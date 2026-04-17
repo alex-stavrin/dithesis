@@ -1,25 +1,12 @@
-% demo.tex
-%
-% Enjoy, evolve, and share!
-%
-% Compile it as follows:
-%   latexmk
-%
-% Check file `dithesis.cls' for other configuration options.
-%
 \documentclass[inscr,ack,preface]{dithesis}
 
-%\usepackage{graphicx}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%% User-specific package inclusions %%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{booktabs}
 \usepackage{hyperref}
 \usepackage{lipsum}
 \usepackage{enumerate}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{float}
 \hypersetup{
     unicode=true,                     % non-Latin characters in bookmarks
     pdffitwindow=true,                % page fit to window when opened
@@ -34,90 +21,62 @@
     pdfauthor={},                     % author
     pdfsubject={}                     % subject of the document
 }
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%% User-specific package inclusions %%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%% User-specific configuration %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%% User-specific configuration %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\authorFirstGr{Αλέξανδρος}
+\authorFirstAbrGr{Α.} % abbreviation of first name
+\authorMiddleGr{ΣΤΑ.}   % abbreviation of father's first name
+\authorLastGr{Σταυρινουδάκης}
+\authorFirstEn{Alexandros}
+\authorFirstAbrEn{A.}
+\authorMiddleEn{STA.}
+\authorLastEn{Stavrinoudakis}
+\authorSn{1115202200171}
 
+\titleEn{The Design and Development of a Scene Editor in Virtual Reality}
+\titleGr{Σχεδίαση και Ανάπτυξη Επεξεργαστή Σκηνών σε Περιβάλλον Εικονικής Πραγματικότητας}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%% Required Metadata %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% First name, last name
-%
-\authorFirstGr{Όνομα}
-\authorFirstAbrGr{Ο.} % abbreviation of first name
-\authorMiddleGr{Σ.}   % abbreviation of father's first name
-\authorLastGr{Επίθετο}
-\authorFirstEn{Onoma}
-\authorFirstAbrEn{O.}
-\authorMiddleEn{S.}
-\authorLastEn{Epitheto}
-\authorSn{1115000000000}
+\dateGr{ΜΑΪΟΣ 2026}
+\dateEn{MAY 2026}
 
-%
-% The title of the thesis
-%
-\titleEn{BSc thesis title in English}
-\titleGr{Τίτλος της πτυχιακής εργασίας στα Ελληνικά}
+\supervisorGr{Μαρία Ρούσσου}{Αναπληρώτρια Καθηγήτρια}
+\supervisorGr{Χρήστος Λουγιάκης}{Υποψήφιος Διδάκτωρ}
+\supervisorEn{Maria Roussou}{Associate Professor}
+\supervisorEn{Christos Lougiakis}{PhD Canditate}
 
-%
-% Month followed by Year
-%
-\dateGr{ΜΑΪΟΣ 2010}
-\dateEn{MAY 2010}
-
-%
-% Supervisor(s) info
-%
-\supervisorGr{Όνομα Επώνυμο}{Βαθμίδα}
-\supervisorEn{Name Surname}{Rank}
-
-%
-% Abstract, synopsis, inscription, ack, and preface pages.
-%
 \abstractEn{
-  \begin{align*}
-    G \leftarrow A_1 \land \dots \land A_n \\
-    \mathsf{G \leftarrow A_1 \land \dots \land A_n}
-  \end{align*}
-\begin{greek}
-Η περίληψη, η επιστημονική περιοχή και οι λέξεις κλειδιά στα Αγγλικά. Δεν θα πρέπει να υπερβαίνει τη μία σελίδα.
-\end{greek}
+This thesis explores the design and development of a Virtual Reality Scene Editor using the Unity game engine. Traditional three dimensional environment design typically relies on two-dimensional displays, creating a cognitive gap between the creation process and the final immersive experience. By shifting the development workflow into a virtual reality environment, users can manipulate three-dimensional scenes with spatial awareness and scale accuracy that flat-screen editors cannot provide.
+
+The developed application allows users to compose three dimensional worlds using a library of predefined assets through intuitive spatial interactions. To assess the system's performance and usability, user experiments were conducted focusing on task efficiency and user presence. Preliminary results indicate that \emph{Results here...}
 }
 \abstractGr{
-Η περίληψη περιλαμβάνει το σκοπό-αντικείµενο της εργασίας, τη μεθοδολογία, τα κύρια βήματα που ακολουθήθηκαν και τέλος τα κύρια αποτελέσματα. Μετά το τέλος της περίληψης θα δηλώνεται η επιστημονική περιοχή της εργασίας και 5 λέξεις κλειδιά. Η συνολική έκταση της περίληψης και των λέξεων δήλωσης επιστημονικής περιοχής και λέξεων-κλειδιών θα είναι μέχρι µία σελίδα. Δεν θα πρέπει να υπερβαίνει τη μία σελίδα.
+Η πτυχιακή εργασία εξετάζει τη σχεδίαση και ανάπτυξη ενός επεξεργαστή σκηνών σε περιβάλλον Εικονικής Πραγματικότητας με τη χρήση της μηχανής παιχνιδιών Unity. Η παραδοσιακή σχεδίαση τρισδιάστατων περιβαλλόντων βασίζεται συνήθως σε δισδιάστατες οθόνες, γεγονός που δημιουργεί ένα νοητικό κενό μεταξύ της διαδικασίας δημιουργίας και της τελικής εμπειρίας. Μεταφέροντας την επεξεργασία σκηνών σε περιβάλλον VR, οι χρήστες μπορούν να χειρίζονται τρισδιάστατες σκηνές με χωρική αντίληψη και ακρίβεια που οι επεξεργαστές επίπεδης οθόνης αδυνατούν να προσφέρουν.
+
+Η εφαρμογή που αναπτύχθηκε επιτρέπει στους χρήστες να συνθέτουν τρισδιάστατους κόσμους χρησιμοποιώντας μια βιβλιοθήκη προκαθορισμένων αντικειμένων μέσω διαισθητικών χωρικών αλληλεπιδράσεων. Για την αξιολόγηση της απόδοσης και της χρηστικότητας του συστήματος, πραγματοποιήθηκαν πειράματα με χρήστες, εστιάζοντας στην αποτελεσματικότητα εκτέλεσης εργασιών και στην αίσθηση παρουσίας του χρήστη. Τα προκαταρκτικά αποτελέσματα δείχνουν ότι \emph{Εδώ μπαίνουν τα αποτελέσματα...}
 }
 \acksEn{
 \begin{greek}
-Στη σελίδα αυτή αναφέρονται οι ευχαριστίες. Η σελίδα αυτή είναι προαιρετική. Παρατίθεται παράδειγμα ευχαριστιών.
+I would like to thank my family and friends for their constant support and presence throughout these years.
 
-Για τη διεκπεραίωση της παρούσας Πτυχιακής Εργασίας, θα θέλαμε να ευχαριστήσουμε τους επιβλέποντες, αν. καθ .Ευστράτιο Γεωργιάδη, Γρηγόριο Παπάμαλο, Αναστασία Γούσιου, Ξενοφών Παπαδόπουλο, για τη συνεργασία και την πολύτιμη συμβολή του στην ολοκλήρωση της.
+I am incredibly grateful to my supervisor, Dr. Maria Roussou, for accepting to oversee this thesis and for her insightful guidance. Special thanks are also due to Dr. Christos Lougiakis for his dedicated support and valuable help at every stage of this project.
+
+Lastly, I would like to thank all the participants of the experiments for their time and cooperation, without which this research would not have been possible.
 \end{greek}
 }
 \prefaceEn{
 \begin{greek}
-Στον πρόλογο αναφέρονται θέματα που δεν είναι επιστημονικά ή τεχνικά, όπως το πλαίσιο που διενεργήθηκε η εργασία, ευχαριστίες, ο τόπος διεξαγωγής κλπ.
+This thesis was developed as part of my undergraduate studies in the Department of Informatics and Telecommunications at the University of Athens.
+
+I am deeply grateful to Dr. Maria Roussou and Dr. Christos Lougiakis for their continuous support and for sharing their expertise throughout the duration of this work.
 \end{greek}
 }
 
-\inscriptionEn{\emph{Στη σελίδα αυτή αναφέρονται οι αφιερώσεις. Η σελίδα αυτή είναι προαιρετική.}}
+\inscriptionEn{Dedicated to my family and my cat Tinker}
 
-%
-% Subject area and keywords
-%
-\subjectAreaGr{Θεματική Περιοχή}
-\subjectAreaEn{Subject Area}
-\keywordsGr{Λέξη κλειδί1, λέξη κλειδί2, λέξη κλειδί3, λέξη κλειδί4, λέξη κλειδί5, λέξη κλειδί6}
-\keywordsEn{Keyword1, keyword2, keyword3, keyword4, keyword5, keyword6, keyword7}
+\subjectAreaGr{Αλληλεπίδραση Ανθρώπου Υπολογιστή}
+\subjectAreaEn{Human Computer Interaction}
+\keywordsGr{Εικονική Πραγματικότητα, Επεξεργαστής Σκηνών}
+\keywordsEn{Virtual Reality, Scene Editor}
 
 %
 % Set the .bib file containing your paper publications (leave the extension out)
@@ -132,9 +91,6 @@
 % The papers are printed in reverse chronological order.
 %
 %\lopfile{mypapers/pubs}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%% Required Metadata %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 
@@ -144,206 +100,286 @@
 
 % add main chapters (should be given in capital letters)
 \chapter{INTRODUCTION}
-  \begin{greek}
-    \section{Μορφοποίηση Κειμένου}
-    Το παρόν αρχείο αποτελεί το υπόδειγμα (template) για τη μορφοποίηση της εργασίας.
 
-    Για την ομοιόμορφη εμφάνιση των σχετικών τόμων και του ψηφιακού υλικού που θα παραδίδονται στην Βιβλιοθήκη, το Τμήμα καθιερώνει υποχρεωτικά πρότυπα. Για το σκοπό αυτό θα πρέπει να τηρούνται αυστηρώς οι οδηγίες που παρατίθενται στη συνέχεια.
+\section{Research Problem}
+The creation of Virtual Reality (VR) content currently suffers from a fundamental "paradigm mismatch." While the end product is an immersive 3D environment, the development process remains tethered to a 2D desktop workflow. Game engines like Unity and Unreal Engine utilize traditional WIMP (Windows, Icons, Menus, Pointers) interfaces that were not designed for spatial computing.
 
-    \subsection{Μέγεθος σελίδας}
-    Το μέγεθος της σελίδας θα πρέπει να είναι \textbf{A4}.
+This discrepancy forces developers into an inefficient, iterative loop:
+\begin{enumerate}
+  \item Modifying spatial properties (e.g., the height of a table) on a 2D monitor.
+  \item Entering the VR environment to verify the "sense of scale" and ergonomic comfort.
+  \item Exiting the VR environment to correct inaccuracies that were invisible in the 2D viewport.
+\end{enumerate}
 
-    \subsection{Ημερομηνίες}
-    Τα στοιχεία του μηνός και του έτους που θα αναγράφονται στη εργασία είναι αυτά της ημερομηνίας εξέτασης. Τα ίδια ημερομηνιακά στοιχεία θα αναγράφονται και σε οποιοδήποτε συνοδευτικό υλικό κατατίθεται στη Βιβλιοθήκη.
+This constant "context switching" disrupts the creator's "flow state" and makes precise spatial design a matter of trial and error rather than direct intuition.
 
-    \subsection{Εξώφυλλο και \grnumm{1} Εσώφυλλο (Σελίδα Τίτλου)}
-    Όπως στην αρχή του παρόντος προτύπου. Δηλαδή με τη σειρά:
-    \begin{enumerate}
-      \item Εικονίδιο της Αθηνάς: άνω στο κέντρο.
-      \item Τίτλος του Πανεπιστημίου: Arial έντονα κεφαλαία 14.
-      \item Τίτλος Σχολής Arial έντονα κεφαλαία 12.
-      \item Τίτλος του Τμήματος: Arial έντονα κεφαλαία 12.
-      \item Είδος εργασίας (Πτυχιακή Εργασία) Arial έντονα κεφαλαία 12.
-      \item Τίτλος της Εργασίας: Arial έντονα πεζά 16.
-      \item Όνομα, αρχικό γράμμα πατρώνυμου και επώνυμο φοιτητή: Arial έντονα πεζά 12.
-      \item \underline{Μόνο στην περίπτωση των \textbf{Πτυχιακών} και \textbf{Διπλωματικών} εργασιών}
+\section{Motivation}
+The motivation for this thesis is driven by the widening "content gap" in the VR industry. Despite the rapid evolution of hardware like the Meta Quest series, the complexity of the development pipeline remains a barrier to entry. By forcing creators to build 3D worlds through a 2D lens, the industry limits the speed at which high-quality content can be produced.
 
-            Επιβλέπων (ή Επιβλέπουσα) ή Επιβλέποντες (ή Επιβλέπουσες): Όνομα και επώνυμο καθηγητή Arial πεζά έντονα 12, τίτλος καθηγητή Arial πεζά 12. Στην περίπτωση που υπάρχουν συνεπιβλέποντες μη μέλη ΔΕΠ προστίθενται στην αμέσως επόμενη γραμμή κατά τον ίδιο τρόπο με τους επιβλέποντες καθηγητές.
-      \item Τόπος ολοκλήρωσης της εργασίας (που είναι πάντα ΑΘΗΝΑ): Arial έντονα κεφαλαία 12.
-      \item Μήνας και έτος ολοκλήρωσης της εργασίας: Arial έντονα κεφαλαία 12. Θα είναι ο μήνας και το έτος εξέτασης της εργασίας.
-      \item Το διάστιχο στα στοιχεία του εξωφύλλου και 1ου εσώφυλλο θα πρέπει να είναι 1pt.
-      \item Η αρίθμηση των σελίδων αρχίζει νοητά από το 1ο εσώφυλλο (σελίδα τίτλου), χωρίς όμως να αναγράφεται ο αριθμός της σελίδας σε αυτό. Η αρίθμηση των σελίδων θα αρχίσει να φαίνεται από την 1η σελίδα του πίνακα περιεχομένων και μετά.
-      \item Το πίσω μέρος της σελίδας αυτής παραμένει λευκό.
-    \end{enumerate}
+Furthermore, as the industry moves toward "Spatial Computing," there is a growing demand for tools that allow for **in-situ** creation. Reducing the friction between the idea and the implementation is essential for both professional developers and the burgeoning community of User-Generated Content (UGC) creators.
 
-    \subsection{\grnumm{2} Εσώφυλλο (Σελίδα έγκρισης)}
-    Όπως στην αρχή του παρόντος προτύπου. Δηλαδή με τη σειρά:
+\section{Purpose}
+The objective of this research is the design and implementation of \textit{SceneEditorVR}, a functional VR-native scene editor prototype. This project does not seek to replace comprehensive game engines but rather to investigate an immersive-first workflow for environmental design and rapid prototyping.
 
-    Είδος εργασίας: \textbf{ΠΤΥΧΙΑΚΗ ΕΡΓΑΣΙΑ} Arial έντονα κεφαλαία 12
+The project focuses on the following core functionalities:
+\begin{itemize}
+  \item \textbf{Immersive Asset Management:} A VR-centric UI for navigating themed libraries and instantiating 3D models.
+  \item \textbf{Natural Spatial Manipulation:} Leveraging 6DoF (Six Degrees of Freedom) input for intuitive translation, rotation, and scaling of objects.
+  \item \textbf{Workflow Continuity:} Providing essential editor features—such as snapping, multi-selection, and undo/redo systems—entirely within the headset.
+  \item \textbf{Data Portability:} Implementing a serialization system using readable .json and industry-standard .glb formats to ensure the VR-created scenes can be integrated back into traditional pipelines.
+\end{itemize}
 
-    Τίτλος: Arial πεζά 12
+Ultimately, this thesis explores how moving the "editor" into the "experience" can streamline the creative process and democratize 3D world-building.
+\chapter{RESEARCH BACKGROUND}
 
-    Κέντρο:
-    \begin{itemize}
-      \item Όνομα και επώνυμο φοιτητή: Arial έντονα πεζά 12
-      \item Αριθμός Μητρώου (Α. Μ.) του φοιτητή (μόνο για τις πτυχιακές και τις μεταπτυχιακές εργασίες): Arial κεφαλαία 1
-    \end{itemize}
+\section{Traditional Desktop Scene Editors}
 
-    Αριστερά:
+\subsection{Unity Scene Editor}
 
-    «Επιβλέπων (ή Επιβλέπουσα ή Επιβλέποντες ή Επιβλέπουσες)» (για τις πτυχιακές εργασίες).
-    \begin{itemize}
-      \item Arial έντονα κεφαλαία 12
-      \item Τίτλος Καθηγητή: Arial πεζά 12
-      \item Όνομα και Επώνυμο Καθηγητή: Arial έντονα πεζά 12
-    \end{itemize}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/unity}
+  \caption{Unity Desktop Editor}
+  \label{Unity Desktop Editor}
+\end{figure}
 
-    Το πίσω μέρος της σελίδας αυτής παραμένει λευκό.
+The Unity Editor is the industry standard for XR development, utilizing a \textit{Scene View}. Interaction within this environment is governed by the \textbf{WIMP} (Windows, Icons, Menus, Pointers) paradigm. While highly precise, this interface creates a "perceptual disconnect." Developers manipulate 3D spatial data through a 2D monitor using a mouse, which lacks depth cues and physical scale.
 
-    \subsection{Περίληψη}
-    Μετά το \grnumm{2} εσώφυλλο θα ακολουθούν σε δύο χωριστά φύλλα η περίληψη της εργασίας στην ελληνική γλώσσα και η περίληψη της εργασίας στην αγγλική. Η περίληψη περιλαμβάνει το σκοπό-αντικείμενο της εργασίας, τη μεθοδολογία, τα κύρια βήματα που ακολουθήθηκαν και τέλος τα κύρια αποτελέσματα.
+Furthermore, the standard Unity workflow requires a repetitive cycle of "editing" and "play-testing." Because the editor is not VR-native, the developer cannot stay within the immersive environment to make structural changes. This results in a loss of \textit{flow state} and significant temporal overhead when fine-tuning the spatial ergonomics of a VR scene.
 
-    Μετά το τέλος της περίληψης θα δηλώνεται η θεματική περιοχή της εργασίας και 5 λέξεις κλειδιά (ελληνικά και αγγλικά αντίστοιχα για κάθε σελίδα). Η συνολική έκταση της περίληψης και των λέξεων δήλωσης επιστημονικής περιοχής και λέξεων κλειδιών θα είναι μέχρι μία σελίδα (δείτε και σελίδες 3 και 4 στο παρόν υπόδειγμα).
+\subsection{Unreal Engine Scene Editor}
 
-    Το πίσω μέρος των σελίδων αυτών παραμένει λευκό.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/unreal}
+  \caption{Unreal Desktop Editor}
+  \label{Unreal Desktop Editor}
+\end{figure}
 
-    Στην περίπτωση της \underline{πτυχιακής} εργασίας, η περίληψη, η επιστημονική περιοχή και οι λέξεις κλειδιά στην αγγλική γλώσσα είναι προαιρετικά.
+Unreal Engine (UE) represents the high-end of the XR development spectrum, offering robust tools for visual fidelity. Historically, Epic Games attempted to bridge the 2D-3D gap with the introduction of the \textit{Unreal VR Editor} in 2016. This tool allowed for direct manipulation of the \textit{Scene Graph} using 6DoF controllers and a floating world-space UI.
 
-    Ακολουθούν σε χωριστές σελίδες, όπως και στο παρόν υπόδειγμα:
+However, as the engine transitioned to Unreal Engine 5, this VR-native editing mode was largely sidelined in favor of "VR Preview" workflows. The industry consensus suggests that the original VR Editor failed to gain traction due to its high cognitive load—it attempted to port a complex desktop-centric interface into a spatial environment without sufficient simplification. This deprecation highlights a significant opportunity for specialized, lightweight authoring tools. Unlike the "feature-heavy" approach of Unreal, \textit{SceneEditorVR} prioritizes a streamlined UX, proving that immersive editing is more effective when designed around spatial ergonomics rather than desktop-legacy menus.
 
-    \textbf{Αφιερώσεις} \textit{(προαιρετικά - το πίσω μέρος της σελίδας αυτής παραμένει λευκό)}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/unreal_vr}
+  \caption{Unreal VR Scene Editor}
+  \label{Unreal VR Scene Editor}
+\end{figure}
 
-    \textbf{Ευχαριστίες} \textit{(προαιρετικά - το πίσω μέρος της σελίδας αυτής παραμένει  λευκό)}
+\subsection{Godot Scene Editor}
 
-    \textbf{Περιεχόμενα}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/godot}
+  \caption{Godot Desktop Editor}
+  \label{Godot Desktop Editor}
+\end{figure}
 
-    \textbf{Πρόλογος} (Όπου αναφέρονται θέματα που δεν είναι επιστημονικά ή τεχνικά, όπως το πλαίσιο που διενεργήθηκε η εργασία, ευχαριστίες, ο τόπος διεξαγωγής κλπ.)
+Godot Engine offers a unique perspective on the evolution of immersive tools, as it is the only major engine to have ported its full desktop editor to standalone VR hardware, specifically the Meta Quest series. As of late 2024, the Godot Editor was made available on the Horizon Store, allowing for a "PC-less" development workflow.
 
-    \subsection{Αρίθμηση σελίδων}
-    Η αρίθμηση των σελίδων πάντοτε αρχίζει νοητά από το \grnumm{1} εσώφυλλο (σελίδα τίτλου, η \grnumf{1} σελίδα του παρόντος υποδείγματος) χωρίς δηλαδή να αναγράφεται ο αριθμός της σελίδας σε αυτό. Και στο \grnumm{2} εσώφυλλο (σελίδα έγκρισης) επίσης ο αριθμός της σελίδας υπολογίζεται χωρίς  να αναγράφεται σε αυτό. Η αρίθμηση πάντοτε τελειώνει στην τελευταία τυπωμένη σελίδα. Θα πρέπει να αρχίσει να αναγράφεται ο αριθμός σελίδων από την πρώτη σελίδα του πρώτου κεφαλαίου (όπως στο παρόν υπόδειγμα).
+However, this implementation highlights the core thesis of this research: the \textit{spatial interaction gap}. While the Godot editor runs natively on the headset, it remains a "hybrid" application. The interface is rendered as a 2D floating window—a direct port of the WIMP-based Android version—rather than a native spatial environment.
 
-    \subsection{Οι σελίδες του Κειμένου}
-    Όπως στο παρόν υπόδειγμα. Δηλαδή:
-    \begin{itemize}
-      \item \textbf{Περιθώρια (Margins):}
-      \begin{enumerate}[$\circ$]
-        \item Άνω (Top): 2 cm
-        \item Κάτω (Bottom): 2 cm
-        \item Περιθώριο Βιβλιοδεσίας (Gutter): 0.5 cm
-        \item Αριστερά (Left): 2 cm
-        \item Δεξιά (Right): 2 cm
-      \end{enumerate}
-      \item \textbf{Κεφαλίδα (Header):} 1.25 cm (από πάνω): Ο τίτλος της εργασίας \emph{(δεν εισάγεται κεφαλίδα στο εξώφυλλο, στο 1ο και 2ο εσώφυλλο, στις σελίδες των περιλήψεων, στις σελίδες των αφιερώσεων και των ευχαριστιών και στις τυχόν λευκές σελίδες)}.
-      \item \textbf{Υποσέλιδο (Footer):} 1.25 cm (από κάτω): Το όνομα ή τα ονόματα των συγγραφέων και ο αριθμός σελίδας \emph{(δεν εισάγεται υποσέλιδο στο εξώφυλλο, στο 1ο και 2ο εσώφυλλο, στις σελίδες των περιλήψεων, στις σελίδες των αφιερώσεων και των ευχαριστιών και στις τυχόν λευκές σελίδες)}.
-      \item \textbf{Αρίθμηση σελίδας:} Δεξιά του υποσέλιδου και στην περίπτωση εκτύπωσης και από τις δύο πλευρές του φύλλου στο κέντρο του υποσέλιδου (Προσοχή: στο παρόν υπόδειγμα η αρίθμηση έχει γίνει στα δεξιά του υποσέλιδου, για εκτύπωση στη μία σελίδα του φύλλου). Το παρόν πρόπυπο υποστηρίζει την επιλογή \texttt{dualpage}, η οποία ρυθμίζει το υποσέλιδο για εκτύπωση και στις δύο πλευρές του φύλλου. Το μέγεθος γραμματοσειράς για την αρίθμηση της σελίδας θα πρέπει να είναι 10.
-      \item \textbf{Μορφή Παραγράφου (Format Paragraph)}
-      \begin{enumerate}[$\circ$]
-        \item \textbf{Στοίχιση (Justification):} αριστερά και δεξιά
-        \item \textbf{Διάκενο μεταξύ παραγράφων (paragraph spacing):}
+This state of the art confirms that simply transporting 2D windows into a 3D space is insufficient. \textit{SceneEditorVR} departs from this "windowed" approach by offering a ground-up spatial interface, prioritizing direct hand-object interaction over traditional 2D menus.
 
-        πριν: 0 στιγμές, μετά: 6 στιγμές
-        \item \textbf{Διάστιχο (Line spacing):} 1 γραμμή
-      \end{enumerate}
-      \item \textbf{Γραμματοσειρά (Font):} Arial 12.
-      \item \textbf{Τύπος Γραμματοσειράς (Font style):} Normal ή Regular.
-      \item \textbf{Αρίθμηση Κεφαλαίων:} Arial 12 ή 14.
-      \item \textbf{Τύπος Αρίθμησης Κεφαλαίων:} όπως στο παρόν υπόδειγμα.
-      \item \textbf{Τίτλος Κεφαλαίων:} Κεφαλαία έντονα Arial 14, στοίχιση στο κέντρο.
-      \item \textbf{Τίτλος Υποκεφαλαίων:} Έντονα (Bold) πεζά Arial 12, στοίχιση αριστερά.
-      \item \textbf{Σχήματα/Διαγράμματα:} Κάθε σχήμα/διαγράμμα θα πρέπει να έχει υποχρεωτικά μοναδική αρίθμηση, είτε στο σύνολο της εργασίας είτε ανά κεφάλαιο, και οπωσδήποτε λεζάντα στο κάτω μέρος τους (τα διαγράμματα ανήκουν στην κατηγορία των σχημάτων), με στοίχιση όπως στο παρόν υπόδειγμα.
-      \item \textbf{Εικόνες/Φωτογραφίες:} Όλες οι εικόνες/φωτογραφίες θα πρέπει να έχουν υποχρεωτικά μοναδική αρίθμηση και οπωσδήποτε λεζάντα στο κάτω μέρος τους, όπως στο παρόν υπόδειγμα.
-      \item \textbf{Πίνακες:} Όλοι οι πίνακες πρέπει να φέρουν μοναδική αρίθμηση και λεζάντα στο πάνω μέρος τους, όπως στο παρόν υπόδειγμα.
-    \end{itemize}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/godot_vr}
+  \caption{Godot Editor running in a Meta Quest}
+  \label{Godot Editor running in a Meta Quest}
+\end{figure}
 
-    \subsection{Ορολογία}
-    Σε περίπτωση συγγραφής στα Ελληνικά, την πρώτη φορά που θα εμφανίζεται στο κείμενο ένας επιστημονικός όρος ο οποίος προέρχεται από μεταφρασμένο ξένο όρο θα αναφέρεται δίπλα σε παρένθεση ο αντίστοιχος ξενόγλωσσος όρος. Στο τέλος του κειμένου θα υπάρχει πίνακας ορολογίας με τις αντιστοιχίσεις των ελληνικών και ξενόγλωσσων όρων. Ως παράδειγμα παράθεσης ορολογίας δίνεται η εξής πρόταση: Ήδη από το 1994 η BELL ξεκίνησε στα εργαστήρια της προσπάθειες για τη σχεδίαση υπολογιστών µε αυξημένη αξιοπιστία (reliability). Δείτε και τον Πίνακα Ορολογίας στο παρόν υπόδειγμα.
+\section{VR-Native Scene Editors}
 
-    \subsection{Συντμήσεις - Αρκτικόλεξα}
-    Στο τέλος του κειμένου θα υπάρχει «Πίνακας Συντμήσεων – Αρκτικόλεξων» όπου θα αναφέρονται οι συντμήσεις-αρκτικόλεξα και δίπλα ή πλήρη ανάπτυξη των ονομασιών. Αν, για παράδειγμα χρησιμοποιήσετε τον όρο W3C στο κείμενό σας, θα πρέπει να παραθέσετε την πλήρη ανάπτυξή του όπως στον Πίνακα Συντμήσεων – Αρκτικόλεξων στο παρόν υπόδειγμα.
+\subsection{Rec Room}
 
-    \subsection{Βιβλιογραφικές Αναφορές}
-    Οι βιβλιογραφικές αναφορές έχουν ρυθμιστεί στο παρόν πρότυπο, έτσι ώστε να συμφωνούν με τις υποδείξεις του IEEE.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/rec_room}
+  \caption{Rec Room User Editor}
+  \label{Rec Room User Editor}
+\end{figure}
 
-    Μέσα στο κείμενο, οι αναφορές γίνονται γράφοντας \verb!\cite{X}!, όπου \texttt{X} είναι το αναγνωριστικό της πηγής.
+Rec Room represents the most successful implementation of a consumer-facing, VR-native creation system. The primary interaction vector is the \textit{Maker Pen}, a multi-functional tool that enables users to instantiate primitive geometry and place pre-defined assets within a shared 3D environment.
 
-    \section{Άλλες Παρατηρήσεις}
-    Θα πρέπει να ακολουθείτε το παρόν υπόδειγμα, όσον αφορά τη μορφοποίηση (εξώφυλλα, εσώφυλλα, κλπ) της εργασίας, τις κενές σελίδες, τα περιθώρια της σελίδας, της κεφαλίδας και του υποσέλιδου, τη μορφή της παραγράφου και των γραμματοσειρών, τις λεζάντες σε σχήματα, εικόνες και πίνακες, τη μοναδική αρίθμηση των λεζάντων και ό,τι άλλο εμφανίζεται στο παρόν υπόδειγμα. Επιπλέον, ιδιαίτερη προσοχή δώστε και στις παρακάτω παρατηρήσεις.
+Key features of the Rec Room workflow relevant to \textit{SceneEditorVR} include:
+\begin{itemize}
+  \item \textbf{Diegetic Toolsets:} The use of a physical tool (the Maker Pen) to house UI menus reduces the cognitive load associated with navigating traditional "flat" menus.
+  \item \textbf{Collaborative Design:} Rec Room allows multiple users to build in the same spatial viewport simultaneously, providing a real-time "WYSIWYG" (What You See Is What You Get) experience.
+\end{itemize}
 
-    \subsection{Λεζάντες}
-    Κάθε σχήμα, διάγραμμα, εικόνα, φωτογραφία και πίνακας θα πρέπει να έχει υποχρεωτικά μοναδική αρίθμηση, είτε στο σύνολο της εργασίας είτε ανά κεφάλαιο, και οπωσδήποτε λεζάντα, όπως φαίνεται πιο πάνω, στο παρόν υπόδειγμα. \textbf{Προσοχή:} για τους πίνακες, η λεζάντα θα πρέπει να βρίσκεται επάνω από τον πίνακα.
+However, Rec Room is fundamentally a "walled garden." Creations are restricted to the platform's proprietary format, and the recent introduction of \textit{Rec Room Studio}—a desktop Unity plugin—suggests a pivot back to traditional 2D-based development for complex tasks. \textit{SceneEditorVR} addresses this by adopting the intuitive UX of the Maker Pen while ensuring professional utility through open-source export capabilities.
 
-    \subsection{Κεφαλίδες και Υποσέλιδα}
-    \textbf{Δεν εισάγονται} στο εξώφυλλο, στο \grnumm{1} και \grnumm{2} εσώφυλλο, στις σελίδες των περιλήψεων, στις σελίδες των αφιερώσεων και των ευχαριστιών και στις τυχόν λευκές σελίδες. Εισάγονται από την \grnumf{1} σελίδα του 1ου κεφαλαίου και μετά
+\subsection{Arkio}
 
-  \end{greek}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/arkio}
+  \caption{Arkio User Editor}
+  \label{Arkio User Editor}
+\end{figure}
+
+Arkio is a professional-grade collaborative design tool that bridges the gap between traditional architectural modeling and immersive spatial design. Unlike gamified builders, Arkio is specifically engineered for AEC (Architecture, Engineering, and Construction) professionals, allowing users to sketch building massing, move walls, and arrange furniture in a 1:1 scale environment. It utilizes a unique volumetric modeling kernel that makes "push-pull" geometry manipulation feel intuitive with VR controllers, effectively turning the virtual space into a digital version of physical model-making. For the purpose of this thesis, Arkio serves as a critical example of an in-situ authoring tool that maintains professional utility through its bidirectional integration with industry-standard software like Revit, Rhino, and Unity. This highlights that VR-native editing is not merely for creative play but is a viable solution for high-precision spatial layout and rapid architectural prototyping.
+
+\subsection{ShapesXR}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/shapesxr}
+  \caption{ShapesXR User Editor}
+  \label{ShapesXR User Editor}
+\end{figure}
+
+ShapesXR is an industry-standard prototyping platform designed to facilitate the transition from 2D concepts to 3D spatial interfaces. It prioritizes low-fidelity "gray-boxing" over high-detail modeling, enabling UX designers to quickly block out user flows and environmental layouts. A defining characteristic of ShapesXR is its "Stages" system—a spatial iteration of traditional presentation slides—which allows creators to storyboard linear interactions within a 3D volume. By integrating with 2D design tools like Figma and providing a dedicated Unity plugin for data handoff, ShapesXR validates the "Rapid Prototyping" objective of this research. It demonstrates that the most effective VR authoring tools are those that simplify complex operations into intuitive spatial gestures, allowing teams to iterate on the "feel" of an experience before committing to final production code.
+\chapter{DESIGN}
+\section{Movement System}
+The navigation system in SceneEditorVR is designed to provide the user with full six-degrees-of-freedom (6DoF) mobility, allowing for precise positioning within the 3D environment. The choice of locomotion methods was driven by the need for fluid movement that does not interrupt the creative workflow.
+
+\subsection{Horizontal Plane Movement}
+Horizontal movement is implemented via Smooth Locomotion, mapped to the left controller’s thumbstick. While many VR applications utilize "Teleportation" to minimize physical discomfort, it was found to be too disjointed or "clunky" for a scene-editing context where incremental adjustments are frequent. To justify this choice, the application identifies its target audience as experienced VR users. By assuming a high level of "VR habituation," the design prioritizes continuous, precise spatial translation over the comfort-centric limitations of teleportation.
+
+\subsection{Vertical Movement}
+To facilitate vertical exploration and the placement of assets at varying heights (e.g., ceiling fixtures or multi-level structures), a dedicated vertical translation system was implemented using the controller Grip buttons. Pressing the left grip initiates an upward ascent, while the right grip initiates a descent. This "button-mapped" approach was chosen after initial testing of "air-grabbing" or "world-pulling" mechanics proved to be unintuitive for users during long editing sessions. By decoupling verticality from hand gestures, the user maintains a stable view while adjusting their elevation.
+
+\subsection{Rotation}
+Rotational navigation is handled through Snap Turning on the right thumbstick. By flicking the stick left or right, the user’s view rotates by a fixed degree increment. This was selected as it remains the industry standard for VR orientation; it provides the necessary change in perspective required to view a 3D model from all sides while significantly reducing the risk of motion sickness compared to smooth, continuous rotation.
+\section{Assets Interaction}
+\section{Gizmos}
+When an asset is selected there are three possible gizmos that can show up
+
+\subsection{Translation Gizmo}
+The translation gizmo has three arrows. One for each axis. The user can interact with the arrows to move the assets around in each axis.
+\subsection{Scale Gizmo}
+The scale gizmo has three scalers. One for each axis. The user can interact with the scalers to scale the assets in each axis. For this type of gizmo there is also a white sphere that when interacted will scale the asset in all of the axis.
+\subsection{Rotation Gizmo}
+The rotation gizmo has three rotators. One for each axis. The can user can interact with rotators to rotate the assets in around all of the axis.
+
+\section{Radial Menus}
+
+There are two radial menus in the application.
+The radials are summoned by their respective buttons.
+While holding the button the user moves the controller to their selection.
+The selection is confirmed when dismissing the radial by releasing the button.
+The radial menus where chosen to facilitate fast and quick actions by the user. 
+These actions are something the user will do a lot
+
+\subsection{Actions Radial Menu}
+
+The actions radial menu contains the following options: 
+\begin{itemize}
+  \item 
+\end{itemize}
 
 
-\chapter{BACKGROUND AND RELATED WORK}
-  \lipsum[4-7]
-  \begin{figure}
-    \centering
-    \includegraphics{emblems/athena-black}
-    \caption{The emblem picturing Athena}
-    \label{athena}
-  \end{figure}
+\subsection{Transform Radial Menu}
 
-\chapter{ANOTHER CHAPTER}
-  \lipsum[10-20]
+\section{UI}
+\section{Assets}
+\section{Rotation}
+\section{Snapping}
+\section{Drag And Drop}
+\chapter{IMPLEMENTATION}
+\chapter{EXPERIMENTS}
+\chapter{ANALYSIS AND RESULTS}
+\chapter{DISCUSSION}
 
-  \begin{table}
-    \centering
+\chapter{THESIS TEMPLATE STUFF (REMOVE BEFORE PUBLISH)}
+\begin{greek}
+  \section{Stuff}
 
-    \caption{Some numbers in a table}
-    \label{numbers}
+  \subsection{Περίληψη}
+  Η περίληψη περιλαμβάνει το σκοπό-αντικείμενο της εργασίας, τη μεθοδολογία, τα κύρια βήματα που ακολουθήθηκαν και τέλος τα κύρια αποτελέσματα.
 
-    \begin{tabular}{| c | c |}
-      \hline
-      1 & one \\
-      \hline
-      2 & two \\
-      \hline
-      3 & three \\
-      \hline
-    \end{tabular}
+  \begin{itemize}
+    \item παραδειγμα itemize 1
+    \item παραδειγμα itemize 2
+  \end{itemize}
 
-  \end{table}
+  \begin{enumerate}
+    \item παραδειγμα enumerate 1
+    \item παραδειγμα enumerate 2
+  \end{enumerate}
 
-\chapter{CONCLUSIONS AND FUTURE WORK}
-  \lipsum[3-5]
-  One reference to some paper \cite{manning:corenlp} and to another paper
-  \cite{pennington:glove}.
+  Μέσα στο κείμενο, οι αναφορές γίνονται γράφοντας \verb!\cite{X}!, όπου \texttt{X} είναι το αναγνωριστικό της πηγής.
+
+\end{greek}
+
+% FIGURE EXAMPLE
+\begin{figure}
+  \centering
+  \includegraphics{emblems/athena-black}
+  \caption{The emblem picturing Athena}
+  \label{athena}
+\end{figure}
+
+% TABLE EXAMPLE
+\begin{table}
+  \centering
+
+  \caption{Some numbers in a table}
+  \label{numbers}
+
+  \begin{tabular}{| c | c |}
+    \hline
+    1 & one   \\
+    \hline
+    2 & two   \\
+    \hline
+    3 & three \\
+    \hline
+  \end{tabular}
+
+\end{table}
+
+% REFERENCE TO PAPER EXAMPLE
+One reference to some paper \cite{manning:corenlp} and to another paper
+\cite{pennington:glove}.
 
 \backmatter
 
 % abbreviations table
 \abbreviations
 \begin{center}
-	\renewcommand{\arraystretch}{1.5}
-	\begin{longtable}{| l | @{\qquad} l |}
-	\hline
-	RDF    & Resource Description Framework \\
-  \hline
-	SPARQL & SPARQL Protocol and RDF Query Language \\
-  \hline
-	OWL    & Web Ontology Language \\
-  \hline
-	OGC    & Open Geospatial Consortium \\
-	\hline
-	\end{longtable}
+  \renewcommand{\arraystretch}{1.5}
+  \begin{longtable}{| l | @{\qquad} l |}
+    \hline
+    VR      & Virtual Reality                       \\
+    \hline
+    3D      & Three Dimensional                     \\
+    \hline
+    2D      & Two Dimensional                       \\
+    \hline
+    6DoF    & Six Degrees of Freedom                \\
+    \hline
+    UGC     & User Generated Content                \\
+    \hline
+    UI      & User Interface                        \\
+    \hline
+    WIMP    & Windows Icons Menus Pointers          \\
+    \hline
+    XR      & Extended Reality                      \\
+    \hline
+    UX      & User Experience                       \\
+    \hline
+    AEC     & Architecture Engineering Construction \\
+    \hline
+    WYSIWYG & What You See Is What You Get          \\
+    \hline
+  \end{longtable}
 \end{center}
 
 % appendix
 \begin{appendix}
-% mark the beginning of the appendix
-\appendixstartedtrue
+  % mark the beginning of the appendix
+  \appendixstartedtrue
 
-% add appendix line to ToC
-\phantomsection
-\addcontentsline{toc}{chapter}{APPENDICES}
+  % add appendix line to ToC
+  \phantomsection
+  \addcontentsline{toc}{chapter}{APPENDICES}
 
-\chapter{FIRST APPENDIX}
-\chapter{SECOND APPENDIX}
-\chapter{THIRD APPENDIX}
+  \chapter{FIRST APPENDIX}
+  \chapter{SECOND APPENDIX}
+  \chapter{THIRD APPENDIX}
 \end{appendix}
 
 % manually include the bibliography
