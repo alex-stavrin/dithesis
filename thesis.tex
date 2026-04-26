@@ -348,7 +348,11 @@ The navigation system in SceneEditorVR is designed to provide the user with full
 Horizontal movement is implemented via Smooth Locomotion, mapped to the left controller’s thumbstick. While many VR applications utilize "Teleportation" to minimize physical discomfort, it was found to be too disjointed or "clunky" for a scene-editing context where incremental adjustments are frequent. To justify this choice, the application identifies its target audience as experienced VR users. By assuming a high level of "VR habituation," the design prioritizes continuous, precise spatial translation over the comfort-centric limitations of teleportation.
 
 \subsection{Vertical Movement}
-To facilitate vertical exploration and the placement of assets at varying heights (e.g., ceiling fixtures or multi-level structures), a dedicated vertical translation system was implemented using the controller Grip buttons. Pressing the left grip initiates an upward ascent, while the right grip initiates a descent. This "button-mapped" approach was chosen after initial testing of "air-grabbing" or "world-pulling" mechanics proved to be unintuitive for users during long editing sessions. By decoupling verticality from hand gestures, the user maintains a stable view while adjusting their elevation.
+To facilitate vertical exploration and the placement of assets at varying heights (e.g., ceiling fixtures or multi-level structures), 
+a dedicated vertical translation system was implemented using the controller Grip buttons. Pressing the left grip initiates an upward ascent,
+while the right grip initiates a descent. This "button-mapped" approach was chosen after initial testing of "air-grabbing" or "world-pulling"
+mechanics proved to be unintuitive for users during long editing sessions. By decoupling verticality from hand gestures, the user maintains
+a stable view while adjusting their elevation.
 
 \subsection{Rotation}
 Rotational navigation is handled through Snap Turning on the right thumbstick. By flicking the stick left or right, the user’s view rotates by a fixed degree increment. This was selected as it remains the industry standard for VR orientation; it provides the necessary change in perspective required to view a 3D model from all sides while significantly reducing the risk of motion sickness compared to smooth, continuous rotation.
@@ -357,8 +361,36 @@ Rotational navigation is handled through Snap Turning on the right thumbstick. B
 When an asset is selected there are three possible gizmos that can show up
 
 \subsection{Translation Gizmo}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/move_gizmo.png}
+  \caption{Translation Gizmo}
+  \label{Translation Gizmo}
+\end{figure}
+
 The translation gizmo has three arrows. One for each axis. The user can interact with the arrows to move the assets around in each axis.
+
+\subsection{Rotation Gizmo}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/rotation_gizmo.png}
+  \caption{Rotation Gizmo}
+  \label{Rotation Gizmo}
+\end{figure}
+
+The rotation gizmo has three rotators. One for each axis. The user can interact with the rotators to rotate the assets around each axis.
+
 \subsection{Scale Gizmo}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/scale_gizmo.png}
+  \caption{Scale Gizmo}
+  \label{Scale Gizmo}
+\end{figure}
+
 The scale gizmo has three scalers. One for each axis. The user can interact with the scalers to scale the assets in each axis. For this type of gizmo there is also a white sphere that when interacted will scale the asset in all of the axis.
 The rotation gizmo has three rotators. One for each axis. The can user can interact with rotators to rotate the assets in around all of the axis.
 
@@ -528,15 +560,120 @@ state to allow for \textit{immediate interaction}.
 Child classes override protected virtual methods to execute specific logic
 during these transitions, ensuring a clean separation between state management and functional execution.
 \section{Ray Passes}
-\section{Managers}
-\section{Actor}
+
+The interaction system in \textit{SceneEditorVR} utilizes a multi-stage raycasting approach
+to manage object selection and UI interaction. To ensure precise control within the 3D environment,
+the system executes up to three sequential physics raycasts per frame, prioritized by the functional importance of the target interactables.
+
+\subsection{Prioritized Raycasting Logic}
+The system evaluates potential targets in a specific order of precedence to prevent interaction overlap. If a high-priority raycast returns a hit,
+the subsequent stages are bypassed:
+\begin{enumerate}
+    \item \textbf{User Interface (UI):} The highest priority is given to world-space UI elements to ensure menu navigation is never 
+    obstructed by background objects.
+    \item \textbf{Transformation Gizmos:} The second priority is assigned to gizmos (handles for translation, rotation, and scaling), 
+    allowing for precise asset manipulation.
+    \item \textbf{Scene Objects:} The final priority level targets standard colliders and environmental assets.
+\end{enumerate}
+
+\subsection{Visual Feedback and State Indication}
+To improve the user's spatial awareness, the controller's ray visualizer dynamically updates its color based on the results of the
+aforementioned raycast hierarchy. This real-time feedback provides immediate confirmation of the current interaction state:
+\begin{itemize}
+    \item \textbf{White:} Indicates a "No Hit" state; the ray is currently not intersecting any interactable surface.
+    \item \textbf{Cyan:} Indicates a successful hit on a \textbf{UI} element.
+    \item \textbf{Orange:} Indicates a hit on either a \textbf{Gizmo} or a \textbf{Scene Object}, signaling that transformation or selection
+    is available.
+\end{itemize}
+
+\section{Singletons}
+
+Due to the high degree of interdependency between the various modules within the VR environment—such as the transformation logic,
+UI systems, and file I/O handlers—traditional Unity workflow methods like manual reference assignment via the Inspector or frequent GetComponent
+calls were deemed inefficient. To ensure global access and architectural consistency, a Singleton design pattern was adopted.
+This allowed for centralized management across more than 20 distinct systems, facilitating seamless communication between core engine 
+components without the overhead of manual dependency linking.
+
 \section{Custom Keyboard}
-\section{UI}
-\section{Actions}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/keyboard.png}
+  \caption{Custom Keyboard}
+  \label{Custom Keyboard}
+\end{figure}
+
+To facilitate text entry without breaking user immersion, a custom virtual keyboard was engineered.
+Unlike standard system overlays, this input module features a dynamic 'billboard' behavior, automatically rotating
+to face the user's viewport to ensure optimal legibility. Furthermore, the keyboard is integrated into the world-space interaction system,
+allowing users to reposition it freely within their personal reach zone. The software logic supports full alphanumeric input,
+including toggles for casing (upper/lower case).
+
+\section{Undo and Redo Actions}
+
+To ensure user experience fluidity and error recovery, the \textit{SceneEditorVR}
+implements a command-based history system. This is achieved through the \textbf{Command Design Pattern},
+which encapsulates every user interaction as a discrete object.
+
+\subsection{The UserAction Interface}
+All reversible operations inherit from a primary abstract class, \texttt{UserAction}. 
+This architecture utilizes polymorphism to allow the system to treat different operations (e.g., transformations, spawning, or selection)
+through a unified interface.
+
+\subsection{State Management via Dual Stacks}
+The system manages the history using two \textbf{Last-In-First-Out (LIFO)} stacks managed by the \texttt{ActionsManager}:
+
+\begin{itemize}
+    \item \textbf{Undo Stack:} Stores executed actions. When a new action is performed, its \texttt{Do()} method is called 
+    and it is pushed onto this stack.
+    \item \textbf{Redo Stack:} Stores actions that have been reversed. If the user performs a new action, 
+    this stack is cleared to maintain a linear timeline.
+\end{itemize}
+
+The implemented actions include spatial transformations (\textit{Move, Rotate, Scale}), object lifecycle management (\textit{Spawn, Delete}), 
+and selection state changes (\textit{Select, Unselect}).
+This modular approach ensures that the system is easily extensible for future features.
+
 \section{Rotation}
-\section{Translation and Scaling Gizmos}
+
+The rotation workflow is divided into two main stages:
+
+\subsection{Initialization and Reference Mapping}
+Upon interacting with the gizmo, the system captures the initial position and rotation of all selected objects.
+If multiple objects are selected, it calculates a shared pivot point. 
+This ensures that the entire group rotates cohesively as a single unit around a common center of mass.
+
+\subsection{Mathematical Projection and Continuous Update}
+Since VR controllers move freely in 3D space, the system must translate this movement into a constrained rotational value. 
+The script utilizes \texttt{Vector3.ProjectOnPlane} 
+to mathematically project the controller's 3D movement onto a 2D plane perpendicular to the active rotation axis. 
+The exact angle is then calculated and applied to the objects. To maintain immersion, 
+the system concurrently communicates with the \texttt{RotationVisualizerManager} to render a dynamic visual guide
+that updates in real-time.
+
 \section{Two Cameras}
 
+To ensure the control panel remains visible and never clips through 3D objects, a dual-camera system was implemented:
+
+\begin{itemize}
+  \item \textbf{World Camera} : Renders the environment and all interactive actors.
+  \item \textbf{UI Overlay Camera} : Renders only the controllers and the control panel.
+\end{itemize}
+
+By assigning the UI Camera a higher depth priority, the control panel is forced to render on top of all world geometry.
+This ensures the user never "loses" the interface inside walls or large assets.
+
+\section{Asset Management Using Addressables}
+
+To efficiently manage the diverse library of predefined 3D models—categorized into Western, Medieval, Vegetation,
+and Primitive Objects—the Unity Addressables System was integrated into the project's architecture.
+Traditional asset referencing in Unity requires objects to be loaded into memory synchronously when the scene initializes.
+This approach scales poorly as the asset library grows and creates significant performance bottlenecks.
+Given the strict memory limitations and processing constraints of standalone VR hardware like the Meta Quest 2, 
+optimizing the application's memory footprint and load times is critical. Utilizing Addressables establishes a 
+robust and scalable foundation. While  the current prototype relies on locally stored predefined assets, this architecture natively support
+s remote content delivery. This design choice paves the way for future iterations where users could seamlessly download
+additional themed asset packs from an external server without needing to update the base application.
 
 \chapter{EXPERIMENTS}
 \chapter{ANALYSIS AND RESULTS}
