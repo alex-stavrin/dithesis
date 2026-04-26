@@ -232,6 +232,115 @@ Arkio is a professional-grade collaborative design tool that bridges the gap bet
 
 ShapesXR is an industry-standard prototyping platform designed to facilitate the transition from 2D concepts to 3D spatial interfaces. It prioritizes low-fidelity "gray-boxing" over high-detail modeling, enabling UX designers to quickly block out user flows and environmental layouts. A defining characteristic of ShapesXR is its "Stages" system—a spatial iteration of traditional presentation slides—which allows creators to storyboard linear interactions within a 3D volume. By integrating with 2D design tools like Figma and providing a dedicated Unity plugin for data handoff, ShapesXR validates the "Rapid Prototyping" objective of this research. It demonstrates that the most effective VR authoring tools are those that simplify complex operations into intuitive spatial gestures, allowing teams to iterate on the "feel" of an experience before committing to final production code.
 \chapter{DESIGN}
+
+\section{User Personas}
+
+\subsection{Persona 1}
+
+\subsubsection{Profile}
+
+\begin{itemize}
+  \item \textbf{Name} : Adam Smith
+  \item \textbf{Age} : 26
+  \item \textbf{Role} : Junior VR Developer
+  \item \textbf{Background} : Adam has spent the last three years building VR environments
+  for academic projects and small indie titles. He is technically proficient in Unity but often finds the 
+  "monitor-and-mouse" workflow creates a disconnect between his vision and the actual spatial feel of the VR scene.
+\end{itemize}
+
+\subsubsection{Technical Background}
+
+\begin{itemize}
+  \item \textbf{VR Experience} : Expert. Owns multiple headsets. Has hundreds of hours in VR across gaming, social VR and development testing.
+  \item \textbf{Game Editors} : Unity Power User. Comfortable with the Inspector and the Hiearachy structure
+  \item \textbf{Native VR Editors} : He has tried some applications with UGC (User Generated Content)
+\end{itemize}
+
+\subsubsection{Physical \& Environmental Context}
+
+\begin{itemize}
+  \item \textbf{Physical Health} : Normal. No history of motion sickness (strong "VR legs"). He can tolerate long sessions
+  in the headset without discomfort.
+  \item \textbf{Physical Setup} : Large room-scale boundary (3x3m). Prefers standing while working to reach high or low within the virtual space.
+\end{itemize}
+
+\subsubsection{Psychographic \& Goals}
+
+\begin{itemize}
+  \item \textbf{Goal} : To rapidly block out a scene's layout while standing inside it,
+  ensuring that the scale of the furniture and objects feels "correct" to a human player immediately.
+  \item \textbf{Pain Points} : He hates having to take the headset off, adjust an object by 5cm in Unity on his monitor
+  , and put the headset back on to check the result.
+  \item \textbf{Expectations} : He expects high precision. He won't be satisfied with "loose" placements; he requires transform
+  snapping and multi-selection to feel like he is in a professional environment.
+\end{itemize}
+
+\subsubsection{User Story}
+
+As a developer who spends all day in Unity, I want a tool that allows me to manipulate 3D assets with the same precision as
+my keyboard and mouse, but with the spatial intuition that only VR provides. I want to build the 'bones' of my level while standing
+inside it so I don't have to guess the scale anymore.
+
+\subsection{Persona 2}
+
+\subsubsection{Profile}
+
+\begin{itemize}
+  \item \textbf{Name} : Rachel Pierce
+  \item \textbf{Age} : 23
+  \item \textbf{Role} : Digital Artist
+  \item \textbf{Background} : Rachel is an active member of the social VR and modding communities
+  . While she has a natural eye for interior design and 3D composition, she finds professional game engines
+  like Unity intimidating and overly technical. She prefers "in-game" creative tools that allow for immediate visual feedback.
+\end{itemize}
+
+\subsubsection{Technical Background}
+
+\begin{itemize}
+        \item \textbf{VR Experience:} High (Uses VR daily for social interaction and world exploration).
+        \item \textbf{Game Editors:} None (Has no experience with professional SDKs or C\# coding).
+        \item \textbf{Prototyping Tools:} Expert in UGC (The Sims Build Mode, Animal Crossing, and basic Blender for asset preparation).
+        \item \textbf{VR Creation Apps:} Moderate (Frequent user of Rec Room Maker Pen and VRChat Home editors).
+    \end{itemize}
+
+\subsubsection{Physical \& Environmental Context}
+
+\begin{itemize}
+  \item \textbf{Physical Health}: Normal. However, she is prone to slight "sim-sickness" during rapid artificial movement
+  , making stable locomotion and snap turning essential for her comfort.
+  \item \textbf{Physical Setup}: Stationary/Small room setup. She relies on in-game vertical and horizontal
+  locomotion because her physical play area is limited.
+\end{itemize}
+
+\subsubsection{Psychographic \& Goals}
+
+\begin{itemize}
+  \item \textbf{Goal}: To intuitively design aesthetically pleasing 3D dioramas and room layouts without needing to learn complex engine logic.
+  \item \textbf{Pain Points}: She feels limited by the "walled gardens" of social VR apps; she wants a simple tool where she can create a 
+  scene and actually own the resulting file (exporting).
+  \item \textbf{Expectations}: She expects a clean, non-distracting interface and a "Creative Mode" feel that prioritizes 
+  visual clarity over technical data.
+\end{itemize}
+
+\subsubsection{User Story}
+
+As a creative hobbyist who loves designing spaces, I want an accessible VR tool that functions like a high-end building game. 
+I want to pick items from a library and snap them together in 1:1 scale, and then be able to export my work as a standard 3D file 
+to share with my friends or use in my digital art portfolio.
+
+\section{Color Palette}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{images/color_palette.png}
+  \caption{Color Palette}
+  \label{Color Palette}
+\end{figure}
+
+The user interface utilizes a neutral color palette and minimalist typography to maintain aesthetic neutrality.
+This design choice ensures that the interface does not impose a specific visual bias, allowing users to
+focus entirely on the creative direction of their own 3D scenes.
+
 \section{Movement System}
 The navigation system in SceneEditorVR is designed to provide the user with full six-degrees-of-freedom (6DoF) mobility, allowing for precise positioning within the 3D environment. The choice of locomotion methods was driven by the need for fluid movement that does not interrupt the creative workflow.
 
@@ -369,6 +478,66 @@ the user commits to the final position, effectively decoupling rapid spatial ori
 by the gizmo system.
 
 \chapter{IMPLEMENTATION}
+
+\section{Game Engine}
+
+While developing a proprietary engine was initially considered, it was deemed outside the scope of this research.
+Consequently, Unity was selected as the primary development platform due to its extensive documentation and proven track record
+in deploying high-performance Virtual Reality applications. Unreal Engine was excluded due to its significantly higher hardware overhead
+and resource requirements for standalone mobile VR deployment. Furthermore, while Godot is an emerging open-source alternative,
+it was determined that its XR toolset currently lacks the production maturity required for the seamless, 
+high-fidelity VR interactions intended for this project.
+
+\section{Use of Unity SDKS}
+
+A deliberate architectural decision was made to avoid high-level frameworks such as the Meta XR SDK or the Unity XR Interaction Toolkit. 
+While these SDKs provide rapid prototyping capabilities, they often introduce significant software overhead and unnecessary dependencies
+that can complicate the project's lifecycle. By implementing a custom interaction system, the application maintains a lightweight footprint
+and ensures better long-term maintainability. Furthermore, this 'low-level' approach minimizes engine-specific abstractions, facilitating
+a more straightforward porting process to other platforms or engines by reducing reliance on proprietary black-box components.
+
+\section{Interactables}
+
+\subsection{Interaction System Architecture}
+
+A custom interaction framework was developed to manage the relationship between the user's rays and the objects.
+This system is built upon an base class, \texttt{Interactable}, which implements a Finite State Machine (FSM)
+to track the lifecycle of an interaction. By using an inheritance-based model, specific behaviors are decoupled from the core state logic.
+
+\subsubsection{State Definitions}
+
+The \texttt{Interactable} class manages five distinct states that define the object's availability and current engagement level:
+
+\begin{itemize}
+    \item \textbf{IE\_INACTIVE}: The object is functionally disabled. Raycasts are ignored, and no interaction logic is processed.
+    \item \textbf{IE\_IDLE}: The object is active within the scene and awaiting user engagement.
+    \item \textbf{IE\_HOVERED}: A user's ray is currently intersecting the object’s collider.
+    \item \textbf{IE\_SELECTED}: The user has performed a selection action while hovering, marking the object as part of the current
+    active selection.
+    \item \textbf{IE\_INTERACTING}: The user is actively manipulating the object.
+\end{itemize}
+
+\subsubsection{State Transitions and Flow}
+
+While the state progression is primarily linear—moving from (\textit{Idle}) to 
+(\textit{Interacting})—the system is designed with a flexible transition logic. 
+This allows for "state bypassing" to improve user experience. 
+For instance, the system can be configured to bypass the \texttt{IE\_SELECTED} 
+state to allow for \textit{immediate interaction}. 
+
+Child classes override protected virtual methods to execute specific logic
+during these transitions, ensuring a clean separation between state management and functional execution.
+\section{Ray Passes}
+\section{Managers}
+\section{Actor}
+\section{Custom Keyboard}
+\section{UI}
+\section{Actions}
+\section{Rotation}
+\section{Translation and Scaling Gizmos}
+\section{Two Cameras}
+
+
 \chapter{EXPERIMENTS}
 \chapter{ANALYSIS AND RESULTS}
 \chapter{DISCUSSION}
