@@ -298,7 +298,7 @@ inside it so I don't have to guess the scale anymore.
 
 \begin{itemize}
         \item \textbf{VR Experience:} High (Uses VR daily for social interaction and world exploration).
-        \item \textbf{Game Editors:} None (Has no experience with professional SDKs or C\# coding).
+        \item \textbf{Game Editors:} None (Has no experience with professional Game Engines).
         \item \textbf{Prototyping Tools:} Expert in UGC (The Sims Build Mode, Animal Crossing, and basic Blender for asset preparation).
         \item \textbf{VR Creation Apps:} Moderate (Frequent user of Rec Room Maker Pen and VRChat Home editors).
     \end{itemize}
@@ -327,19 +327,6 @@ inside it so I don't have to guess the scale anymore.
 As a creative hobbyist who loves designing spaces, I want an accessible VR tool that functions like a high-end building game. 
 I want to pick items from a library and snap them together in 1:1 scale, and then be able to export my work as a standard 3D file 
 to share with my friends or use in my digital art portfolio.
-
-\section{Color Palette}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\textwidth]{images/color_palette.png}
-  \caption{Color Palette}
-  \label{Color Palette}
-\end{figure}
-
-The user interface utilizes a neutral color palette and minimalist typography to maintain aesthetic neutrality.
-This design choice ensures that the interface does not impose a specific visual bias, allowing users to
-focus entirely on the creative direction of their own 3D scenes.
 
 \section{Movement System}
 The navigation system in SceneEditorVR is designed to provide the user with full six-degrees-of-freedom (6DoF) mobility, allowing for precise positioning within the 3D environment. The choice of locomotion methods was driven by the need for fluid movement that does not interrupt the creative workflow.
@@ -391,8 +378,8 @@ The rotation gizmo has three rotators. One for each axis. The user can interact 
   \label{Scale Gizmo}
 \end{figure}
 
-The scale gizmo has three scalers. One for each axis. The user can interact with the scalers to scale the assets in each axis. For this type of gizmo there is also a white sphere that when interacted will scale the asset in all of the axis.
-The rotation gizmo has three rotators. One for each axis. The can user can interact with rotators to rotate the assets in around all of the axis.
+The scale gizmo has three scalers. One for each axis. The user can interact with the scalers to scale the assets in each axis. For this type of gizmo there is
+also a white sphere that when interacted will scale the asset in all of the axis.
 
 \section{Radial Menus}
 
@@ -500,7 +487,7 @@ To facilitate organized browsing, the assets are categorized into the following 
 Unlike traditional desktop-based 3D editors that map 2D mouse coordinates to 3D rotation axes, SceneEditorVR 
 leverages the six degrees of freedom (6-DOF) inherent in Virtual Reality. A custom Spatial Rotation 
 Visualizer was implemented to make angular manipulation more intuitive. Upon selecting a rotation axis, the system instantiates two components: 
-a static Center Anchor at the object's pivot and a dynamic Target Visualizer. The software calculates the angular displacement 
+a static Center Anchor and a dynamic Target Visualizer. The software calculates the angular displacement 
 of the VR controller relative to the center anchor in real-time. By mapping the object’s orientation to the vector formed between 
 these two visualizers, the user can 'steer' the asset. This creates a direct 1:1 spatial mapping where the asset’s final orientation 
 aligns precisely with the user’s physical pointing direction.
