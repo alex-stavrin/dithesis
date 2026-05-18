@@ -114,9 +114,25 @@ This discrepancy forces developers into an inefficient, iterative loop:
 This constant "context switching" disrupts the creator's "flow state" and makes precise spatial design a matter of trial and error rather than direct intuition.
 
 \section{Motivation}
-The motivation for this thesis is driven by the widening "content gap" in the VR industry. Despite the rapid evolution of hardware like the Meta Quest series, the complexity of the development pipeline remains a barrier to entry. By forcing creators to build 3D worlds through a 2D lens, the industry limits the speed at which high-quality content can be produced.
 
+\subsection{The VR Content Gap}
+
+The motivation for this thesis is driven by the widening "content gap" in the VR industry. Despite the rapid evolution of hardware
+like the Meta Quest series, the complexity of the development pipeline remains a barrier to entry. By forcing creators to build 3D
+worlds through a 2D lens, the industry limits the speed at which high-quality content can be produced.
 Furthermore, as the industry moves toward "Spatial Computing," there is a growing demand for tools that allow for **in-situ** creation. Reducing the friction between the idea and the implementation is essential for both professional developers and the burgeoning community of User-Generated Content (UGC) creators.
+
+\subsection{NoFold}
+
+NoFold is a next-generation web/XR hybrid platform developed by researchers at the National and Kapodistrian University of Athens,
+designed to bridge the gap between digital board game development and the physical tabletop experience \cite{Lougiakis2024NoFold}.
+The platform aims to solve traditional playtesting challenges---such as high logistical costs, physical component constraints, and the loss of
+social cues in standard digital platforms---by offering a two-part ecosystem: a web-based authoring hub for component creation and
+asset management, and an immersive XR application (VR/MR) for realistic, physics-based playtesting and remote collaboration.
+
+While the current iteration of NoFold successfully handles card game workflows and basic physics-based manipulation
+(grabbing, moving, and throwing). To fully realize its potential as an all-in-one creation tool,
+incorporating features for advanced environmental customization would be a highly useful addition to the platform's ecosystem.
 
 \section{Purpose}
 The objective of this research is the design and implementation of \textit{SceneEditorVR}, a functional VR-native scene editor prototype. This project does not seek to replace comprehensive game engines but rather to investigate an immersive-first workflow for environmental design and rapid prototyping.
@@ -164,7 +180,7 @@ However, as the engine transitioned to Unreal Engine 5, this VR-native editing m
   \centering
   \includegraphics[width=\textwidth]{images/unreal_vr}
   \caption{Unreal VR Scene Editor \cite{UnrealVREditor}}
-  \label{Unreal VR Scene Editor}  
+  \label{Unreal VR Scene Editor}
 \end{figure}
 
 \subsection{Godot Scene Editor}
@@ -244,8 +260,8 @@ ShapesXR is an industry-standard prototyping platform designed to facilitate the
   \item \textbf{Age} : 26
   \item \textbf{Role} : Junior VR Developer
   \item \textbf{Background} : Adam has spent the last three years building VR environments
-  for academic projects and small indie titles. He is technically proficient in Unity but often finds the 
-  "monitor-and-mouse" workflow creates a disconnect between his vision and the actual spatial feel of the VR scene.
+        for academic projects and small indie titles. He is technically proficient in Unity but often finds the
+        "monitor-and-mouse" workflow creates a disconnect between his vision and the actual spatial feel of the VR scene.
 \end{itemize}
 
 \subsubsection{Technical Background}
@@ -260,7 +276,7 @@ ShapesXR is an industry-standard prototyping platform designed to facilitate the
 
 \begin{itemize}
   \item \textbf{Physical Health} : Normal. No history of motion sickness (strong "VR legs"). He can tolerate long sessions
-  in the headset without discomfort.
+        in the headset without discomfort.
   \item \textbf{Physical Setup} : Large room-scale boundary (3x3m). Prefers standing while working to reach high or low within the virtual space.
 \end{itemize}
 
@@ -268,11 +284,11 @@ ShapesXR is an industry-standard prototyping platform designed to facilitate the
 
 \begin{itemize}
   \item \textbf{Goal} : To rapidly block out a scene's layout while standing inside it,
-  ensuring that the scale of the furniture and objects feels "correct" to a human player immediately.
+        ensuring that the scale of the furniture and objects feels "correct" to a human player immediately.
   \item \textbf{Pain Points} : He hates having to take the headset off, adjust an object by 5cm in Unity on his monitor
-  , and put the headset back on to check the result.
+        , and put the headset back on to check the result.
   \item \textbf{Expectations} : He expects high precision. He won't be satisfied with "loose" placements; he requires transform
-  snapping and multi-selection to feel like he is in a professional environment.
+        snapping and multi-selection to feel like he is in a professional environment.
 \end{itemize}
 
 \subsubsection{User Story}
@@ -290,42 +306,42 @@ inside it so I don't have to guess the scale anymore.
   \item \textbf{Age} : 23
   \item \textbf{Role} : Digital Artist
   \item \textbf{Background} : Rachel is an active member of the social VR and modding communities
-  . While she has a natural eye for interior design and 3D composition, she finds professional game engines
-  like Unity intimidating and overly technical. She prefers "in-game" creative tools that allow for immediate visual feedback.
+        . While she has a natural eye for interior design and 3D composition, she finds professional game engines
+        like Unity intimidating and overly technical. She prefers "in-game" creative tools that allow for immediate visual feedback.
 \end{itemize}
 
 \subsubsection{Technical Background}
 
 \begin{itemize}
-        \item \textbf{VR Experience:} High (Uses VR daily for social interaction and world exploration).
-        \item \textbf{Game Editors:} None (Has no experience with professional Game Engines).
-        \item \textbf{Prototyping Tools:} Expert in UGC (The Sims Build Mode, Animal Crossing, and basic Blender for asset preparation).
-        \item \textbf{VR Creation Apps:} Moderate (Frequent user of Rec Room Maker Pen and VRChat Home editors).
-    \end{itemize}
+  \item \textbf{VR Experience:} High (Uses VR daily for social interaction and world exploration).
+  \item \textbf{Game Editors:} None (Has no experience with professional Game Engines).
+  \item \textbf{Prototyping Tools:} Expert in UGC (The Sims Build Mode, Animal Crossing, and basic Blender for asset preparation).
+  \item \textbf{VR Creation Apps:} Moderate (Frequent user of Rec Room Maker Pen and VRChat Home editors).
+\end{itemize}
 
 \subsubsection{Physical \& Environmental Context}
 
 \begin{itemize}
   \item \textbf{Physical Health}: Normal. However, she is prone to slight "sim-sickness" during rapid artificial movement
-  , making stable locomotion and snap turning essential for her comfort.
+        , making stable locomotion and snap turning essential for her comfort.
   \item \textbf{Physical Setup}: Stationary/Small room setup. She relies on in-game vertical and horizontal
-  locomotion because her physical play area is limited.
+        locomotion because her physical play area is limited.
 \end{itemize}
 
 \subsubsection{Psychographic \& Goals}
 
 \begin{itemize}
   \item \textbf{Goal}: To intuitively design aesthetically pleasing 3D dioramas and room layouts without needing to learn complex engine logic.
-  \item \textbf{Pain Points}: She feels limited by the "walled gardens" of social VR apps; she wants a simple tool where she can create a 
-  scene and actually own the resulting file (exporting).
-  \item \textbf{Expectations}: She expects a clean, non-distracting interface and a "Creative Mode" feel that prioritizes 
-  visual clarity over technical data.
+  \item \textbf{Pain Points}: She feels limited by the "walled gardens" of social VR apps; she wants a simple tool where she can create a
+        scene and actually own the resulting file (exporting).
+  \item \textbf{Expectations}: She expects a clean, non-distracting interface and a "Creative Mode" feel that prioritizes
+        visual clarity over technical data.
 \end{itemize}
 
 \subsubsection{User Story}
 
-As a creative hobbyist who loves designing spaces, I want an accessible VR tool that functions like a high-end building game. 
-I want to pick items from a library and snap them together in 1:1 scale, and then be able to export my work as a standard 3D file 
+As a creative hobbyist who loves designing spaces, I want an accessible VR tool that functions like a high-end building game.
+I want to pick items from a library and snap them together in 1:1 scale, and then be able to export my work as a standard 3D file
 to share with my friends or use in my digital art portfolio.
 
 \section{Movement System}
@@ -335,7 +351,7 @@ The navigation system in SceneEditorVR is designed to provide the user with full
 Horizontal movement is implemented via Smooth Locomotion, mapped to the left controller’s thumbstick. While many VR applications utilize "Teleportation" to minimize physical discomfort, it was found to be too disjointed or "clunky" for a scene-editing context where incremental adjustments are frequent. To justify this choice, the application identifies its target audience as experienced VR users. By assuming a high level of "VR habituation," the design prioritizes continuous, precise spatial translation over the comfort-centric limitations of teleportation.
 
 \subsection{Vertical Movement}
-To facilitate vertical exploration and the placement of assets at varying heights (e.g., ceiling fixtures or multi-level structures), 
+To facilitate vertical exploration and the placement of assets at varying heights (e.g., ceiling fixtures or multi-level structures),
 a dedicated vertical translation system was implemented using the controller Grip buttons. Pressing the left grip initiates an upward ascent,
 while the right grip initiates a descent. This "button-mapped" approach was chosen after initial testing of "air-grabbing" or "world-pulling"
 mechanics proved to be unintuitive for users during long editing sessions. By decoupling verticality from hand gestures, the user maintains
@@ -384,8 +400,8 @@ also a white sphere that when interacted will scale the asset in all of the axis
 \section{Radial Menus}
 
 The application utilizes two button-activated radial menus designed to streamline high-frequency
-tasks through rapid, fluid interactions. To operate them, the user holds the designated button 
-and gestures toward an option, confirming their choice instantly upon release. This intuitive 
+tasks through rapid, fluid interactions. To operate them, the user holds the designated button
+and gestures toward an option, confirming their choice instantly upon release. This intuitive
 selection method was specifically chosen to minimize friction for the actions performed most often.
 
 \subsection{Actions Radial Menu}
@@ -484,30 +500,30 @@ To facilitate organized browsing, the assets are categorized into the following 
 
 \section{Rotation}
 
-Unlike traditional desktop-based 3D editors that map 2D mouse coordinates to 3D rotation axes, SceneEditorVR 
-leverages the six degrees of freedom (6-DOF) inherent in Virtual Reality. A custom Spatial Rotation 
-Visualizer was implemented to make angular manipulation more intuitive. Upon selecting a rotation axis, the system instantiates two components: 
-a static Center Anchor and a dynamic Target Visualizer. The software calculates the angular displacement 
-of the VR controller relative to the center anchor in real-time. By mapping the object’s orientation to the vector formed between 
-these two visualizers, the user can 'steer' the asset. This creates a direct 1:1 spatial mapping where the asset’s final orientation 
+Unlike traditional desktop-based 3D editors that map 2D mouse coordinates to 3D rotation axes, SceneEditorVR
+leverages the six degrees of freedom (6-DOF) inherent in Virtual Reality. A custom Spatial Rotation
+Visualizer was implemented to make angular manipulation more intuitive. Upon selecting a rotation axis, the system instantiates two components:
+a static Center Anchor and a dynamic Target Visualizer. The software calculates the angular displacement
+of the VR controller relative to the center anchor in real-time. By mapping the object’s orientation to the vector formed between
+these two visualizers, the user can 'steer' the asset. This creates a direct 1:1 spatial mapping where the asset’s final orientation
 aligns precisely with the user’s physical pointing direction.
 
 \section{Snapping}
 
 One of the inherent challenges of 3D UI design is the lack of tactile feedback, which can make precise alignment difficult for the user.
 To mitigate this, SceneEditorVR utilizes a Discrete Transformation Toggle (Snapping). This feature provides a 'magnetic' feel to asset
-placement, allowing users to align objects with mathematical accuracy despite the inherent jitter of handheld VR controllers. The 
-interface offers granular control, enabling users to define the 'snap-step' for translation, rotation, and scale. For workflows 
-requiring organic or high-fidelity placement, the snapping constraints can be bypassed by setting the increments to zero. By 
+placement, allowing users to align objects with mathematical accuracy despite the inherent jitter of handheld VR controllers. The
+interface offers granular control, enabling users to define the 'snap-step' for translation, rotation, and scale. For workflows
+requiring organic or high-fidelity placement, the snapping constraints can be bypassed by setting the increments to zero. By
 integrating this system into the drag-and-drop workflow, the application reduces the need for secondary 'corrective' transformations.
 
 \section{Drag And Drop}
 
-To streamline the scene composition workflow, SceneEditorVR implements a seamless transition between asset instantiation and placement. 
+To streamline the scene composition workflow, SceneEditorVR implements a seamless transition between asset instantiation and placement.
 Drawing inspiration from industry-standard game engines, the system utilizes a drag-and-drop paradigm from a centralized content panel.
 To reduce task completion time a Hybrid Transformation Model was introduced: while an asset is being 'held' in the drag state, the user
-can utilize the controller’s thumbstick for coarse adjustments. This allows for simultaneous translation and rotation before 
-the user commits to the final position, effectively decoupling rapid spatial orientation from the high-precision refinements provided 
+can utilize the controller’s thumbstick for coarse adjustments. This allows for simultaneous translation and rotation before
+the user commits to the final position, effectively decoupling rapid spatial orientation from the high-precision refinements provided
 by the gizmo system.
 
 \chapter{IMPLEMENTATION}
@@ -518,12 +534,12 @@ While developing a proprietary engine was initially considered, it was deemed ou
 Consequently, Unity was selected as the primary development platform due to its extensive documentation and proven track record
 in deploying high-performance Virtual Reality applications. Unreal Engine was excluded due to its significantly higher hardware overhead
 and resource requirements for standalone mobile VR deployment. Furthermore, while Godot is an emerging open-source alternative,
-it was determined that its XR toolset currently lacks the production maturity required for the seamless, 
+it was determined that its XR toolset currently lacks the production maturity required for the seamless,
 high-fidelity VR interactions intended for this project.
 
 \section{Use of Unity SDKS}
 
-A deliberate architectural decision was made to avoid high-level frameworks such as the Meta XR SDK or the Unity XR Interaction Toolkit. 
+A deliberate architectural decision was made to avoid high-level frameworks such as the Meta XR SDK or the Unity XR Interaction Toolkit.
 While these SDKs provide rapid prototyping capabilities, they often introduce significant software overhead and unnecessary dependencies
 that can complicate the project's lifecycle. By implementing a custom interaction system, the application maintains a lightweight footprint
 and ensures better long-term maintainability. Furthermore, this 'low-level' approach minimizes engine-specific abstractions, facilitating
@@ -542,21 +558,21 @@ to track the lifecycle of an interaction. By using an inheritance-based model, s
 The \texttt{Interactable} class manages five distinct states that define the object's availability and current engagement level:
 
 \begin{itemize}
-    \item \textbf{IE\_INACTIVE}: The object is functionally disabled. Raycasts are ignored, and no interaction logic is processed.
-    \item \textbf{IE\_IDLE}: The object is active within the scene and awaiting user engagement.
-    \item \textbf{IE\_HOVERED}: A user's ray is currently intersecting the object’s collider.
-    \item \textbf{IE\_SELECTED}: The user has performed a selection action while hovering, marking the object as part of the current
-    active selection.
-    \item \textbf{IE\_INTERACTING}: The user is actively manipulating the object.
+  \item \textbf{IE\_INACTIVE}: The object is functionally disabled. Raycasts are ignored, and no interaction logic is processed.
+  \item \textbf{IE\_IDLE}: The object is active within the scene and awaiting user engagement.
+  \item \textbf{IE\_HOVERED}: A user's ray is currently intersecting the object’s collider.
+  \item \textbf{IE\_SELECTED}: The user has performed a selection action while hovering, marking the object as part of the current
+        active selection.
+  \item \textbf{IE\_INTERACTING}: The user is actively manipulating the object.
 \end{itemize}
 
 \subsubsection{State Transitions and Flow}
 
-While the state progression is primarily linear—moving from (\textit{Idle}) to 
-(\textit{Interacting})—the system is designed with a flexible transition logic. 
-This allows for "state bypassing" to improve user experience. 
-For instance, the system can be configured to bypass the \texttt{IE\_SELECTED} 
-state to allow for \textit{immediate interaction}. 
+While the state progression is primarily linear—moving from (\textit{Idle}) to
+(\textit{Interacting})—the system is designed with a flexible transition logic.
+This allows for "state bypassing" to improve user experience.
+For instance, the system can be configured to bypass the \texttt{IE\_SELECTED}
+state to allow for \textit{immediate interaction}.
 
 Child classes override protected virtual methods to execute specific logic
 during these transitions, ensuring a clean separation between state management and functional execution.
@@ -570,21 +586,21 @@ the system executes up to three sequential physics raycasts per frame, prioritiz
 The system evaluates potential targets in a specific order of precedence to prevent interaction overlap. If a high-priority raycast returns a hit,
 the subsequent stages are bypassed:
 \begin{enumerate}
-    \item \textbf{User Interface (UI):} The highest priority is given to world-space UI elements to ensure menu navigation is never 
-    obstructed by background objects.
-    \item \textbf{Transformation Gizmos:} The second priority is assigned to gizmos (handles for translation, rotation, and scaling), 
-    allowing for precise asset manipulation.
-    \item \textbf{Scene Objects:} The final priority level targets standard colliders and environmental assets.
+  \item \textbf{User Interface (UI):} The highest priority is given to world-space UI elements to ensure menu navigation is never
+        obstructed by background objects.
+  \item \textbf{Transformation Gizmos:} The second priority is assigned to gizmos (handles for translation, rotation, and scaling),
+        allowing for precise asset manipulation.
+  \item \textbf{Scene Objects:} The final priority level targets standard colliders and environmental assets.
 \end{enumerate}
 
 \subsection{Visual Feedback and State Indication}
 To improve the user's spatial awareness, the controller's ray visualizer dynamically updates its color based on the results of the
 aforementioned raycast hierarchy. This real-time feedback provides immediate confirmation of the current interaction state:
 \begin{itemize}
-    \item \textbf{White:} Indicates a "No Hit" state; the ray is currently not intersecting any interactable surface.
-    \item \textbf{Cyan:} Indicates a successful hit on a \textbf{UI} element.
-    \item \textbf{Orange:} Indicates a hit on either a \textbf{Gizmo} or a \textbf{Scene Object}, signaling that transformation or selection
-    is available.
+  \item \textbf{White:} Indicates a "No Hit" state; the ray is currently not intersecting any interactable surface.
+  \item \textbf{Cyan:} Indicates a successful hit on a \textbf{UI} element.
+  \item \textbf{Orange:} Indicates a hit on either a \textbf{Gizmo} or a \textbf{Scene Object}, signaling that transformation or selection
+        is available.
 \end{itemize}
 
 \section{Singletons}
@@ -592,7 +608,7 @@ aforementioned raycast hierarchy. This real-time feedback provides immediate con
 Due to the high degree of interdependency between the various modules within the VR environment—such as the transformation logic,
 UI systems, and file I/O handlers—traditional Unity workflow methods like manual reference assignment via the Inspector or frequent GetComponent
 calls were deemed inefficient. To ensure global access and architectural consistency, a Singleton design pattern was adopted.
-This allowed for centralized management across more than 20 distinct systems, facilitating seamless communication between core engine 
+This allowed for centralized management across more than 20 distinct systems, facilitating seamless communication between core engine
 components without the overhead of manual dependency linking.
 
 \section{Custom Keyboard}
@@ -617,7 +633,7 @@ implements a command-based history system. This is achieved through the \textbf{
 which encapsulates every user interaction as a discrete object.
 
 \subsection{The UserAction Interface}
-All reversible operations inherit from a primary abstract class, \texttt{UserAction}. 
+All reversible operations inherit from a primary abstract class, \texttt{UserAction}.
 This architecture utilizes polymorphism to allow the system to treat different operations (e.g., transformations, spawning, or selection)
 through a unified interface.
 
@@ -625,13 +641,13 @@ through a unified interface.
 The system manages the history using two \textbf{Last-In-First-Out (LIFO)} stacks managed by the \texttt{ActionsManager}:
 
 \begin{itemize}
-    \item \textbf{Undo Stack:} Stores executed actions. When a new action is performed, its \texttt{Do()} method is called 
-    and it is pushed onto this stack.
-    \item \textbf{Redo Stack:} Stores actions that have been reversed. If the user performs a new action, 
-    this stack is cleared to maintain a linear timeline.
+  \item \textbf{Undo Stack:} Stores executed actions. When a new action is performed, its \texttt{Do()} method is called
+        and it is pushed onto this stack.
+  \item \textbf{Redo Stack:} Stores actions that have been reversed. If the user performs a new action,
+        this stack is cleared to maintain a linear timeline.
 \end{itemize}
 
-The implemented actions include spatial transformations (\textit{Move, Rotate, Scale}), object lifecycle management (\textit{Spawn, Delete}), 
+The implemented actions include spatial transformations (\textit{Move, Rotate, Scale}), object lifecycle management (\textit{Spawn, Delete}),
 and selection state changes (\textit{Select, Unselect}).
 This modular approach ensures that the system is easily extensible for future features.
 
@@ -641,14 +657,14 @@ The rotation workflow is divided into two main stages:
 
 \subsection{Initialization and Reference Mapping}
 Upon interacting with the gizmo, the system captures the initial position and rotation of all selected objects.
-If multiple objects are selected, it calculates a shared pivot point. 
+If multiple objects are selected, it calculates a shared pivot point.
 This ensures that the entire group rotates cohesively as a single unit around a common center of mass.
 
 \subsection{Mathematical Projection and Continuous Update}
-Since VR controllers move freely in 3D space, the system must translate this movement into a constrained rotational value. 
-The script utilizes \texttt{Vector3.ProjectOnPlane} 
-to mathematically project the controller's 3D movement onto a 2D plane perpendicular to the active rotation axis. 
-The exact angle is then calculated and applied to the objects. To maintain immersion, 
+Since VR controllers move freely in 3D space, the system must translate this movement into a constrained rotational value.
+The script utilizes \texttt{Vector3.ProjectOnPlane}
+to mathematically project the controller's 3D movement onto a 2D plane perpendicular to the active rotation axis.
+The exact angle is then calculated and applied to the objects. To maintain immersion,
 the system concurrently communicates with the \texttt{RotationVisualizerManager} to render a dynamic visual guide
 that updates in real-time.
 
@@ -670,8 +686,8 @@ To efficiently manage the diverse library of predefined 3D models—categorized 
 and Primitive Objects—the Unity Addressables System was integrated into the project's architecture.
 Traditional asset referencing in Unity requires objects to be loaded into memory synchronously when the scene initializes.
 This approach scales poorly as the asset library grows and creates significant performance bottlenecks.
-Given the strict memory limitations and processing constraints of standalone VR hardware like the Meta Quest 2, 
-optimizing the application's memory footprint and load times is critical. Utilizing Addressables establishes a 
+Given the strict memory limitations and processing constraints of standalone VR hardware like the Meta Quest 2,
+optimizing the application's memory footprint and load times is critical. Utilizing Addressables establishes a
 robust and scalable foundation. While  the current prototype relies on locally stored predefined assets, this architecture natively support
 s remote content delivery. This design choice paves the way for future iterations where users could seamlessly download
 additional themed asset packs from an external server without needing to update the base application.
