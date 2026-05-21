@@ -150,7 +150,35 @@ Ultimately, this thesis explores how moving the "editor" into the "experience" c
 
 \section{VR Interaction}
 
-\subsection{VR Interaction}
+\subsection{3D Interaction}
+
+\subsubsection{3D Gizmos}
+In 3D user interfaces and scene editors, 3D gizmos (often referred to as handles) are interactive geometric tools overlaid onto 3D objects.
+They provide a visual framework for directly manipulating an object’s spatial properties—such as translation, rotation, and scaling—within a three-dimensional environment.  
+Gizmos act as a visual guide, rendering axes lines, rotation rings, or scaling boxes directly in the object's local space or the world's global space. 
+This provides immediate feedback regarding the orientation and coordinate system currently in use.
+
+A foundational approach to building these tools is outlined by Conner \cite{conner1992three},
+who introduce 3D widgets as "first-class objects" that encapsulate both visual geometry and behavioral constraints
+within the same 3D environment as the application itself. By utilizing data-driven dependencies and multi-way constraint controllers,
+gizmos dynamically link user input to application variables. This architectural integration allows gizmos to provide tight semantic feedback and run-time flexibility,
+forming the basis for modern 3D transformation tools in virtual reality and scene editing software.
+
+\subsubsection{3D Rays for Interaction}
+
+Immersive virtual environment (VE) interaction techniques can be broadly categorized based on their underlying frames of reference.
+According to the taxonomy proposed by Poupyrev et al. \cite{poupyrev1998egocentric}, these techniques are divided into \textbf{exocentric metaphors} 
+(where users interact with the VE from an outside, ``God's-eye'' perspective) and \textbf{egocentric metaphors} 
+(where the user is embedded within and interacts from inside the environment). 
+
+Within egocentric manipulation, the framework distinguishes between two generic interaction methods based on their degrees of freedom (DOF) affordances and constraints:
+\begin{itemize}
+    \item \textbf{Virtual Hand Metaphors (3D Manipulation):} Techniques like the ``classical'' virtual hand or the Go-Go technique act as 3D direct manipulation tools 
+    because they allow users to effectively manipulate all three spatial coordinates: pitch, yaw, and distance.
+    \item \textbf{Virtual Pointer Metaphors (2D Manipulation):} \textbf{Ray interaction (such as ray-casting) belongs strictly to this category}. 
+    Because a classical ray pointer only allows the user to effectively control two degrees of freedom—direction via 
+    pitch and yaw, it is classified fundamentally as a 2D direct manipulation metaphor.
+\end{itemize}
 
 \subsection{Navigation in Virtual Environments}
 
@@ -700,9 +728,9 @@ robust and scalable foundation. While  the current prototype relies on locally s
 s remote content delivery. This design choice paves the way for future iterations where users could seamlessly download
 additional themed asset packs from an external server without needing to update the base application.
 
-\chapter{EXPERIMENTS}
+\chapter{EXPERT EVALUATION}
 \chapter{ANALYSIS AND RESULTS}
-\chapter{DISCUSSION}
+\chapter{CONCLUSION}
 
 \chapter{THESIS TEMPLATE STUFF (REMOVE BEFORE PUBLISH)}
 \begin{greek}
