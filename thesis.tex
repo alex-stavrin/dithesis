@@ -42,16 +42,16 @@
 \supervisorGr{Μαρία Ρούσσου}{Αναπληρώτρια Καθηγήτρια}
 \supervisorGr{Χρήστος Λουγιάκης}{Υποψήφιος Διδάκτωρ}
 \supervisorEn{Maria Roussou}{Associate Professor}
-\supervisorEn{Christos Lougiakis}{PhD Canditate}
+\supervisorEn{Christos Lougiakis}{PhD Candidate}
 
 \abstractEn{
 This thesis explores the design and development of a Virtual Reality Scene Editor using the Unity game engine. 
-Traditional three dimensional environment design typically relies on two-dimensional displays, creating a 
+Traditional three-dimensional environment design typically relies on two-dimensional displays, creating a 
 cognitive gap between the creation process and the final immersive experience. By shifting the development 
 workflow into a virtual reality environment, users can manipulate three-dimensional scenes with spatial awareness 
 and scale accuracy that flat-screen editors cannot provide.
 
-The developed application allows users to compose three dimensional worlds using a library of predefined assets 
+The developed application allows users to compose three-dimensional worlds using a library of predefined assets 
 through intuitive spatial interactions. To assess the system's performance and usability, user experiments were 
 conducted focusing on task efficiency and user presence. Preliminary results indicate that \emph{Results here...}
 }
@@ -84,14 +84,14 @@ This thesis was developed as part of my undergraduate studies in the Department 
 University of Athens.
 
 I am deeply grateful to Dr. Maria Roussou and Dr. Christos Lougiakis for their continuous support and for sharing their expertise 
-throughout the duration of this work.
+throughout this work.
 \end{greek}
 }
 
 \inscriptionEn{Dedicated to my family and my cat Tinker}
 
 \subjectAreaGr{Αλληλεπίδραση Ανθρώπου Υπολογιστή}
-\subjectAreaEn{Human Computer Interaction}
+\subjectAreaEn{Human-Computer Interaction}
 \keywordsGr{Εικονική Πραγματικότητα, Επεξεργαστής Σκηνών}
 \keywordsEn{Virtual Reality, Scene Editor}
 
@@ -119,9 +119,9 @@ throughout the duration of this work.
 \chapter{INTRODUCTION}
 
 \section{Research Problem}
-The creation of Virtual Reality (VR) content currently suffers from a fundamental "paradigm mismatch." 
-While the end product is an immersive 3D environment, the development process remains tethered to a 2D desktop workflow. 
-Game engines like Unity and Unreal Engine utilize traditional WIMP (Windows, Icons, Menus, Pointers) interfaces that 
+The creation of Virtual Reality (VR) content currently suffers from a fundamental "paradigm mismatch."
+While the end product is an immersive 3D environment, the development process remains tethered to a 2D desktop workflow.
+Game engines like Unity and Unreal Engine utilize traditional WIMP (Windows, Icons, Menus, Pointers) interfaces that
 were not designed for spatial computing.
 
 This discrepancy forces developers into an inefficient, iterative loop:
@@ -132,7 +132,7 @@ This discrepancy forces developers into an inefficient, iterative loop:
 \end{enumerate}
 
 This constant "context switching" disrupts the creator's "flow state" and makes precise spatial design a matter
- of trial and error rather than direct intuition.
+of trial and error rather than direct intuition.
 
 \section{Motivation}
 
@@ -141,15 +141,15 @@ This constant "context switching" disrupts the creator's "flow state" and makes 
 The motivation for this thesis is driven by the widening "content gap" in the VR industry. Despite the rapid evolution of hardware
 like the Meta Quest series, the complexity of the development pipeline remains a barrier to entry. By forcing creators to build 3D
 worlds through a 2D lens, the industry limits the speed at which high-quality content can be produced.
-Furthermore, as the industry moves toward "Spatial Computing," there is a growing demand for tools that allow for **in-situ** creation. 
-Reducing the friction between the idea and the implementation is essential for both professional developers and the burgeoning 
+Furthermore, as the industry moves toward "Spatial Computing," there is a growing demand for tools that allow for **in-situ** creation.
+Reducing the friction between the idea and the implementation is essential for both professional developers and the burgeoning
 community of User-Generated Content (UGC) creators.
 
 \subsection{NoFold}
 
 NoFold is a next-generation web/XR hybrid platform developed by researchers at the National and Kapodistrian University of Athens,
 designed to bridge the gap between digital board game development and the physical tabletop experience \cite{Lougiakis2024NoFold}.
-The platform aims to solve traditional playtesting challenges---such as high logistical costs, physical component constraints, and the 
+The platform aims to solve traditional playtesting challenges---such as high logistical costs, physical component constraints, and the
 loss of social cues in standard digital platforms---by offering a two-part ecosystem: a web-based authoring hub for component creation and
 asset management, and an immersive XR application (VR/MR) for realistic, physics-based playtesting and remote collaboration.
 
@@ -158,22 +158,22 @@ While the current iteration of NoFold successfully handles card game workflows a
 incorporating features for advanced environmental customization would be a highly useful addition to the platform's ecosystem.
 
 \section{Purpose}
-The objective of this research is the design and implementation of \textit{SceneEditorVR}, a functional VR-native scene editor prototype. 
-This project does not seek to replace comprehensive game engines but rather to investigate an immersive-first workflow for environmental 
+The objective of this research is the design and implementation of \textit{SceneEditorVR}, a functional VR-native scene editor prototype.
+This project does not seek to replace comprehensive game engines but rather to investigate an immersive-first workflow for environmental
 design and rapid prototyping.
 
 The project focuses on the following core functionalities:
 \begin{itemize}
   \item \textbf{Immersive Asset Management:} A VR-centric UI for navigating themed libraries and instantiating 3D models.
-  \item \textbf{Natural Spatial Manipulation:} Leveraging 6DoF (Six Degrees of Freedom) input for intuitive translation, rotation, 
-  and scaling of objects.
-  \item \textbf{Workflow Continuity:} Providing essential editor features—such as snapping, multi-selection, and undo/redo systems—entirely 
-  within the headset.
-  \item \textbf{Data Portability:} Implementing a serialization system using readable .json and industry-standard .glb formats to ensure the 
-  VR-created scenes can be integrated back into traditional pipelines.
+  \item \textbf{Natural Spatial Manipulation:} Leveraging 6DoF (Six Degrees of Freedom) input for intuitive translation, rotation,
+        and scaling of objects.
+  \item \textbf{Workflow Continuity:} Providing essential editor features—such as snapping, multi-selection, and undo/redo systems—entirely
+        within the headset.
+  \item \textbf{Data Portability:} Implementing a serialization system using readable .json and industry-standard .glb formats to ensure the
+        VR-created scenes can be integrated back into traditional pipelines.
 \end{itemize}
 
-Ultimately, this thesis explores how moving the "editor" into the "experience" can streamline the creative process and democratize 3D 
+Ultimately, this thesis explores how moving the "editor" into the "experience" can streamline the creative process and democratize 3D
 world-building.
 \chapter{RESEARCH BACKGROUND}
 
@@ -183,34 +183,34 @@ world-building.
 
 \subsubsection{3D Gizmos}
 In 3D user interfaces and scene editors, 3D gizmos (often referred to as handles) are interactive geometric tools overlaid onto 3D objects.
-They provide a visual framework for directly manipulating an object’s spatial properties—such as translation, rotation, and scaling—within 
-a three-dimensional environment. Gizmos act as a visual guide, rendering axes lines, rotation rings, or scaling boxes directly in the 
-object's local space or the world's global space. This provides immediate feedback regarding the orientation and coordinate system currently 
+They provide a visual framework for directly manipulating an object’s spatial properties—such as translation, rotation, and scaling—within
+a three-dimensional environment. Gizmos act as a visual guide, rendering axes lines, rotation rings, or scaling boxes directly in the
+object's local space or the world's global space. This provides immediate feedback regarding the orientation and coordinate system currently
 in use.
 
 A foundational approach to building these tools is outlined by Conner \cite{conner1992three},
 who introduce 3D widgets as "first-class objects" that encapsulate both visual geometry and behavioral constraints
 within the same 3D environment as the application itself. By utilizing data-driven dependencies and multi-way constraint controllers,
-gizmos dynamically link user input to application variables. This architectural integration allows gizmos to provide tight semantic feedback 
+gizmos dynamically link user input to application variables. This architectural integration allows gizmos to provide tight semantic feedback
 and run-time flexibility, forming the basis for modern 3D transformation tools in virtual reality and scene editing software.
 
 \subsubsection{3D Rays for Interaction}
 
 Immersive virtual environment (VE) interaction techniques can be broadly categorized based on their underlying frames of reference.
-According to the taxonomy proposed by Poupyrev et al. \cite{poupyrev1998egocentric}, these techniques are divided into 
-\textbf{exocentric metaphors} 
-(where users interact with the VE from an outside, ``God's-eye'' perspective) and \textbf{egocentric metaphors} 
-(where the user is embedded within and interacts from inside the environment). 
+According to the taxonomy proposed by Poupyrev et al. \cite{poupyrev1998egocentric}, these techniques are divided into
+\textbf{exocentric metaphors}
+(where users interact with the VE from an outside, ``God's-eye'' perspective) and \textbf{egocentric metaphors}
+(where the user is embedded within and interacts from inside the environment).
 
-Within egocentric manipulation, the framework distinguishes between two generic interaction methods based on their degrees of freedom (DOF) 
+Within egocentric manipulation, the framework distinguishes between two generic interaction methods based on their degrees of freedom (DOF)
 affordances and constraints:
 \begin{itemize}
-  \item \textbf{Virtual Hand Metaphors (3D Manipulation):} Techniques like the ``classical'' virtual hand or the Go-Go technique 
-  act as 3D direct manipulation tools because they allow users to effectively manipulate all three spatial coordinates: pitch, yaw, and 
-  distance.
-  \item \textbf{Virtual Pointer Metaphors (2D Manipulation):} \textbf{Ray interaction (such as ray-casting) belongs strictly to this category}. 
-  Because a classical ray pointer only allows the user to effectively control two degrees of freedom—direction via 
-  pitch and yaw, it is classified fundamentally as a 2D direct manipulation metaphor.
+  \item \textbf{Virtual Hand Metaphors (3D Manipulation):} Techniques like the ``classical'' virtual hand or the Go-Go technique
+        act as 3D direct manipulation tools because they allow users to effectively manipulate all three spatial coordinates: pitch, yaw, and
+        distance.
+  \item \textbf{Virtual Pointer Metaphors (2D Manipulation):} \textbf{Ray interaction (such as ray-casting) belongs strictly to this category}.
+        Because a classical ray pointer only allows the user to effectively control two degrees of freedom—direction via
+        pitch and yaw, it is classified fundamentally as a 2D direct manipulation metaphor.
 \end{itemize}
 
 \subsection{Navigation in Virtual Environments}
@@ -228,13 +228,13 @@ affordances and constraints:
   \label{Unity Desktop Editor}
 \end{figure}
 
-The Unity Editor is the industry standard for XR development, utilizing a \textit{Scene View}. 
-Interaction within this environment is governed by the \textbf{WIMP} (Windows, Icons, Menus, Pointers) paradigm. 
-While highly precise, this interface creates a "perceptual disconnect." Developers manipulate 3D spatial data 
+The Unity Editor is the industry standard for XR development, utilizing a \textit{Scene View}.
+Interaction within this environment is governed by the \textbf{WIMP} (Windows, Icons, Menus, Pointers) paradigm.
+While highly precise, this interface creates a "perceptual disconnect." Developers manipulate 3D spatial data
 through a 2D monitor using a mouse, which lacks depth cues and physical scale.
 
-Furthermore, the standard Unity workflow requires a repetitive cycle of "editing" and "play-testing." 
-Because the editor is not VR-native, the developer cannot stay within the immersive environment to make structural changes. 
+Furthermore, the standard Unity workflow requires a repetitive cycle of "editing" and "play-testing."
+Because the editor is not VR-native, the developer cannot stay within the immersive environment to make structural changes.
 This results in a loss of \textit{flow state} and significant temporal overhead when fine-tuning the spatial ergonomics of a VR scene.
 
 \subsection{Unreal Engine Scene Editor}
@@ -246,15 +246,15 @@ This results in a loss of \textit{flow state} and significant temporal overhead 
   \label{Unreal Desktop Editor}
 \end{figure}
 
-Unreal Engine (UE) represents the high-end of the XR development spectrum, offering robust tools for visual fidelity. 
-Historically, Epic Games attempted to bridge the 2D-3D gap with the introduction of the \textit{Unreal VR Editor} in 2016. 
-This tool allowed for direct manipulation of the \textit{Scene Graph} using 6DoF controllers and a floating world-space UI.
+Unreal Engine (UE) represents the high-end of the XR development spectrum, offering robust tools for visual fidelity.
+Historically, Epic Games attempted to bridge the 2D-3D gap with the introduction of the \textit{Unreal VR Editor} in 2016.
+This tool enabled direct manipulation of the Scene Graph with 6DoF controllers and a floating world-space UI.
 
-However, as the engine transitioned to Unreal Engine 5, this VR-native editing mode was largely sidelined in favor of 
-"VR Preview" workflows. The industry consensus suggests that the original VR Editor failed to gain traction due to its 
-high cognitive load—it attempted to port a complex desktop-centric interface into a spatial environment without sufficient 
-simplification. This deprecation highlights a significant opportunity for specialized, lightweight authoring tools. Unlike the 
-"feature-heavy" approach of Unreal, \textit{SceneEditorVR} prioritizes a streamlined UX, proving that immersive editing is more 
+However, as the engine transitioned to Unreal Engine 5, this VR-native editing mode was largely sidelined in favor of
+"VR Preview" workflows. The industry consensus suggests that the original VR Editor failed to gain traction due to its
+high cognitive load—it attempted to port a complex desktop-centric interface into a spatial environment without sufficient
+simplification. This deprecation highlights a significant opportunity for specialized, lightweight authoring tools. Unlike the
+"feature-heavy" approach of Unreal, \textit{SceneEditorVR} prioritizes a streamlined UX, proving that immersive editing is more
 effective when designed around spatial ergonomics rather than desktop-legacy menus.
 
 \begin{figure}[H]
@@ -273,16 +273,16 @@ effective when designed around spatial ergonomics rather than desktop-legacy men
   \label{Godot Desktop Editor}
 \end{figure}
 
-Godot Engine offers a unique perspective on the evolution of immersive tools, as it is the only major engine to have 
-ported its full desktop editor to standalone VR hardware, specifically the Meta Quest series. As of late 2024, the 
+Godot Engine offers a unique perspective on the evolution of immersive tools, as it is the only major engine to have
+ported its full desktop editor to standalone VR hardware, specifically the Meta Quest series. As of late 2024, the
 Godot Editor was made available on the Horizon Store, allowing for a "PC-less" development workflow.
 
-However, this implementation highlights the core thesis of this research: the \textit{spatial interaction gap}. While 
-the Godot editor runs natively on the headset, it remains a "hybrid" application. The interface is rendered as a 2D 
+However, this implementation highlights the core thesis of this research: the \textit{spatial interaction gap}. While
+the Godot editor runs natively on the headset, it remains a "hybrid" application. The interface is rendered as a 2D
 floating window—a direct port of the WIMP-based Android version—rather than a native spatial environment.
 
-This state of the art confirms that simply transporting 2D windows into a 3D space is insufficient. \textit{SceneEditorVR} 
-departs from this "windowed" approach by offering a ground-up spatial interface, prioritizing direct hand-object interaction 
+This state of the art confirms that simply transporting 2D windows into a 3D space is insufficient. \textit{SceneEditorVR}
+departs from this "windowed" approach by offering a ground-up spatial interface, prioritizing direct hand-object interaction
 over traditional 2D menus.
 
 \begin{figure}[H]
@@ -303,21 +303,21 @@ over traditional 2D menus.
   \label{Rec Room User Editor}
 \end{figure}
 
-Rec Room represents the most successful implementation of a consumer-facing, VR-native creation system. 
-The primary interaction vector is the \textit{Maker Pen}, a multi-functional tool that enables users to 
+Rec Room represents the most successful implementation of a consumer-facing, VR-native creation system.
+The primary interaction vector is the \textit{Maker Pen}, a multi-functional tool that enables users to
 instantiate primitive geometry and place pre-defined assets within a shared 3D environment.
 
 Key features of the Rec Room workflow relevant to \textit{SceneEditorVR} include:
 \begin{itemize}
-  \item \textbf{Diegetic Toolsets:} The use of a physical tool (the Maker Pen) to house UI menus reduces the cognitive load 
-  associated with navigating traditional "flat" menus.
-  \item \textbf{Collaborative Design:} Rec Room allows multiple users to build in the same spatial viewport simultaneously, 
-  providing a real-time "WYSIWYG" (What You See Is What You Get) experience.
+  \item \textbf{Diegetic Toolsets:} The use of a physical tool (the Maker Pen) to house UI menus reduces the cognitive load
+        associated with navigating traditional "flat" menus.
+  \item \textbf{Collaborative Design:} Rec Room allows multiple users to build in the same spatial viewport simultaneously,
+        providing a real-time "WYSIWYG" (What You See Is What You Get) experience.
 \end{itemize}
 
-However, Rec Room is fundamentally a "walled garden." Creations are restricted to the platform's proprietary format, 
-and the recent introduction of \textit{Rec Room Studio}—a desktop Unity plugin—suggests a pivot back to traditional 
-2D-based development for complex tasks. \textit{SceneEditorVR} addresses this by adopting the intuitive UX of the 
+However, Rec Room is fundamentally a "walled garden." Creations are restricted to the platform's proprietary format,
+and the recent introduction of \textit{Rec Room Studio}—a desktop Unity plugin—suggests a pivot back to traditional
+2D-based development for complex tasks. \textit{SceneEditorVR} addresses this by adopting the intuitive UX of the
 Maker Pen while ensuring professional utility through open-source export capabilities.
 
 \subsection{Arkio}
@@ -329,13 +329,13 @@ Maker Pen while ensuring professional utility through open-source export capabil
   \label{Arkio User Editor}
 \end{figure}
 
-Arkio is a professional-grade collaborative design tool that bridges the gap between traditional architectural modeling and 
-immersive spatial design. Unlike gamified builders, Arkio is specifically engineered for AEC (Architecture, Engineering, and Construction) 
-professionals, allowing users to sketch building massing, move walls, and arrange furniture in a 1:1 scale environment. 
-It utilizes a unique volumetric modeling kernel that makes "push-pull" geometry manipulation feel intuitive with VR controllers, 
-effectively turning the virtual space into a digital version of physical model-making. For the purpose of this thesis, 
-Arkio serves as a critical example of an in-situ authoring tool that maintains professional utility through its 
-bidirectional integration with industry-standard software like Revit, Rhino, and Unity. This highlights that VR-native 
+Arkio is a professional-grade collaborative design tool that bridges the gap between traditional architectural modeling and
+immersive spatial design. Unlike gamified builders, Arkio is specifically engineered for AEC (Architecture, Engineering, and Construction)
+professionals, allowing users to sketch building massing, move walls, and arrange furniture in a 1:1 scale environment.
+It utilizes a unique volumetric modeling kernel that makes "push-pull" geometry manipulation feel intuitive with VR controllers,
+effectively turning the virtual space into a digital version of physical model-making. For the purpose of this thesis,
+Arkio serves as a critical example of an in-situ authoring tool that maintains professional utility through its
+bidirectional integration with industry-standard software like Revit, Rhino, and Unity. This highlights that VR-native
 editing is not merely for creative play but is a viable solution for high-precision spatial layout and rapid architectural prototyping.
 
 \subsection{ShapesXR}
@@ -347,12 +347,12 @@ editing is not merely for creative play but is a viable solution for high-precis
   \label{ShapesXR User Editor}
 \end{figure}
 
-ShapesXR is an industry-standard prototyping platform designed to facilitate the transition from 2D concepts to 3D spatial interfaces. 
-It prioritizes low-fidelity "gray-boxing" over high-detail modeling, enabling UX designers to quickly block out user flows and 
-environmental layouts. A defining characteristic of ShapesXR is its "Stages" system—a spatial iteration of traditional 
-presentation slides—which allows creators to storyboard linear interactions within a 3D volume. By integrating with 2D design tools 
-like Figma and providing a dedicated Unity plugin for data handoff, ShapesXR validates the "Rapid Prototyping" objective of this research. 
-It demonstrates that the most effective VR authoring tools are those that simplify complex operations into intuitive spatial gestures, 
+ShapesXR is an industry-standard prototyping platform designed to facilitate the transition from 2D concepts to 3D spatial interfaces.
+It prioritizes low-fidelity "gray-boxing" over high-detail modeling, enabling UX designers to quickly block out user flows and
+environmental layouts. A defining characteristic of ShapesXR is its "Stages" system—a spatial iteration of traditional
+presentation slides—which allows creators to storyboard linear interactions within a 3D volume. By integrating with 2D design tools
+like Figma and providing a dedicated Unity plugin for data handoff, ShapesXR validates the "Rapid Prototyping" objective of this research.
+It demonstrates that the most effective VR authoring tools are those that simplify complex operations into intuitive spatial gestures,
 allowing teams to iterate on the "feel" of an experience before committing to final production code.
 \chapter{DESIGN}
 
@@ -452,15 +452,15 @@ I want to pick items from a library and snap them together in 1:1 scale, and the
 to share with my friends or use in my digital art portfolio.
 
 \section{Movement System}
-The navigation system in SceneEditorVR is designed to provide the user with full six-degrees-of-freedom (6DoF) mobility, allowing for 
-precise positioning within the 3D environment. The choice of locomotion methods was driven by the need for fluid movement that 
+The navigation system in SceneEditorVR is designed to provide the user with full six-degrees-of-freedom (6DoF) mobility, allowing for
+precise positioning within the 3D environment. The choice of locomotion methods was driven by the need for fluid movement that
 does not interrupt the creative workflow.
 
 \subsection{Horizontal Plane Movement}
-Horizontal movement is implemented via Smooth Locomotion, mapped to the left controller’s thumbstick. While many VR applications 
-utilize "Teleportation" to minimize physical discomfort, it was found to be too disjointed or "clunky" for a scene-editing 
-context where incremental adjustments are frequent. To justify this choice, the application identifies its target audience as 
-experienced VR users. By assuming a high level of "VR habituation," the design prioritizes continuous, precise spatial translation 
+Horizontal movement is implemented via Smooth Locomotion, mapped to the left controller’s thumbstick. While many VR applications
+utilize "Teleportation" to minimize physical discomfort, it was found to be too disjointed or "clunky" for a scene-editing
+context where incremental adjustments are frequent. To justify this choice, the application identifies its target audience as
+experienced VR users. By assuming a high level of "VR habituation," the design prioritizes continuous, precise spatial translation
 over the comfort-centric limitations of teleportation.
 
 \subsection{Vertical Movement}
@@ -471,9 +471,9 @@ mechanics proved to be unintuitive for users during long editing sessions. By de
 a stable view while adjusting their elevation.
 
 \subsection{Rotation}
-Rotational navigation is handled through Snap Turning on the right thumbstick. By flicking the stick left or right, the user’s view 
-rotates by a fixed degree increment. This was selected as it remains the industry standard for VR orientation; it provides the necessary 
-change in perspective required to view a 3D model from all sides while significantly reducing the risk of motion sickness 
+Rotational navigation is handled through Snap Turning on the right thumbstick. By flicking the stick left or right, the user’s view
+rotates by a fixed degree increment. This was selected as it remains the industry standard for VR orientation; it provides the necessary
+change in perspective required to view a 3D model from all sides while significantly reducing the risk of motion sickness
 compared to smooth, continuous rotation.
 \section{Assets Interaction}
 \section{Gizmos}
@@ -563,7 +563,7 @@ The transform radial menu containns the following options:
   \label{Control Panel}
 \end{figure}
 
-The level editor features a central control panel modeled after the Meta Horizon OS interface. This panel can be freely 
+The level editor features a central control panel modeled after the Meta Horizon OS interface. This panel can be freely
 repositioned within the environment or instantly recalled to the user's position using the Settings button.
 
 \subsection{Content Tab}
@@ -586,7 +586,7 @@ This tab serves as a library for all predefined assets available for use in the 
   \label{Scene tab in the Control Panel}
 \end{figure}
 
-The Scene tab provides essential management tools, allowing users to save their progress, export the 
+The Scene tab provides essential management tools, allowing users to save their progress, export the
 current scene, or exit to the main menu.
 
 \subsection{Help Tab}
