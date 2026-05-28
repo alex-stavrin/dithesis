@@ -141,7 +141,7 @@ of trial and error rather than direct intuition.
 The motivation for this thesis is driven by the widening "content gap" in the VR industry. Despite the rapid evolution of hardware
 like the Meta Quest series, the complexity of the development pipeline remains a barrier to entry. By forcing creators to build 3D
 worlds through a 2D lens, the industry limits the speed at which high-quality content can be produced.
-Furthermore, as the industry moves toward "Spatial Computing," there is a growing demand for tools that allow for **in-situ** creation.
+Furthermore, as the industry moves toward "Spatial Computing," there is a growing demand for tools that allow for \textbf{in-situ} creation.
 Reducing the friction between the idea and the implementation is essential for both professional developers and the burgeoning
 community of User-Generated Content (UGC) creators.
 
@@ -154,7 +154,7 @@ loss of social cues in standard digital platforms---by offering a two-part ecosy
 asset management, and an immersive XR application (VR/MR) for realistic, physics-based playtesting and remote collaboration.
 
 While the current iteration of NoFold successfully handles card game workflows and basic physics-based manipulation
-(grabbing, moving, and throwing). To fully realize its potential as an all-in-one creation tool,
+(grabbing, moving, and throwing), to fully realize its potential as an all-in-one creation tool,
 incorporating features for advanced environmental customization would be a highly useful addition to the platform's ecosystem.
 
 \section{Purpose}
@@ -428,7 +428,7 @@ allowing teams to iterate on the "feel" of an experience before committing to fi
 
 \begin{itemize}
   \item \textbf{VR Experience} : Expert. Owns multiple headsets. Has hundreds of hours in VR across gaming, social VR and development testing.
-  \item \textbf{Game Editors} : Unity Power User. Comfortable with the Inspector and the Hiearachy structure
+  \item \textbf{Game Editors} : Unity Power User. Comfortable with the Inspector and the Hierarchy structure
   \item \textbf{Native VR Editors} : He has tried some applications with UGC (User Generated Content)
 \end{itemize}
 
@@ -445,8 +445,8 @@ allowing teams to iterate on the "feel" of an experience before committing to fi
 \begin{itemize}
   \item \textbf{Goal} : To rapidly block out a scene's layout while standing inside it,
         ensuring that the scale of the furniture and objects feels "correct" to a human player immediately.
-  \item \textbf{Pain Points} : He hates having to take the headset off, adjust an object by 5cm in Unity on his monitor
-        , and put the headset back on to check the result.
+  \item \textbf{Pain Points} : He hates having to take the headset off, adjust an object by 5cm in Unity on his monitor,
+        and put the headset back on to check the result.
   \item \textbf{Expectations} : He expects high precision. He won't be satisfied with "loose" placements; he requires transform
         snapping and multi-selection to feel like he is in a professional environment.
 \end{itemize}
@@ -482,7 +482,7 @@ inside it so I don't have to guess the scale anymore.
 \subsubsection{Physical \& Environmental Context}
 
 \begin{itemize}
-  \item \textbf{Physical Health}: Normal. However, she is prone to slight "sim-sickness" during rapid artificial movement
+  \item \textbf{Physical Health}: Normal. However, she is prone to slight "simulator sickness" during rapid artificial movement
         , making stable locomotion and snap turning essential for her comfort.
   \item \textbf{Physical Setup}: Stationary/Small room setup. She relies on in-game vertical and horizontal
         locomotion because her physical play area is limited.
@@ -529,8 +529,9 @@ rotates by a fixed degree increment. This was selected as it remains the industr
 change in perspective required to view a 3D model from all sides while significantly reducing the risk of motion sickness
 compared to smooth, continuous rotation.
 \section{Assets Interaction}
+In \textit{SceneEditorVR}, users interact with environmental assets by targeting them directly using the controllers' selection rays. The interaction system supports both single-object and multi-object selection, allowing users to manipulate multiple assets simultaneously. Once selected, assets can be modified through the activation of spatial transformation gizmos or through contextual actions such as duplication and deletion. When a multi-selection is active, the system dynamically calculates a shared center of mass (pivot point) from all selected objects, serving as the central anchor for subsequent translation, rotation, and scaling operations.
 \section{Gizmos}
-When an asset is selected there are three possible gizmos that can show up
+When an asset is selected, one of three possible transformation gizmos can be activated:
 
 \subsection{Translation Gizmo}
 
@@ -585,10 +586,10 @@ selection method was specifically chosen to minimize friction for the actions pe
 The actions radial menu contains the following options:
 \begin{itemize}
   \item \textbf{Cancel} : Will not execute any actions
-  \item \textbf{Redo} : Will redo the last undoed action
+  \item \textbf{Redo} : Will redo the last undone action
   \item \textbf{Duplicate} : Will duplicate the currently selected assets
   \item \textbf{Delete} : Will delete the currently selected assets
-  \item \textbf{Unfo} : Will undo the last action
+  \item \textbf{Undo} : Will undo the last action
 \end{itemize}
 
 \subsection{Transform Radial Menu}
@@ -600,11 +601,11 @@ The actions radial menu contains the following options:
   \label{Transform Radial Menu}
 \end{figure}
 
-The transform radial menu containns the following options:
+The transform radial menu contains the following options:
 \begin{itemize}
-  \item \textbf{Move} : Will show translation gizmo
-  \item \textbf{Rotate} : Will show rotation gizmo
-  \item \textbf{Scale} : Will show scale gizmo
+  \item \textbf{Move} : Activates the translation gizmo for positional adjustments.
+  \item \textbf{Rotate} : Activates the rotation gizmo for angular adjustments.
+  \item \textbf{Scale} : Activates the scale gizmo for resizing adjustments.
 \end{itemize}
 
 \section{Control Panel}
@@ -708,7 +709,7 @@ and resource requirements for standalone mobile VR deployment. Furthermore, whil
 it was determined that its XR toolset currently lacks the production maturity required for the seamless,
 high-fidelity VR interactions intended for this project.
 
-\section{Use of Unity SDKS}
+\section{Use of Unity SDKs}
 
 A deliberate architectural decision was made to avoid high-level frameworks such as the Meta XR SDK or the Unity XR Interaction Toolkit.
 While these SDKs provide rapid prototyping capabilities, they often introduce significant software overhead and unnecessary dependencies
@@ -721,7 +722,7 @@ a more straightforward porting process to other platforms or engines by reducing
 \subsection{Interaction System Architecture}
 
 A custom interaction framework was developed to manage the relationship between the user's rays and the objects.
-This system is built upon an base class, \texttt{Interactable}, which implements a Finite State Machine (FSM)
+This system is built upon a base class, \texttt{Interactable}, which implements a Finite State Machine (FSM)
 to track the lifecycle of an interaction. By using an inheritance-based model, specific behaviors are decoupled from the core state logic.
 
 \subsubsection{State Definitions}
@@ -859,59 +860,89 @@ Traditional asset referencing in Unity requires objects to be loaded into memory
 This approach scales poorly as the asset library grows and creates significant performance bottlenecks.
 Given the strict memory limitations and processing constraints of standalone VR hardware like the Meta Quest 2,
 optimizing the application's memory footprint and load times is critical. Utilizing Addressables establishes a
-robust and scalable foundation. While  the current prototype relies on locally stored predefined assets, this architecture natively support
-s remote content delivery. This design choice paves the way for future iterations where users could seamlessly download
+robust and scalable foundation. While the current prototype relies on locally stored predefined assets, this architecture natively supports
+remote content delivery. This design choice paves the way for future iterations where users could seamlessly download
 additional themed asset packs from an external server without needing to update the base application.
 
 \chapter{EXPERT EVALUATION}
+To assess the usability, efficiency, and overall user experience of \textit{SceneEditorVR}, an expert evaluation study was conducted. 
+The study was designed to observe how users interact with the spatial interface and to gather qualitative and quantitative feedback regarding
+the system's effectiveness.
 
 \section{Welcome and Introduction}
+Upon arrival, participants were welcomed and briefed on the purpose of the study. 
+They were provided with an information sheet detailing the research objectives
+
+\section{Consent Form}
+Next the participants were asked to sign a consent form.
+
+\section{Participant Information Questionnaire}
+A questionnaire was given to the participants to gather demographic data. [INSERT QUESTIONS HERE]
+
+\section{Familiarization with the hardware}
+Participants were equipped with a Meta Quest headset and given a brief explanation of the physical boundaries 
+(room-scale setup) and the basic controller layout to ensure they felt comfortable and safe before entering the virtual environment.
+
+\section{Recording}
+A recording of the user's view is iniated to gather information about his/her experience.
 
 \section{Guided Tutorial with specific Tasks}
+To familiarize users with the \textit{SceneEditorVR} interaction paradigms, the evaluation began with a guided tutorial phase.
+During this stage, participants were asked to complete a series of specific, progressively complex tasks. These tasks included:
+\begin{itemize}
+    \item Creating a new level/scene and giving a name.
+    \item Fill rest...
+\end{itemize}
+This phase ensured that all users reached a baseline proficiency with the system's mechanics before moving on to independent creation.
 
-\section{Free-Mode creation (10 minute time limit)}
+\section{Creation Process}
+
+\subsection{Structured Creation}
+
+\subsection{Free Creation}
+
 
 \section{Questionnaires}
+Immediately after concluding the VR session, participants were asked to complete a series of standardized and custom
+questionnaires to provide quantitative data on their experience.
 
 \subsection{VRSUQ}
+To evaluate the system's usability, the Virtual Reality System Usability Questionnaire (VRSUQ) was administered.
+This tool is specifically tailored to assess the ease of use, interface intuitiveness,
+and overall user satisfaction within immersive spatial computing environments.
 
 \subsection{UEQ-S}
+The short version of the User Experience Questionnaire (UEQ-S) was utilized to measure
+both the pragmatic (efficiency, perspicuity, dependability) and hedonic (stimulation, novelty) qualities
+of the software. This provided a quick but comprehensive overview of the users' subjective impressions.
 
 \subsection{Custom questions}
+In addition to the standardized forms, a set of custom Likert-scale questions was designed specifically for this study. 
+These questions targeted unique features of \textit{SceneEditorVR}, such as the perceived accuracy of the spatial rotation visualizer,
+and the comfort of the selected locomotion methods.
 
 \section{Interviews}
+The final phase of the evaluation consisted of a semi-structured interview, allowing participants to elaborate on their 
+questionnaire responses and provide deeper qualitative insights.
 
 \subsection{Custom Questions}
+Participants were asked open-ended questions regarding their workflow, such as: 
+"How did the VR editing experience compare to your prior experiences with desktop editors like Unity or Godot?" 
+and "Which tools did you find most or least intuitive?"
 
 \subsection{Positives}
+Users were encouraged to highlight the aspects of the system they found most successful. 
+This section of the interview aimed to validate the core design choices, such as the effectiveness
+of the radial menus for quick actions and the natural feel of the 6DoF gizmo manipulation.
 
 \subsection{Negatives}
+Finally, participants discussed the limitations and pain points they encountered. Gathering constructive criticism on 
+elements like UI placement, snapping sensitivity, or physical fatigue (e.g., "gorilla arm" syndrome) is critical for 
+identifying areas of improvement for future iterations of the software.
 
 \chapter{ANALYSIS AND RESULTS}
 \chapter{CONCLUSION}
 
-\chapter{THESIS TEMPLATE STUFF (REMOVE BEFORE PUBLISH)}
-\begin{greek}
-  \section{Stuff}
-
-  \subsection{Περίληψη}
-  Η περίληψη περιλαμβάνει το σκοπό-αντικείμενο της εργασίας, τη μεθοδολογία, τα κύρια βήματα που ακολουθήθηκαν και τέλος τα κύρια αποτελέσματα.
-
-  \begin{itemize}
-    \item παραδειγμα itemize 1
-    \item παραδειγμα itemize 2
-  \end{itemize}
-
-  \begin{enumerate}
-    \item παραδειγμα enumerate 1
-    \item παραδειγμα enumerate 2
-  \end{enumerate}
-
-  Μέσα στο κείμενο, οι αναφορές γίνονται γράφοντας \verb!\cite{X}!, όπου \texttt{X} είναι το αναγνωριστικό της πηγής.
-
-\end{greek}
-
-% FIGURE EXAMPLE
 \begin{figure}
   \centering
   \includegraphics{emblems/athena-black}
@@ -919,7 +950,6 @@ additional themed asset packs from an external server without needing to update 
   \label{athena}
 \end{figure}
 
-% TABLE EXAMPLE
 \begin{table}
   \centering
 
@@ -938,7 +968,6 @@ additional themed asset packs from an external server without needing to update 
 
 \end{table}
 
-% REFERENCE TO PAPER EXAMPLE
 One reference to some paper \cite{manning:corenlp} and to another paper
 \cite{pennington:glove}.
 
