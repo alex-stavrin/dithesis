@@ -871,16 +871,91 @@ the system's effectiveness.
 
 \section{Welcome and Introduction}
 Upon arrival, participants were welcomed and briefed on the purpose of the study. 
-They were provided with an information sheet detailing the research objectives
+They were provided with information detailing the research objectives.
 
 \section{Consent Form}
 Next the participants were asked to sign a consent form.
 
 \section{Participant Information Questionnaire}
-A questionnaire was given to the participants to gather demographic data. [INSERT QUESTIONS HERE]
+A questionnaire was given to the participants to gather demographic data.
+
+\begin{enumerate}
+    \item \textbf{Age} 
+    \\ Number Input
+    
+    \item \textbf{Gender}
+    \begin{itemize}
+        \item Male
+        \item Female
+        \item Prefer not to answer
+    \end{itemize}
+
+    \item \textbf{Which is your dominant hand?}
+    \begin{itemize}
+      \item Right 
+      \item Left 
+      \item Both
+    \end{itemize}
+
+    \item \textbf{Do you wear glasses? Will you be wearing them during the VR experiment?}
+    \begin{itemize}
+      \item No I don't wear glasses
+      \item Yes I wear glasses and I will be wearing them during the experiment
+      \item Yes I wear glasses but I will not be wearing them during the experiment
+    \end{itemize}
+
+    \item \textbf{Years of experience with VR (Virtual Reality)}
+    \begin{itemize}
+      \item Less than a year
+      \item 1-3 years
+      \item More than 3 years
+    \end{itemize}
+
+    \item \textbf{How often are you in VR (Virtual Reality)?}
+    \begin{itemize}
+      \item 0 times per month
+      \item 1-3 times per month
+      \item 1-2 times per week
+      \item 3-5 times per week
+      \item Every day
+    \end{itemize}    
+    
+    \item \textbf{How easily do you get motion sickness in VR (Virtual Reality)}
+    
+    \begin{table}[h!]
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{ccccccc}
+                   & 1 & 2 & 3 & 4 & 5 & \\
+        Very easily & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & I get none
+    \end{tabular}
+    \end{table}
+
+    \item \textbf{Which VR devices have you used?}
+    \\ Text Input
+    
+    \item \textbf{What tools have you used for 3D scene creation (Blender, Unity, Unreal Engine etc.)?}
+    \\ Text Input
+
+    \item \textbf{What is your experience level in the tools you mentioned in the last question?}
+    \begin{table}[h!]
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{ccccccc}
+                   & 1 & 2 & 3 & 4 & 5 & \\
+        Beginner & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & Proficient
+    \end{tabular}
+    \end{table}
+    
+    \item \textbf{Have you used a tool for scene creation inside VR (Virtual Reality)? If yes, which ones have you used?}
+    \\ Text Input
+
+\end{enumerate}
 
 \section{Familiarization with the hardware}
-Participants were equipped with a Meta Quest headset and given a brief explanation of the physical boundaries 
+Participants were equipped with a Meta Quest 2 headset and given a brief explanation of the physical boundaries 
 (room-scale setup) and the basic controller layout to ensure they felt comfortable and safe before entering the virtual environment.
 
 \section{Recording}
@@ -898,9 +973,12 @@ This phase ensured that all users reached a baseline proficiency with the system
 \section{Creation Process}
 
 \subsection{Structured Creation}
+In this section, participants are instructed to build a specific layout: a medieval room featuring a central table surrounded by four chairs.
+A timer will be used to measure completion speed for this task.
 
 \subsection{Free Creation}
-
+In this section, participants are tasked with freely decorating the room they created in the previous section,
+using any available assets they choose. In this section the recording will be used to count errors, undos and deletes.
 
 \section{Questionnaires}
 Immediately after concluding the VR session, participants were asked to complete a series of standardized and custom
@@ -925,20 +1003,14 @@ and the comfort of the selected locomotion methods.
 The final phase of the evaluation consisted of a semi-structured interview, allowing participants to elaborate on their 
 questionnaire responses and provide deeper qualitative insights.
 
-\subsection{Custom Questions}
-Participants were asked open-ended questions regarding their workflow, such as: 
-"How did the VR editing experience compare to your prior experiences with desktop editors like Unity or Godot?" 
-and "Which tools did you find most or least intuitive?"
+\subsection{Open Ended Questions}
 
-\subsection{Positives}
-Users were encouraged to highlight the aspects of the system they found most successful. 
-This section of the interview aimed to validate the core design choices, such as the effectiveness
-of the radial menus for quick actions and the natural feel of the 6DoF gizmo manipulation.
-
-\subsection{Negatives}
-Finally, participants discussed the limitations and pain points they encountered. Gathering constructive criticism on 
-elements like UI placement, snapping sensitivity, or physical fatigue (e.g., "gorilla arm" syndrome) is critical for 
-identifying areas of improvement for future iterations of the software.
+\begin{enumerate}
+  \item How was the experience compared to other editors?
+  \item What features would make the application better?
+  \item What were some positives of the application?
+  \item What were some negatives of the application?
+\end{enumerate}
 
 \chapter{ANALYSIS AND RESULTS}
 \chapter{CONCLUSION}
@@ -967,9 +1039,6 @@ identifying areas of improvement for future iterations of the software.
   \end{tabular}
 
 \end{table}
-
-One reference to some paper \cite{manning:corenlp} and to another paper
-\cite{pennington:glove}.
 
 \backmatter
 
