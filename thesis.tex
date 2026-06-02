@@ -53,7 +53,7 @@ and scale accuracy that flat-screen editors cannot provide.
 
 The developed application allows users to compose three-dimensional worlds using a library of predefined assets 
 through intuitive spatial interactions. To assess the system's performance and usability, user experiments were 
-conducted focusing on task efficiency and user presence. Preliminary results indicate that \emph{Results here...}
+conducted focusing on task efficiency and user presence.
 }
 \abstractGr{
 Η πτυχιακή εργασία εξετάζει τη σχεδίαση και ανάπτυξη ενός επεξεργαστή σκηνών σε περιβάλλον Εικονικής Πραγματικότητας. 
@@ -65,10 +65,9 @@ conducted focusing on task efficiency and user presence. Preliminary results ind
 Η εφαρμογή που αναπτύχθηκε επιτρέπει στους χρήστες να συνθέτουν τρισδιάστατους κόσμους χρησιμοποιώντας μια βιβλιοθήκη 
 προκαθορισμένων αντικειμένων μέσω διαισθητικών χωρικών αλληλεπιδράσεων. Για την αξιολόγηση της απόδοσης 
 και της χρηστικότητας του συστήματος, πραγματοποιήθηκαν πειράματα με χρήστες, εστιάζοντας στην αποτελεσματικότητα 
-εκτέλεσης εργασιών και στην αίσθηση παρουσίας του χρήστη. Τα προκαταρκτικά αποτελέσματα δείχνουν ότι \emph{Εδώ μπαίνουν τα αποτελέσματα...}
+εκτέλεσης εργασιών και στην αίσθηση παρουσίας του χρήστη.
 }
 \acksEn{
-\begin{greek}
 I would like to thank my family and friends for their constant support and presence throughout these years.
 
 I am incredibly grateful to my supervisor, Dr. Maria Roussou, for accepting to oversee this thesis and for her insightful guidance. 
@@ -76,16 +75,13 @@ Special thanks are also due to Dr. Christos Lougiakis for his dedicated support 
 
 Lastly, I would like to thank all the participants of the experiments for their time and cooperation, without which this research 
 would not have been possible.
-\end{greek}
 }
 \prefaceEn{
-\begin{greek}
 This thesis was developed as part of my undergraduate studies in the Department of Informatics and Telecommunications at the 
 University of Athens.
 
 I am deeply grateful to Dr. Maria Roussou and Dr. Christos Lougiakis for their continuous support and for sharing their expertise 
 throughout this work.
-\end{greek}
 }
 
 \inscriptionEn{Dedicated to my family and my cat Tinker}
@@ -119,29 +115,29 @@ throughout this work.
 \chapter{INTRODUCTION}
 
 \section{Research Problem}
-The creation of Virtual Reality (VR) content currently suffers from a fundamental "paradigm mismatch."
+The creation of Virtual Reality (VR) content currently suffers from a fundamental ``paradigm mismatch.''
 While the end product is an immersive 3D environment, the development process remains tethered to a 2D desktop workflow.
-Traditional game engines utilize traditional WIMP (Windows, Icons, Menus, Pointers) interfaces that
+Traditional game engines utilize conventional WIMP (Windows, Icons, Menus, Pointers) interfaces that
 were not designed for spatial computing.
 
 This discrepancy forces developers into an inefficient, iterative loop:
 \begin{enumerate}
   \item Modifying spatial properties (e.g., the height of a table) on a 2D monitor.
-  \item Entering the VR environment to verify the "sense of scale" and ergonomic comfort.
+  \item Entering the VR environment to verify the ``sense of scale'' and ergonomic comfort.
   \item Exiting the VR environment to correct inaccuracies that were invisible in the 2D viewport.
 \end{enumerate}
 
-This constant "context switching" disrupts the creator's "flow state" and makes precise spatial design a matter
+This constant ``context switching'' disrupts the creator's ``flow state'' and makes precise spatial design a matter
 of trial and error rather than direct intuition.
 
 \section{Motivation}
 
 \subsection{The VR Content Gap}
 
-The motivation for this thesis is driven by the widening "content gap" in the VR industry. Despite the rapid evolution of hardware
+The motivation for this thesis is driven by the widening ``content gap'' in the VR industry. Despite the rapid evolution of hardware
 like the Meta Quest series, the complexity of the development pipeline remains a barrier to entry. By forcing creators to build 3D
 worlds through a 2D lens, the industry limits the speed at which high-quality content can be produced.
-Furthermore, as the industry moves toward "Spatial Computing," there is a growing demand for tools that allow for \textbf{in-situ} creation.
+Furthermore, as the industry moves toward ``Spatial Computing,'' there is a growing demand for tools that allow for \textit{in situ} creation.
 Reducing the friction between the idea and the implementation is essential for both professional developers and the burgeoning
 community of User-Generated Content (UGC) creators.
 
@@ -173,7 +169,7 @@ The project focuses on the following core functionalities:
         VR-created scenes can be integrated back into traditional pipelines.
 \end{itemize}
 
-Ultimately, this thesis explores how moving the "editor" into the "experience" can streamline the creative process and democratize 3D
+This thesis explores how moving the ``editor'' into the ``experience'' can streamline the creative process and democratize 3D
 world-building.
 \chapter{RESEARCH BACKGROUND}
 
@@ -189,7 +185,7 @@ object's local space or the world's global space. This provides immediate feedba
 in use.
 
 A foundational approach to building these tools is outlined by Conner~\cite{conner1992three},
-who introduce 3D widgets as "first-class objects" that encapsulate both visual geometry and behavioral constraints
+who introduced 3D widgets as ``first-class objects'' that encapsulate both visual geometry and behavioral constraints
 within the same 3D environment as the application itself. By utilizing data-driven dependencies and multi-way constraint controllers,
 gizmos dynamically link user input to application variables. This architectural integration allows gizmos to provide tight semantic feedback
 and run-time flexibility, forming the basis for modern 3D transformation tools in virtual reality and scene editing software.
@@ -200,7 +196,7 @@ Immersive virtual environment (VE) interaction techniques can be broadly categor
 According to the taxonomy proposed by Poupyrev et al.~\cite{poupyrev1998egocentric}, these techniques are divided into
 \textbf{exocentric metaphors}
 (where users interact with the VE from an outside, ``God's-eye'' perspective) and \textbf{egocentric metaphors}
-(where the user is embedded within and interacts from inside the environment).
+(where the user is embedded within and interacts from within the environment).
 
 Within egocentric manipulation, the framework distinguishes between two generic interaction methods based on their degrees of freedom (DOF)
 affordances and constraints:
@@ -208,7 +204,7 @@ affordances and constraints:
   \item \textbf{Virtual Hand Metaphors (3D Manipulation):} Techniques like the ``classical'' virtual hand or the Go-Go technique
         act as 3D direct manipulation tools because they allow users to effectively manipulate all three spatial coordinates: pitch, yaw, and
         distance.
-  \item \textbf{Virtual Pointer Metaphors (2D Manipulation):} \textbf{Ray interaction (such as ray-casting) belongs strictly to this category}.
+  \item \textbf{Virtual Pointer Metaphors (2D Manipulation):} Ray interaction (such as ray-casting) belongs strictly to this category.
         Because a classical ray pointer only allows the user to effectively control two degrees of freedom—direction via
         pitch and yaw, it is classified fundamentally as a 2D direct manipulation metaphor.
 \end{itemize}
@@ -239,7 +235,7 @@ motion continuity, and interaction space size~\cite{mti1040024}.
   \item \textbf{Teleportation-based:} Uses artificial inputs (e.g., point and teleport) for non-continuous, instantaneous movement in open spaces.
         \begin{itemize}
           \item \textit{Pros:} Prevents motion sickness.
-          \item \textit{Cons:} Visual "jumps" disrupt continuous virtual motion and consistent VR presence.
+          \item \textit{Cons:} Visual ``jumps'' disrupt continuous virtual motion and consistent VR presence.
         \end{itemize}
 \end{itemize}
 
@@ -247,11 +243,11 @@ motion continuity, and interaction space size~\cite{mti1040024}.
 
 \subsection{2D and 3D User Interfaces}
 
-In virtual reality (VR), user interfaces are broadly categorized based on their input and target dimensions,
+In VR, user interfaces are broadly categorized based on their input and target dimensions,
 resulting in a mix of 2D and 3D interaction methods~\cite{electronics13030600}.
 
 \subsubsection*{2D Interfaces in VR}
-Many VR applications adapt traditional 2D design principles (like Windows, Icons, Menus, and Pointers) into 3D environments.
+Many VR applications adapt traditional 2D design principles (such as Windows, Icons, Menus, and Pointers) into 3D environments.
 
 \begin{itemize}
   \item \textbf{Menus:} Often displayed as floating planes, Head-Up Displays (HUDs), or specialized layouts like ring menus and
@@ -275,13 +271,13 @@ Many VR applications adapt traditional 2D design principles (like Windows, Icons
 \subsection{Radial Menus in VR}
 
 \subsubsection{What is a Radial Menu?}
-A radial menu is an interface technique characterized by a circular item layout \cite{Wentzel}.
+A radial menu is an interface technique characterized by a circular item layout~\cite{Wentzel}.
 In a standard two-dimensional design, the menu items are equally spaced around the circumference of a circle.
 These are frequently implemented as marking menus. In this format,
-users can select an item by making a swift movement, known as a "mark,"
+users can select an item by making a swift movement, known as a ``mark,''
 from the center of the menu toward the desired item. While marking is optimal, radial layouts can also function with direct or raycast selection methods.
 
-\subsubsection{How are Radial Menus Used in VR}
+\subsubsection{How are Radial Menus Used in VR?}
 \begin{itemize}
   \item \textbf{Anchoring and Invocation:} In consumer VR applications, radial menus are most commonly anchored to the user's hand.
         They are typically invoked by holding a controller trigger, at which point the menu appears centered on the controller's position.
@@ -300,17 +296,17 @@ from the center of the menu toward the desired item. While marking is optimal, r
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{images/unity}
+  \includegraphics[width=\textwidth]{images/unity.png}
   \caption{Unity Desktop Editor}
-  \label{unity_desktop_editor}
+  \label{fig:unity_desktop}
 \end{figure}
 
-The Unity Editor \cite{UnityEngine2024} is the industry standard for XR development, utilizing a \textit{Scene View}.
+The Unity Editor~\cite{UnityEngine2024} (Figure~\ref{fig:unity_desktop}) is the industry standard for XR development, utilizing a \textit{Scene View}.
 Interaction within this environment is governed by the \textbf{WIMP} (Windows, Icons, Menus, Pointers) paradigm.
-While highly precise, this interface creates a "perceptual disconnect." Developers manipulate 3D spatial data
+While highly precise, this interface creates a ``perceptual disconnect.'' Developers manipulate 3D spatial data
 through a 2D monitor using a mouse, which lacks depth cues and physical scale.
 
-Furthermore, the standard Unity workflow requires a repetitive cycle of "editing" and "play-testing."
+Furthermore, the standard Unity workflow requires a repetitive cycle of ``editing'' and ``play-testing.''
 Because the editor is not VR-native, the developer cannot stay within the immersive environment to make structural changes.
 This results in a loss of \textit{flow state} and significant temporal overhead when fine-tuning the spatial ergonomics of a VR scene.
 
@@ -318,55 +314,54 @@ This results in a loss of \textit{flow state} and significant temporal overhead 
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{images/unreal}
+  \includegraphics[width=\textwidth]{images/unreal.png}
   \caption{Unreal Desktop Editor}
-  \label{unreal_desktop_editor}
+  \label{fig:unreal_desktop}
 \end{figure}
 
-Unreal Engine \cite{UnrealEngine2025} represents the high-end of the XR development spectrum, offering robust tools for visual fidelity.
-Historically, Epic Games attempted to bridge the 2D-3D gap with the introduction of the \textit{Unreal VR Editor} in 2016.
+Unreal Engine~\cite{UnrealEngine2025} (Figure~\ref{fig:unreal_desktop}) represents the high-end of the XR development spectrum, offering robust tools for visual fidelity.
+Historically, Epic Games attempted to bridge the 2D-3D gap with the introduction of the \textit{Unreal VR Editor} (Figure~\ref{fig:unreal_vr}) in 2016.
 This tool enabled direct manipulation of the Scene Graph with 6DoF controllers and a floating world-space UI.
 
 However, as the engine transitioned to Unreal Engine 5, this VR-native editing mode was largely sidelined in favor of
-"VR Preview" workflows. The industry consensus suggests that the original VR Editor failed to gain traction due to its
+``VR Preview'' workflows. The industry consensus suggests that the original VR Editor failed to gain traction due to its
 high cognitive load—it attempted to port a complex desktop-centric interface into a spatial environment without sufficient
-simplification. This deprecation highlights a significant opportunity for specialized, lightweight authoring tools. Unlike the
-"feature-heavy" approach of Unreal, \textit{SceneEditorVR} prioritizes a streamlined UX, proving that immersive editing is more
+simplification. This deprecation highlights a significant opportunity for specialized, lightweight authoring tools. Unlike the ``feature-heavy'' approach of Unreal, \textit{SceneEditorVR} prioritizes a streamlined UX, suggesting that immersive editing is more
 effective when designed around spatial ergonomics rather than desktop-legacy menus.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{images/unreal_vr}
-  \caption{Unreal VR Scene Editor \cite{UnrealVREditor}}
-  \label{Unreal VR Scene Editor}
+  \includegraphics[width=\textwidth]{images/unreal_vr.png}
+  \caption{Unreal VR Scene Editor~\cite{UnrealVREditor}}
+  \label{fig:unreal_vr}
 \end{figure}
 
 \subsection{Godot Scene Editor}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{images/godot}
+  \includegraphics[width=\textwidth]{images/godot.png}
   \caption{Godot Desktop Editor}
-  \label{Godot Desktop Editor}
+  \label{fig:godot_desktop}
 \end{figure}
 
-Godot Engine \cite{GodotEngine2026} offers a unique perspective on the evolution of immersive tools, as it is the only major engine to have
-ported its full desktop editor to standalone VR hardware, specifically the Meta Quest series. As of late 2024, the
-Godot Editor was made available on the Horizon Store, allowing for a "PC-less" development workflow.
+Godot Engine~\cite{GodotEngine2026} (Figure~\ref{fig:godot_desktop}) offers a unique perspective on the evolution of immersive tools, as it is the only major engine to have
+ported its full desktop editor to standalone VR hardware, specifically the Meta Quest series (Figure~\ref{fig:godot_vr}). In late 2024, the
+Godot Editor was made available on the Horizon Store, allowing for a ``PC-less'' development workflow.
 
 However, this implementation highlights the core thesis of this research: the \textit{spatial interaction gap}. While
-the Godot editor runs natively on the headset, it remains a "hybrid" application. The interface is rendered as a 2D
+the Godot editor runs natively on the headset, it remains a ``hybrid'' application. The interface is rendered as a 2D
 floating window—a direct port of the WIMP-based Android version—rather than a native spatial environment.
 
 This state of the art confirms that simply transporting 2D windows into a 3D space is insufficient. \textit{SceneEditorVR}
-departs from this "windowed" approach by offering a ground-up spatial interface, prioritizing direct hand-object interaction
+departs from this ``windowed'' approach by offering a ground-up spatial interface, prioritizing direct hand-object interaction
 over traditional 2D menus.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{images/godot_vr}
-  \caption{Godot Editor running in a Meta Quest \cite{GodotEditorMetaQuest}}
-  \label{Godot Editor running in a Meta Quest}
+  \includegraphics[width=\textwidth]{images/godot_vr.png}
+  \caption{Godot Editor running in a Meta Quest~\cite{GodotEditorMetaQuest}}
+  \label{fig:godot_vr}
 \end{figure}
 
 \section{VR-Native Scene Editors}
@@ -375,24 +370,24 @@ over traditional 2D menus.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{images/rec_room}
-  \caption{Rec Room User Editor \cite{RecRoom}}
-  \label{Rec Room User Editor}
+  \includegraphics[width=\textwidth]{images/rec_room.png}
+  \caption{Rec Room User Editor~\cite{RecRoom}}
+  \label{fig:rec_room}
 \end{figure}
 
-Rec Room \cite{RecRoom2016} represents the most successful implementation of a consumer-facing, VR-native creation system.
+Rec Room~\cite{RecRoom2016} (Figure~\ref{fig:rec_room}) represents the most successful implementation of a consumer-facing, VR-native creation system.
 The primary interaction vector is the \textit{Maker Pen}, a multi-functional tool that enables users to
 instantiate primitive geometry and place pre-defined assets within a shared 3D environment.
 
 Key features of the Rec Room workflow relevant to \textit{SceneEditorVR} include:
 \begin{itemize}
   \item \textbf{Diegetic Toolsets:} The use of a physical tool (the Maker Pen) to house UI menus reduces the cognitive load
-        associated with navigating traditional "flat" menus.
+        associated with navigating traditional ``flat'' menus.
   \item \textbf{Collaborative Design:} Rec Room allows multiple users to build in the same spatial viewport simultaneously,
-        providing a real-time "WYSIWYG" (What You See Is What You Get) experience.
+        providing a real-time ``WYSIWYG'' (What You See Is What You Get) experience.
 \end{itemize}
 
-However, Rec Room is fundamentally a "walled garden." Creations are restricted to the platform's proprietary format,
+However, Rec Room is fundamentally a ``walled garden.'' Creations are restricted to the platform's proprietary format,
 and the recent introduction of \textit{Rec Room Studio}—a desktop Unity plugin—suggests a pivot back to traditional
 2D-based development for complex tasks. \textit{SceneEditorVR} addresses this by adopting the intuitive UX of the
 Maker Pen while ensuring professional utility through open-source export capabilities.
@@ -401,15 +396,15 @@ Maker Pen while ensuring professional utility through open-source export capabil
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{images/arkio}
-  \caption{Arkio User Editor \cite{Arkio}}
-  \label{Arkio User Editor}
+  \includegraphics[width=\textwidth]{images/arkio.png}
+  \caption{Arkio User Editor~\cite{Arkio}}
+  \label{fig:arkio}
 \end{figure}
 
-Arkio \cite{Arkio2026} is a professional-grade collaborative design tool that bridges the gap between traditional architectural modeling and
+Arkio~\cite{Arkio2026} (Figure~\ref{fig:arkio}) is a professional-grade collaborative design tool that bridges the gap between traditional architectural modeling and
 immersive spatial design. Unlike gamified builders, Arkio is specifically engineered for AEC (Architecture, Engineering, and Construction)
 professionals, allowing users to sketch building massing, move walls, and arrange furniture in a 1:1 scale environment.
-It utilizes a unique volumetric modeling kernel that makes "push-pull" geometry manipulation feel intuitive with VR controllers,
+It utilizes a unique volumetric modeling kernel that makes ``push-pull'' geometry manipulation feel intuitive with VR controllers,
 effectively turning the virtual space into a digital version of physical model-making. For the purpose of this thesis,
 Arkio serves as a critical example of an in-situ authoring tool that maintains professional utility through its
 bidirectional integration with industry-standard software like Revit, Rhino, and Unity. This highlights that VR-native
@@ -419,18 +414,18 @@ editing is not merely for creative play but is a viable solution for high-precis
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{images/shapesxr}
-  \caption{ShapesXR User Editor \cite{ShapesXR}}
-  \label{ShapesXR User Editor}
+  \includegraphics[width=\textwidth]{images/shapesxr.png}
+  \caption{ShapesXR User Editor~\cite{ShapesXR}}
+  \label{fig:shapesxr}
 \end{figure}
 
-ShapesXR \cite{ShapesXR2026} is an industry-standard prototyping platform designed to facilitate the transition from 2D concepts to 3D spatial interfaces.
-It prioritizes low-fidelity "gray-boxing" over high-detail modeling, enabling UX designers to quickly block out user flows and
-environmental layouts. A defining characteristic of ShapesXR is its "Stages" system—a spatial iteration of traditional
+ShapesXR~\cite{ShapesXR2026} (Figure~\ref{fig:shapesxr}) is an industry-standard prototyping platform designed to facilitate the transition from 2D concepts to 3D spatial interfaces.
+It prioritizes low-fidelity ``gray-boxing'' over high-detail modeling, enabling UX designers to quickly block out user flows and
+environmental layouts. A defining characteristic of ShapesXR is its ``Stages'' system—a spatial iteration of traditional
 presentation slides—which allows creators to storyboard linear interactions within a 3D volume. By integrating with 2D design tools
-like Figma and providing a dedicated Unity plugin for data handoff, ShapesXR validates the "Rapid Prototyping" objective of this research.
+like Figma and providing a dedicated Unity plugin for data handoff, ShapesXR validates the ``Rapid Prototyping'' objective of this research.
 It demonstrates that the most effective VR authoring tools are those that simplify complex operations into intuitive spatial gestures,
-allowing teams to iterate on the "feel" of an experience before committing to final production code.
+allowing teams to iterate on the ``feel'' of an experience before committing to final production code.
 \chapter{DESIGN}
 
 \section{User Personas}
@@ -440,58 +435,58 @@ allowing teams to iterate on the "feel" of an experience before committing to fi
 \subsubsection{Profile}
 
 \begin{itemize}
-  \item \textbf{Name} : Adam Smith
-  \item \textbf{Age} : 26
-  \item \textbf{Role} : Junior VR Developer
-  \item \textbf{Background} : Adam has spent the last three years building VR environments
+  \item \textbf{Name}: Adam Smith
+  \item \textbf{Age}: 26
+  \item \textbf{Role}: Junior VR Developer
+  \item \textbf{Background}: Adam has spent the last three years building VR environments
         for academic projects and small indie titles. He is technically proficient in Unity but often finds the
-        "monitor-and-mouse" workflow creates a disconnect between his vision and the actual spatial feel of the VR scene.
+        ``monitor-and-mouse'' workflow creates a disconnect between his vision and the actual spatial feel of the VR scene.
 \end{itemize}
 
 \subsubsection{Technical Background}
 
 \begin{itemize}
-  \item \textbf{VR Experience} : Expert. Owns multiple headsets. Has hundreds of hours in VR across gaming, social VR and development testing.
-  \item \textbf{Game Editors} : Unity Power User. Comfortable with the Inspector and the Hierarchy structure
-  \item \textbf{Native VR Editors} : He has tried some applications with UGC (User Generated Content)
+  \item \textbf{VR Experience}: Expert. Owns multiple headsets. Has hundreds of hours in VR across gaming, social VR, and development testing.
+  \item \textbf{Game Editors}: Unity Power User. Comfortable with the Inspector and the Hierarchy structure.
+  \item \textbf{Native VR Editors}: He has tried some applications with UGC (User Generated Content).
 \end{itemize}
 
 \subsubsection{Physical \& Environmental Context}
 
 \begin{itemize}
-  \item \textbf{Physical Health} : Normal. No history of motion sickness (strong "VR legs"). He can tolerate long sessions
+  \item \textbf{Physical Health}: Normal. No history of motion sickness (strong ``VR legs''). He can tolerate long sessions
         in the headset without discomfort.
-  \item \textbf{Physical Setup} : Large room-scale boundary (3x3m). Prefers standing while working to reach high or low within the virtual space.
+  \item \textbf{Physical Setup}: Large room-scale boundary (3x3m). Prefers standing while working to reach high or low within the virtual space.
 \end{itemize}
 
 \subsubsection{Psychographic \& Goals}
 
 \begin{itemize}
-  \item \textbf{Goal} : To rapidly block out a scene's layout while standing inside it,
-        ensuring that the scale of the furniture and objects feels "correct" to a human player immediately.
-  \item \textbf{Pain Points} : He hates having to take the headset off, adjust an object by 5cm in Unity on his monitor,
+  \item \textbf{Goal}: To rapidly block out a scene's layout while standing inside it,
+        ensuring that the scale of the furniture and objects feels ``correct'' to a human player immediately.
+  \item \textbf{Pain Points}: He hates having to take the headset off, adjust an object by 5cm in Unity on his monitor,
         and put the headset back on to check the result.
-  \item \textbf{Expectations} : He expects high precision. He won't be satisfied with "loose" placements; he requires transform
+  \item \textbf{Expectations}: He expects high precision. He won't be satisfied with ``loose'' placements; he requires transform
         snapping and multi-selection to feel like he is in a professional environment.
 \end{itemize}
 
 \subsubsection{User Story}
 
-As a developer who spends all day in Unity, I want a tool that allows me to manipulate 3D assets with the same precision as
-my keyboard and mouse, but with the spatial intuition that only VR provides. I want to build the 'bones' of my level while standing
-inside it so I don't have to guess the scale anymore.
+The goals of this persona reflect a desire for workflow continuity: ``As a developer who spends all day in Unity, I want a tool that allows me to manipulate 3D assets with the same precision as
+my keyboard and mouse, but with the spatial intuition that only VR provides. I want to build the ``bones'' of my level while standing
+inside it so I don't have to guess the scale anymore.''
 
 \subsection{Persona 2}
 
 \subsubsection{Profile}
 
 \begin{itemize}
-  \item \textbf{Name} : Rachel Pierce
-  \item \textbf{Age} : 23
-  \item \textbf{Role} : Digital Artist
-  \item \textbf{Background} : Rachel is an active member of the social VR and modding communities
-        . While she has a natural eye for interior design and 3D composition, she finds professional game engines
-        like Unity intimidating and overly technical. She prefers "in-game" creative tools that allow for immediate visual feedback.
+  \item \textbf{Name}: Rachel Pierce
+  \item \textbf{Age}: 23
+  \item \textbf{Role}: Digital Artist
+  \item \textbf{Background}: Rachel is an active member of the social VR and modding communities.
+        While she has a natural eye for interior design and 3D composition, she finds professional game engines
+        like Unity intimidating and overly technical. She prefers ``in-game'' creative tools that allow for immediate visual feedback.
 \end{itemize}
 
 \subsubsection{Technical Background}
@@ -506,8 +501,8 @@ inside it so I don't have to guess the scale anymore.
 \subsubsection{Physical \& Environmental Context}
 
 \begin{itemize}
-  \item \textbf{Physical Health}: Normal. However, she is prone to slight "simulator sickness" during rapid artificial movement
-        , making stable locomotion and snap turning essential for her comfort.
+  \item \textbf{Physical Health}: Normal. However, she is prone to slight ``simulator sickness'' during rapid artificial movement,
+        making stable locomotion and snap turning essential for her comfort.
   \item \textbf{Physical Setup}: Stationary/Small room setup. She relies on in-game vertical and horizontal
         locomotion because her physical play area is limited.
 \end{itemize}
@@ -516,17 +511,17 @@ inside it so I don't have to guess the scale anymore.
 
 \begin{itemize}
   \item \textbf{Goal}: To intuitively design aesthetically pleasing 3D dioramas and room layouts without needing to learn complex engine logic.
-  \item \textbf{Pain Points}: She feels limited by the "walled gardens" of social VR apps; she wants a simple tool where she can create a
+  \item \textbf{Pain Points}: She feels limited by the ``walled gardens'' of social VR apps; she wants a simple tool where she can create a
         scene and actually own the resulting file (exporting).
-  \item \textbf{Expectations}: She expects a clean, non-distracting interface and a "Creative Mode" feel that prioritizes
+  \item \textbf{Expectations}: She expects a clean, non-distracting interface and a ``Creative Mode'' feel that prioritizes
         visual clarity over technical data.
 \end{itemize}
 
 \subsubsection{User Story}
 
-As a creative hobbyist who loves designing spaces, I want an accessible VR tool that functions like a high-end building game.
+The core motivation for this persona centers on accessibility: ``As a creative hobbyist who loves designing spaces, I want an accessible VR tool that functions like a high-end building game.
 I want to pick items from a library and snap them together in 1:1 scale, and then be able to export my work as a standard 3D file
-to share with my friends or use in my digital art portfolio.
+to share with my friends or use in my digital art portfolio.''
 
 \section{Movement System}
 The navigation system in SceneEditorVR is designed to provide the user with full six-degrees-of-freedom (6DoF) mobility, allowing for
@@ -535,17 +530,17 @@ does not interrupt the creative workflow.
 
 \subsection{Horizontal Plane Movement}
 Horizontal movement is implemented via Smooth Locomotion, mapped to the left controller’s thumbstick. While many VR applications
-utilize "Teleportation" to minimize physical discomfort, it was found to be too disjointed or "clunky" for a scene-editing
-context where incremental adjustments are frequent. To justify this choice, the application identifies its target audience as
-experienced VR users. By assuming a high level of "VR habituation," the design prioritizes continuous, precise spatial translation
+utilize ``Teleportation'' to minimize physical discomfort, it was found to be too disjointed or cumbersome for a scene-editing
+context. To justify this choice, the target audience for the application was identified as
+experienced VR users. By assuming a high level of ``VR habituation,'' the design prioritizes continuous, precise spatial translation
 over the comfort-centric limitations of teleportation.
 
 \subsection{Vertical Movement}
 To facilitate vertical exploration and the placement of assets at varying heights (e.g., ceiling fixtures or multi-level structures),
 a dedicated vertical translation system was implemented using the controller Grip buttons. Pressing the left grip initiates an upward ascent,
-while the right grip initiates a descent. This "button-mapped" approach was chosen after initial testing of "air-grabbing" or "world-pulling"
+while the right grip initiates a descent. This ``button-mapped'' approach was chosen after initial testing of ``air-grabbing'' or ``world-pulling''
 mechanics proved to be unintuitive for users during long editing sessions. By decoupling verticality from hand gestures, the user maintains
-a stable view while adjusting their elevation.
+a stable viewpoint while adjusting their elevation.
 
 \subsection{Rotation}
 Rotational navigation is handled through Snap Turning on the right thumbstick. By flicking the stick left or right, the user’s view
@@ -555,7 +550,7 @@ compared to smooth, continuous rotation.
 \section{Assets Interaction}
 In \textit{SceneEditorVR}, users interact with environmental assets by targeting them directly using the controllers' selection rays. The interaction system supports both single-object and multi-object selection, allowing users to manipulate multiple assets simultaneously. Once selected, assets can be modified through the activation of spatial transformation gizmos or through contextual actions such as duplication and deletion. When a multi-selection is active, the system dynamically calculates a shared center of mass (pivot point) from all selected objects, serving as the central anchor for subsequent translation, rotation, and scaling operations.
 \section{Gizmos}
-When an asset is selected, one of three possible transformation gizmos can be activated:
+When an asset is selected, one of three possible transformation gizmos can be activated (Figures~\ref{fig:translation_gizmo}, \ref{fig:rotation_gizmo}, and \ref{fig:scale_gizmo}):
 
 \subsection{Translation Gizmo}
 
@@ -563,10 +558,10 @@ When an asset is selected, one of three possible transformation gizmos can be ac
   \centering
   \includegraphics[width=\textwidth]{images/move_gizmo.png}
   \caption{Translation Gizmo}
-  \label{Translation Gizmo}
+  \label{fig:translation_gizmo}
 \end{figure}
 
-The translation gizmo has three arrows. One for each axis. The user can interact with the arrows to move the assets around in each axis.
+The translation gizmo consists of three arrows, one corresponding to each axis. The user can interact with the arrows to move the assets along each axis.
 
 \subsection{Rotation Gizmo}
 
@@ -574,10 +569,10 @@ The translation gizmo has three arrows. One for each axis. The user can interact
   \centering
   \includegraphics[width=\textwidth]{images/rotation_gizmo.png}
   \caption{Rotation Gizmo}
-  \label{Rotation Gizmo}
+  \label{fig:rotation_gizmo}
 \end{figure}
 
-The rotation gizmo has three rotators. One for each axis. The user can interact with the rotators to rotate the assets around each axis.
+The rotation gizmo features three rotational rings, one for each axis. The user can interact with the rotators to rotate the assets around each axis.
 
 \subsection{Scale Gizmo}
 
@@ -585,15 +580,14 @@ The rotation gizmo has three rotators. One for each axis. The user can interact 
   \centering
   \includegraphics[width=\textwidth]{images/scale_gizmo.png}
   \caption{Scale Gizmo}
-  \label{Scale Gizmo}
+  \label{fig:scale_gizmo}
 \end{figure}
 
-The scale gizmo has three scalers. One for each axis. The user can interact with the scalers to scale the assets in each axis. For this type
-of gizmo there is also a white sphere that when interacted will scale the asset in all of the axes.
+The scale gizmo incorporates three scaling handles, one for each axis. The user can interact with the scalers to scale the assets in each axis. Additionally, it features a central white sphere that enables uniform scaling across all three axes.
 
 \section{Radial Menus}
 
-The application utilizes two button-activated radial menus designed to streamline high-frequency
+The application utilizes two button-activated radial menus (Figures~\ref{fig:radial_actions} and \ref{fig:radial_transform}) designed to streamline high-frequency
 tasks through rapid, fluid interactions. To operate them, the user holds the designated button
 and gestures toward an option, confirming their choice instantly upon release. This intuitive
 selection method was specifically chosen to minimize friction for the actions performed most often.
@@ -604,16 +598,16 @@ selection method was specifically chosen to minimize friction for the actions pe
   \centering
   \includegraphics[width=\textwidth]{images/radial_actions.png}
   \caption{Actions Radial Menu}
-  \label{Actions Radial Menu}
+  \label{fig:radial_actions}
 \end{figure}
 
 The actions radial menu contains the following options:
 \begin{itemize}
-  \item \textbf{Cancel} : Will not execute any actions
-  \item \textbf{Redo} : Will redo the last undone action
-  \item \textbf{Duplicate} : Will duplicate the currently selected assets
-  \item \textbf{Delete} : Will delete the currently selected assets
-  \item \textbf{Undo} : Will undo the last action
+  \item \textbf{Cancel}: Cancels any pending actions.
+  \item \textbf{Redo}: Redoes the last undone action.
+  \item \textbf{Duplicate}: Duplicates the currently selected assets.
+  \item \textbf{Delete}: Deletes the currently selected assets.
+  \item \textbf{Undo}: Undoes the last action.
 \end{itemize}
 
 \subsection{Transform Radial Menu}
@@ -622,14 +616,14 @@ The actions radial menu contains the following options:
   \centering
   \includegraphics[width=\textwidth]{images/radial_transform.png}
   \caption{Transform Radial Menu}
-  \label{Transform Radial Menu}
+  \label{fig:radial_transform}
 \end{figure}
 
 The transform radial menu contains the following options:
 \begin{itemize}
-  \item \textbf{Move} : Activates the translation gizmo for positional adjustments.
-  \item \textbf{Rotate} : Activates the rotation gizmo for angular adjustments.
-  \item \textbf{Scale} : Activates the scale gizmo for resizing adjustments.
+  \item \textbf{Move}: Activates the translation gizmo for positional adjustments.
+  \item \textbf{Rotate}: Activates the rotation gizmo for angular adjustments.
+  \item \textbf{Scale}: Activates the scale gizmo for resizing adjustments.
 \end{itemize}
 
 \section{Control Panel}
@@ -638,10 +632,10 @@ The transform radial menu contains the following options:
   \centering
   \includegraphics[width=\textwidth]{images/control_panel.png}
   \caption{Control Panel}
-  \label{Control Panel}
+  \label{fig:control_panel}
 \end{figure}
 
-The level editor features a central control panel modeled after the Meta Horizon OS interface. This panel can be freely
+The level editor features a central control panel (Figure~\ref{fig:control_panel}) modeled after the Meta Horizon OS interface. This panel can be freely
 repositioned within the environment or instantly recalled to the user's position using the Settings button.
 
 \subsection{Content Tab}
@@ -650,10 +644,10 @@ repositioned within the environment or instantly recalled to the user's position
   \centering
   \includegraphics[width=\textwidth]{images/content_tab.png}
   \caption{Content tab in the Control Panel}
-  \label{Content tab in the Control Panel}
+  \label{fig:content_tab}
 \end{figure}
 
-This tab serves as a library for all predefined assets available for use in the scene.
+This tab (Figure~\ref{fig:content_tab}) serves as a library for all predefined assets available for use in the scene.
 
 \subsection{Scene Tab}
 
@@ -661,10 +655,10 @@ This tab serves as a library for all predefined assets available for use in the 
   \centering
   \includegraphics[width=\textwidth]{images/scene_tab.png}
   \caption{Scene tab in the Control Panel}
-  \label{Scene tab in the Control Panel}
+  \label{fig:scene_tab}
 \end{figure}
 
-The Scene tab provides essential management tools, allowing users to save their progress, export the
+The Scene tab (Figure~\ref{fig:scene_tab}) provides essential management tools, allowing users to save their progress, export the
 current scene, or exit to the main menu.
 
 \subsection{Help Tab}
@@ -673,10 +667,10 @@ current scene, or exit to the main menu.
   \centering
   \includegraphics[width=\textwidth]{images/help_tab.png}
   \caption{Help tab in the Control Panel}
-  \label{Help tab in the Control Panel}
+  \label{fig:help_tab}
 \end{figure}
 
-The Help tab contains detailed documentation and reference material regarding the application's controls.
+The Help tab (Figure~\ref{fig:help_tab}) contains detailed documentation and reference material regarding the application's controls.
 
 \section{Assets}
 
@@ -698,26 +692,26 @@ To facilitate organized browsing, the assets are categorized into the following 
 
 Unlike traditional desktop-based 3D editors that map 2D mouse coordinates to 3D rotation axes, SceneEditorVR
 leverages the six degrees of freedom (6-DOF) inherent in Virtual Reality. A custom Spatial Rotation
-Visualizer was implemented to make angular manipulation more intuitive. Upon selecting a rotation axis, the system instantiates two components:
+Visualizer was developed to make angular manipulation more intuitive. Upon selecting a rotation axis, the system instantiates two components:
 a static Center Anchor and a dynamic Target Visualizer. The software calculates the angular displacement
 of the VR controller relative to the center anchor in real-time. By mapping the object’s orientation to the vector formed between
-these two visualizers, the user can 'steer' the asset. This creates a direct 1:1 spatial mapping where the asset’s final orientation
+these two visualizers, the user can ``steer'' the asset. This creates a direct 1:1 spatial mapping where the asset’s final orientation
 aligns precisely with the user’s physical pointing direction.
 
 \section{Snapping}
 
 One of the inherent challenges of 3D UI design is the lack of tactile feedback, which can make precise alignment difficult for the user.
-To mitigate this, SceneEditorVR utilizes a Discrete Transformation Toggle (Snapping). This feature provides a 'magnetic' feel to asset
+To mitigate this, SceneEditorVR utilizes a Discrete Transformation Toggle (Snapping). This feature provides a ``magnetic'' feel to asset
 placement, allowing users to align objects with mathematical accuracy despite the inherent jitter of handheld VR controllers. The
-interface offers granular control, enabling users to define the 'snap-step' for translation, rotation, and scale. For workflows
+interface offers granular control, enabling users to define the ``snap-step'' for translation, rotation, and scale. For workflows
 requiring organic or high-fidelity placement, the snapping constraints can be bypassed by setting the increments to zero. By
-integrating this system into the drag-and-drop workflow, the application reduces the need for secondary 'corrective' transformations.
+integrating this system into the drag-and-drop workflow, the application reduces the need for secondary ``corrective'' transformations.
 
 \section{Drag And Drop}
 
 To streamline the scene composition workflow, SceneEditorVR implements a seamless transition between asset instantiation and placement.
 Drawing inspiration from industry-standard game engines, the system utilizes a drag-and-drop paradigm from a centralized content panel.
-To reduce task completion time a Hybrid Transformation Model was introduced: while an asset is being 'held' in the drag state, the user
+To reduce task completion time a Hybrid Transformation Model was introduced: while an asset is being ``held'' in the drag state, the user
 can utilize the controller’s thumbstick for coarse adjustments. This allows for simultaneous translation and rotation before
 the user commits to the final position, effectively decoupling rapid spatial orientation from the high-precision refinements provided
 by the gizmo system.
@@ -740,7 +734,7 @@ high-fidelity VR interactions intended for this project.
 A deliberate architectural decision was made to avoid high-level frameworks such as the Meta XR SDK or the Unity XR Interaction Toolkit.
 While these SDKs provide rapid prototyping capabilities, they often introduce significant software overhead and unnecessary dependencies
 that can complicate the project's lifecycle. By implementing a custom interaction system, the application maintains a lightweight footprint
-and ensures better long-term maintainability. Furthermore, this 'low-level' approach minimizes engine-specific abstractions, facilitating
+and ensures better long-term maintainability. Furthermore, this ``low-level'' approach minimizes engine-specific abstractions, facilitating
 a more straightforward porting process to other platforms or engines by reducing reliance on proprietary black-box components.
 
 \section{Interaction System}
@@ -762,9 +756,9 @@ The \texttt{Interactable} class manages five distinct states that define the obj
   \item \textbf{IE\_INTERACTING}: The user is actively manipulating the object.
 \end{itemize}
 
-While the state progression is primarily linear—moving from (\textit{Idle}) to
-(\textit{Interacting})—the system is designed with a flexible transition logic.
-This allows for "state bypassing" to improve user experience.
+While the state progression is primarily linear—moving from \textit{Idle} to
+\textit{Interacting}—the system is designed with a flexible transition logic.
+This allows for ``state bypassing'' to improve user experience.
 For instance, the system can be configured to bypass the \texttt{IE\_SELECTED}
 state to allow for \textit{immediate interaction}.
 
@@ -791,13 +785,13 @@ the subsequent stages are bypassed:
 To improve the user's spatial awareness, the controller's ray visualizer dynamically updates its color based on the results of the
 aforementioned raycast hierarchy. This real-time feedback provides immediate confirmation of the current interaction state:
 \begin{itemize}
-  \item \textbf{White:} Indicates a "No Hit" state; the ray is currently not intersecting any interactable surface.
-  \item \textbf{Cyan:} Indicates a successful hit on a \textbf{UI} element.
-  \item \textbf{Orange:} Indicates a hit on either a \textbf{Gizmo} or a \textbf{Scene Object}, signaling that transformation or selection
+  \item \textbf{White:} Indicates a ``No Hit'' state; the ray is currently not intersecting any interactable surface.
+  \item \textbf{Cyan:} Indicates a successful hit on a UI element.
+  \item \textbf{Orange:} Indicates a hit on either a gizmo or a scene object, signaling that transformation or selection
         is available.
 \end{itemize}
 
-\section{Singletons}
+\section{Singleton Design Pattern}
 
 Due to the high degree of interdependency between the various modules within the VR environment—such as the transformation logic,
 UI systems, and file I/O handlers—traditional Unity workflow methods like manual reference assignment via the Inspector or frequent GetComponent
@@ -811,18 +805,18 @@ components without the overhead of manual dependency linking.
   \centering
   \includegraphics[width=\textwidth]{images/keyboard.png}
   \caption{Custom Keyboard}
-  \label{Custom Keyboard}
+  \label{fig:custom_keyboard}
 \end{figure}
 
-To facilitate text entry without breaking user immersion, a custom virtual keyboard was engineered.
-Unlike standard system overlays, this input module features a dynamic 'billboard' behavior, automatically rotating
+To facilitate text entry without breaking user immersion, a custom virtual keyboard was engineered (Figure~\ref{fig:custom_keyboard}).
+Unlike standard system overlays, this input module features a dynamic ``billboard'' behavior, automatically rotating
 to face the user's viewport to ensure optimal legibility. Furthermore, the keyboard is integrated into the world-space interaction system,
 allowing users to reposition it freely within their personal reach zone. The software logic supports full alphanumeric input,
 including toggles for casing (upper/lower case).
 
 \section{Undo and Redo Actions}
 
-To ensure user experience fluidity and error recovery, the \textit{SceneEditorVR}
+To ensure user experience fluidity and error recovery, \textit{SceneEditorVR}
 implements a command-based history system. This is achieved through the \textbf{Command Design Pattern},
 which encapsulates every user interaction as a discrete object.
 
@@ -832,7 +826,7 @@ This architecture utilizes polymorphism to allow the system to treat different o
 through a unified interface.
 
 \subsection{State Management via Dual Stacks}
-The system manages the history using two \textbf{Last-In-First-Out (LIFO)} stacks managed by the \texttt{ActionsManager}:
+The system manages the history using two Last-In-First-Out (LIFO) stacks managed by the \texttt{ActionsManager}:
 
 \begin{itemize}
   \item \textbf{Undo Stack:} Stores executed actions. When a new action is performed, its \texttt{Do()} method is called
@@ -845,7 +839,7 @@ The implemented actions include spatial transformations (\textit{Move, Rotate, S
 and selection state changes (\textit{Select, Unselect}).
 This modular approach ensures that the system is easily extensible for future features.
 
-\section{Rotation}
+\section{Rotation Mechanics Implementation}
 
 The rotation workflow is divided into two main stages:
 
@@ -862,7 +856,7 @@ The exact angle is then calculated and applied to the objects. To maintain immer
 the system concurrently communicates with the \texttt{RotationVisualizerManager} to render a dynamic visual guide
 that updates in real-time.
 
-\section{Two Cameras}
+\section{Dual-Camera Rendering Architecture}
 
 To ensure the control panel remains visible and never clips through 3D objects, a dual-camera system was implemented:
 
@@ -872,7 +866,7 @@ To ensure the control panel remains visible and never clips through 3D objects, 
 \end{itemize}
 
 By assigning the UI Camera a higher depth priority, the control panel is forced to render on top of all world geometry.
-This ensures the user never "loses" the interface inside walls or large assets.
+This ensures the user never ``loses'' the interface inside walls or large assets.
 
 \section{Asset Management Using Addressables}
 
@@ -891,112 +885,52 @@ To assess the usability, efficiency, and overall user experience of \textit{Scen
 The study was designed to observe how users interact with the spatial interface and to gather qualitative and quantitative feedback regarding
 the system's effectiveness.
 
-\section{Welcome and Introduction}
+\section{Experimental Procedure}
 Upon arrival, participants were welcomed and briefed on the purpose of the study.
-They were provided with information detailing the research objectives.
+They were provided with information detailing the research objectives and asked to sign a consent form.
+Following this, a questionnaire was administered to gather demographic data and assess their prior experience.
 
-\section{Consent Form}
-Next the participants were asked to sign a consent form.
+\subsection{Participant Information Questionnaire}
 
-\section{Participant Information Questionnaire}
-A questionnaire was given to the participants to gather demographic data.
+The format of this questionnaire is provided in Appendix \ref{appendix:questionnaires}.
 
-\begin{enumerate}
-  \item \textbf{Age}
-        \\ Number Input
 
-  \item \textbf{Gender}
-        \begin{itemize}
-          \item Male
-          \item Female
-          \item Prefer not to answer
-        \end{itemize}
-
-  \item \textbf{Which is your dominant hand?}
-        \begin{itemize}
-          \item Right
-          \item Left
-          \item Both
-        \end{itemize}
-
-  \item \textbf{Do you wear glasses? Will you be wearing them during the VR experiment?}
-        \begin{itemize}
-          \item No I don't wear glasses
-          \item Yes I wear glasses and I will be wearing them during the experiment
-          \item Yes I wear glasses but I will not be wearing them during the experiment
-        \end{itemize}
-
-  \item \textbf{Years of experience with VR (Virtual Reality)}
-        \begin{itemize}
-          \item Less than a year
-          \item 1-3 years
-          \item More than 3 years
-        \end{itemize}
-
-  \item \textbf{How often are you in VR (Virtual Reality)?}
-        \begin{itemize}
-          \item 0 times per month
-          \item 1-3 times per month
-          \item 1-2 times per week
-          \item 3-5 times per week
-          \item Every day
-        \end{itemize}
-
-  \item \begin{minipage}[t]{\linewidth}
-          \textbf{How easily do you get motion sickness in VR (Virtual Reality)?}
-          \begin{center}
-            \small
-            \renewcommand{\arraystretch}{1.5}
-            \begin{tabular}{ccccccccc}
-                          & 1          & 2          & 3          & 4          & 5          &            \\
-              Very easily & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & I get none
-            \end{tabular}
-          \end{center}
-        \end{minipage}
-
-  \item \textbf{Which VR devices have you used?}
-        \\ Text Input
-
-  \item \textbf{What tools have you used for 3D scene creation (Blender, Unity, Unreal Engine etc.)?}
-        \\ Text Input
-
-  \item \begin{minipage}[t]{\linewidth}
-          \textbf{What is your experience level in the tools you mentioned in the last question?}
-          \begin{center}
-            \small
-            \renewcommand{\arraystretch}{1.5}
-            \begin{tabular}{ccccccccc}
-                       & 1          & 2          & 3          & 4          & 5          &            \\
-              Beginner & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & Proficient
-            \end{tabular}
-          \end{center}
-        \end{minipage}
-
-  \item \textbf{Have you used a tool for scene creation inside VR (Virtual Reality)? If yes, which ones have you used?}
-        \\ Text Input
-
-\end{enumerate}
-
-\section{Familiarization with the hardware}
+\section{Familiarization with the Hardware}
 Participants were equipped with a Meta Quest 2 headset and given a brief explanation of the physical boundaries
-(room-scale setup) and the basic controller layout to ensure they felt comfortable and safe before entering the virtual environment.
+(room-scale setup) and the basic controller layout to ensure they felt comfortable and safe before entering the virtual environment. A recording of the user's view was initiated to gather information about their experience.
 
-\section{Recording}
-A recording of the user's view is initiated to gather information about his/her experience.
-
-\section{Guided Tutorial with specific Tasks}
+\section{Guided Tutorial Phase}
 To familiarize users with the \textit{SceneEditorVR} interaction paradigms, the evaluation began with a guided tutorial phase.
-During this stage, participants were asked to complete a series of specific, progressively complex tasks. These tasks included:
+During this stage, participants were asked to complete a series of specific, progressively complex tasks, categorized by the core interactions required.
+These tasks were structured into the following categories:
+
+\subsection{Scene Initialization and File Operations}
+Participants began by setting up a workspace:
 \begin{itemize}
   \item Go to create scene screen
   \item Use the keyboard to give the scene a name (move the keyboard around)
   \item Create scene
+\end{itemize}
+
+\subsection{Locomotion and Navigation}
+These tasks assessed the user's ability to navigate within the virtual environment:
+\begin{itemize}
   \item Rotate around
   \item Move around (vertically and horizontally)
+\end{itemize}
+
+\subsection{Control Panel and UI Navigation}
+Users practiced summoning and interacting with the central system menus:
+\begin{itemize}
   \item Call control panel to user
   \item Inspect content tab in the UI
   \item Inspect scene tab in the UI
   \item Inspect help tab in the UI
+\end{itemize}
+
+\subsection{Basic Asset Manipulation}
+This phase covered the foundational interactions for selecting, transforming, and editing individual objects:
+\begin{itemize}
   \item Drag and drop asset to the scene (move and rotate while dragging)
   \item Deselect asset
   \item Select asset
@@ -1010,12 +944,22 @@ During this stage, participants were asked to complete a series of specific, pro
   \item Delete original item
   \item Undo
   \item Redo
+\end{itemize}
+
+\subsection{Advanced Selection and Multi-Object Manipulation}
+Participants performed complex operations involving simultaneous control over multiple objects:
+\begin{itemize}
   \item Place four objects in the scene
   \item Multi select all objects
   \item Move multiple objects
   \item Scale multiple objects
   \item Rotate multiple objects
-  \item Control snappings amount
+\end{itemize}
+
+\subsection{Snapping and Precision Controls}
+These tasks tested the precision positioning constraints and snapping adjustments:
+\begin{itemize}
+  \item Control snapping amount
   \item Turn off snapping
   \item Move without snap
   \item Scale without snap
@@ -1025,337 +969,53 @@ During this stage, participants were asked to complete a series of specific, pro
   \item Menu
   \item Load created scene
 \end{itemize}
+
 This phase ensured that all users reached a baseline proficiency with the system's mechanics before moving on to independent creation.
 
 \section{Creation Process}
 
 \subsection{Structured Creation}
-In this section, participants are instructed to build a specific layout: a medieval room featuring a central table surrounded by four chairs.
-A timer will be used to measure completion speed for this task.
+In this section, participants were instructed to build a specific layout: a medieval room featuring a central table surrounded by four chairs.
+A timer was used to measure completion speed for this task.
 
 \subsection{Free Creation}
-In this section, participants are tasked with freely decorating the room they created in the previous section,
-using any available assets they choose. In this section the recording will be used to count errors, undos and deletes.
+In this section, participants were tasked with freely decorating the room they created in the previous section,
+using any available assets they chose. During this phase, the recording was used to track errors, undo actions, and deletions.
 
 \section{Questionnaires}
 Immediately after concluding the VR session, participants were asked to complete a series of standardized and custom
 questionnaires to provide quantitative data on their experience.
 
 \subsection{VRSUQ}
-To evaluate the system's usability, the Virtual Reality System Usability Questionnaire (VRSUQ) was administered \cite{KimRhiu2024VRSUQ}.
+To evaluate the system's usability, the Virtual Reality System Usability Questionnaire (VRSUQ) was administered~\cite{KimRhiu2024VRSUQ}.
 This tool is specifically tailored to assess the ease of use, interface intuitiveness,
 and overall user satisfaction within immersive spatial computing environments.
 
-\begin{enumerate}
-  \item \begin{minipage}[t]{\linewidth}
-          \textbf{The system responded well to my manipulations as expected with no delays.}
-          \begin{center}
-            \small
-            \renewcommand{\arraystretch}{1.5}
-            \begin{tabular}{ccccccccc}
-                                & 1          & 2          & 3          & 4          & 5          & 6          & 7          &                \\
-              Strongly Disagree & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & Strongly Agree
-            \end{tabular}
-          \end{center}
-        \end{minipage}
+The format of this questionnaire is provided in Appendix \ref{appendix:questionnaires}.
 
-  \item \begin{minipage}[t]{\linewidth}
-          \textbf{I think the virtual reality system provides clear feedback on my manipulations.}
-          \begin{center}
-            \small
-            \renewcommand{\arraystretch}{1.5}
-            \begin{tabular}{ccccccccc}
-                                & 1          & 2          & 3          & 4          & 5          & 6          & 7          &                \\
-              Strongly Disagree & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & Strongly Agree
-            \end{tabular}
-          \end{center}
-        \end{minipage}
-
-
-  \item \begin{minipage}[t]{\linewidth}
-          \textbf{(−)I kept making errors/mistakes while using the virtual reality system.}
-          \begin{center}
-            \small
-            \renewcommand{\arraystretch}{1.5}
-            \begin{tabular}{ccccccccc}
-                                & 1          & 2          & 3          & 4          & 5          & 6          & 7          &                \\
-              Strongly Disagree & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & Strongly Agree
-            \end{tabular}
-          \end{center}
-        \end{minipage}
-
-
-  \item \begin{minipage}[t]{\linewidth}
-          \textbf{I could clearly understand the information presented within the virtual environment.}
-          \begin{center}
-            \small
-            \renewcommand{\arraystretch}{1.5}
-            \begin{tabular}{ccccccccc}
-                                & 1          & 2          & 3          & 4          & 5          & 6          & 7          &                \\
-              Strongly Disagree & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & Strongly Agree
-            \end{tabular}
-          \end{center}
-        \end{minipage}
-
-
-  \item \begin{minipage}[t]{\linewidth}
-          \textbf{I think this system is user-friendly, straightforward to learn, and designed in such a way that most people will find it easy to adapt to.}
-          \begin{center}
-            \small
-            \renewcommand{\arraystretch}{1.5}
-            \begin{tabular}{ccccccccc}
-                                & 1          & 2          & 3          & 4          & 5          & 6          & 7          &                \\
-              Strongly Disagree & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & Strongly Agree
-            \end{tabular}
-          \end{center}
-        \end{minipage}
-
-
-  \item \begin{minipage}[t]{\linewidth}
-          \textbf{I think it is easy to correct errors made during virtual reality experiences.}
-          \begin{center}
-            \small
-            \renewcommand{\arraystretch}{1.5}
-            \begin{tabular}{ccccccccc}
-                                & 1          & 2          & 3          & 4          & 5          & 6          & 7          &                \\
-              Strongly Disagree & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & Strongly Agree
-            \end{tabular}
-          \end{center}
-        \end{minipage}
-
-
-  \item \begin{minipage}[t]{\linewidth}
-          \textbf{I enjoyed the virtual reality experience.}
-          \begin{center}
-            \small
-            \renewcommand{\arraystretch}{1.5}
-            \begin{tabular}{ccccccccc}
-                                & 1          & 2          & 3          & 4          & 5          & 6          & 7          &                \\
-              Strongly Disagree & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & Strongly Agree
-            \end{tabular}
-          \end{center}
-        \end{minipage}
-
-
-  \item \begin{minipage}[t]{\linewidth}
-          \textbf{(−) I felt dizzy, motion sickness, or a headache while experiencing virtual reality.}
-          \begin{center}
-            \small
-            \renewcommand{\arraystretch}{1.5}
-            \begin{tabular}{ccccccccc}
-                                & 1          & 2          & 3          & 4          & 5          & 6          & 7          &                \\
-              Strongly Disagree & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & Strongly Agree
-            \end{tabular}
-          \end{center}
-        \end{minipage}
-
-
-  \item \begin{minipage}[t]{\linewidth}
-          \textbf{(−) While experiencing virtual reality, I felt mental burdens such as tension, frustration, and time pressure.}
-          \begin{center}
-            \small
-            \renewcommand{\arraystretch}{1.5}
-            \begin{tabular}{ccccccccc}
-                                & 1          & 2          & 3          & 4          & 5          & 6          & 7          &                \\
-              Strongly Disagree & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & Strongly Agree
-            \end{tabular}
-          \end{center}
-        \end{minipage}
-\end{enumerate}
 
 \subsection{UEQ-S}
-The short version of the User Experience Questionnaire (UEQ-S) \cite{Schrepp2017UEQS} was utilized to measure
+The short version of the User Experience Questionnaire (UEQ-S)~\cite{Schrepp2017UEQS} was utilized to measure
 both the pragmatic (efficiency, perspicuity, dependability) and hedonic (stimulation, novelty) qualities
 of the software. This provided a quick but comprehensive overview of the users' subjective impressions.
 
-\begin{enumerate}
-  \item \begin{minipage}[t]{\linewidth}
-          \textbf{obstructive vs. supportive}
-          \begin{center}
-            \small
-            \renewcommand{\arraystretch}{1.5}
-            \begin{tabular}{ccccccccc}
-                          & 1          & 2          & 3          & 4          & 5          & 6          & 7          &            \\
-              obstructive & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & supportive
-            \end{tabular}
-          \end{center}
-        \end{minipage}
+The format of this questionnaire is provided in Appendix \ref{appendix:questionnaires}.
 
 
-  \item \begin{minipage}[t]{\linewidth}
-          \textbf{complicated vs. easy}
-          \begin{center}
-            \small
-            \renewcommand{\arraystretch}{1.5}
-            \begin{tabular}{ccccccccc}
-                          & 1          & 2          & 3          & 4          & 5          & 6          & 7          &      \\
-              complicated & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & easy
-            \end{tabular}
-          \end{center}
-        \end{minipage}
-
-
-  \item \begin{minipage}[t]{\linewidth}
-          \textbf{inefficient vs. efficient}
-          \begin{center}
-            \small
-            \renewcommand{\arraystretch}{1.5}
-            \begin{tabular}{ccccccccc}
-                          & 1          & 2          & 3          & 4          & 5          & 6          & 7          &           \\
-              inefficient & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & efficient
-            \end{tabular}
-          \end{center}
-        \end{minipage}
-
-
-  \item \begin{minipage}[t]{\linewidth}
-          \textbf{clear vs. confusing}
-          \begin{center}
-            \small
-            \renewcommand{\arraystretch}{1.5}
-            \begin{tabular}{ccccccccc}
-                    & 1          & 2          & 3          & 4          & 5          & 6          & 7          &           \\
-              clear & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & confusing
-            \end{tabular}
-          \end{center}
-        \end{minipage}
-
-
-  \item \begin{minipage}[t]{\linewidth}
-          \textbf{boring  vs. exciting}
-          \begin{center}
-            \small
-            \renewcommand{\arraystretch}{1.5}
-            \begin{tabular}{ccccccccc}
-                     & 1          & 2          & 3          & 4          & 5          & 6          & 7          &          \\
-              boring & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & exciting
-            \end{tabular}
-          \end{center}
-        \end{minipage}
-
-  \item \begin{minipage}[t]{\linewidth}
-          \textbf{not interesting vs. interesting}
-          \begin{center}
-            \small
-            \renewcommand{\arraystretch}{1.5}
-            \begin{tabular}{ccccccccc}
-                              & 1          & 2          & 3          & 4          & 5          & 6          & 7          &             \\
-              not interesting & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & interesting
-            \end{tabular}
-          \end{center}
-        \end{minipage}
-
-
-  \item \begin{minipage}[t]{\linewidth}
-          \textbf{conventional vs. inventive}
-          \begin{center}
-            \small
-            \renewcommand{\arraystretch}{1.5}
-            \begin{tabular}{ccccccccc}
-                           & 1          & 2          & 3          & 4          & 5          & 6          & 7          &           \\
-              conventional & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & inventive
-            \end{tabular}
-          \end{center}
-        \end{minipage}
-
-
-  \item \begin{minipage}[t]{\linewidth}
-          \textbf{usual vs. leading-edge}
-          \begin{center}
-            \small
-            \renewcommand{\arraystretch}{1.5}
-            \begin{tabular}{ccccccccc}
-                    & 1          & 2          & 3          & 4          & 5          & 6          & 7          &              \\
-              usual & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & leading-edge
-            \end{tabular}
-          \end{center}
-        \end{minipage}
-\end{enumerate}
-
-\subsection{Custom questions}
+\subsection{Custom Questions}
 In addition to the standardized forms, a set of custom questions was designed specifically for this study.
 These questions targeted unique features of \textit{SceneEditorVR}, such as the perceived accuracy of the spatial rotation visualizer,
 and the comfort of the selected locomotion methods.
 
-\begin{enumerate}
-  \item \begin{minipage}[t]{\linewidth}
-          \textbf{How easy was to transform the assets in the scene?}
-          \begin{center}
-            \small
-            \renewcommand{\arraystretch}{1.5}
-            \begin{tabular}{ccccccc}
-                             & 1          & 2          & 3          & 4          & 5          &           \\
-              Very difficult & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & Very easy
-            \end{tabular}
-          \end{center}
-        \end{minipage}
+The format of this questionnaire is provided in Appendix \ref{appendix:questionnaires}.
 
-  \item \begin{minipage}[t]{\linewidth}
-          \textbf{How intuitive was the rotation of the objects?}
-          \begin{center}
-            \small
-            \renewcommand{\arraystretch}{1.5}
-            \begin{tabular}{ccccccc}
-                          & 1          & 2          & 3          & 4          & 5          &                \\
-              Unintuitive & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & Very intuitive
-            \end{tabular}
-          \end{center}
-        \end{minipage}
-
-  \item \begin{minipage}[t]{\linewidth}
-          \textbf{Was the central UI panel during the scene creation intrusive?}
-          \begin{center}
-            \small
-            \renewcommand{\arraystretch}{1.5}
-            \begin{tabular}{ccccccc}
-                             & 1          & 2          & 3          & 4          & 5          &               \\
-              Very Intrusive & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & Not Intrusive
-            \end{tabular}
-          \end{center}
-        \end{minipage}
-
-  \item \begin{minipage}[t]{\linewidth}
-          \textbf{How helpful was the snapping system?}
-          \begin{center}
-            \small
-            \renewcommand{\arraystretch}{1.5}
-            \begin{tabular}{ccccccc}
-                          & 1          & 2          & 3          & 4          & 5          &              \\
-              Not helpful & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & Very helpful
-            \end{tabular}
-          \end{center}
-        \end{minipage}
-
-  \item \begin{minipage}[t]{\linewidth}
-          \textbf{How easy was it to navigate around the scene?}
-          \begin{center}
-            \small
-            \renewcommand{\arraystretch}{1.5}
-            \begin{tabular}{ccccccc}
-                        & 1          & 2          & 3          & 4          & 5          &           \\
-              Very hard & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & Very easy
-            \end{tabular}
-          \end{center}
-        \end{minipage}
-
-  \item \begin{minipage}[t]{\linewidth}
-          \textbf{Would you prefer to make virtual reality scenes with this tool, rather than a traditional scene editor?}
-          \begin{center}
-            \small
-            \renewcommand{\arraystretch}{1.5}
-            \begin{tabular}{ccccccc}
-                         & 1          & 2          & 3          & 4          & 5          &             \\
-              Not likely & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & Most likely
-            \end{tabular}
-          \end{center}
-        \end{minipage}
-\end{enumerate}
 
 \section{Interviews}
 The final phase of the evaluation consisted of a semi-structured interview, allowing participants to elaborate on their
 questionnaire responses and provide deeper qualitative insights.
 
 \subsection{Open Ended Questions}
+The semi-structured interview concluded with the following open-ended questions:
 
 \begin{enumerate}
   \item How was the experience compared to other editors?
@@ -1366,11 +1026,11 @@ questionnaire responses and provide deeper qualitative insights.
 
 \chapter{ANALYSIS AND RESULTS}
 
-Do experiments...
+% To be completed: Add experimental data and analysis.
 
 \chapter{CONCLUSION}
 
-Do experiments...
+% To be completed: Add conclusion.
 
 \backmatter
 
@@ -1412,16 +1072,390 @@ Do experiments...
   \phantomsection
   \addcontentsline{toc}{chapter}{APPENDICES}
 
-  \chapter{FIRST APPENDIX}
-  \chapter{SECOND APPENDIX}
-  \chapter{THIRD APPENDIX}
+  \chapter{QUESTIONNAIRES}
+  \label{appendix:questionnaires}
+
+  \section{Participant Information Questionnaire}
+  \begin{enumerate}
+    \item \textbf{Age}
+          \textit{(Number Input)}
+
+    \item \textbf{Gender}
+          \begin{itemize}
+            \item Male
+            \item Female
+            \item Prefer not to answer
+          \end{itemize}
+
+    \item \textbf{Which is your dominant hand?}
+          \begin{itemize}
+            \item Right
+            \item Left
+            \item Both
+          \end{itemize}
+
+    \item \textbf{Do you wear glasses? Will you be wearing them during the VR experiment?}
+          \begin{itemize}
+            \item No I don't wear glasses
+            \item Yes I wear glasses and I will be wearing them during the experiment
+            \item Yes I wear glasses but I will not be wearing them during the experiment
+          \end{itemize}
+
+    \item \textbf{Years of experience with VR}
+          \begin{itemize}
+            \item Less than a year
+            \item 1-3 years
+            \item More than 3 years
+          \end{itemize}
+
+    \item \textbf{How often are you in VR?}
+          \begin{itemize}
+            \item 0 times per month
+            \item 1-3 times per month
+            \item 1-2 times per week
+            \item 3-5 times per week
+            \item Every day
+          \end{itemize}
+
+    \item \begin{minipage}[t]{\linewidth}
+            \textbf{How easily do you get motion sickness in VR?}
+            \begin{center}
+              \small
+              \renewcommand{\arraystretch}{1.5}
+              \begin{tabular}{ccccccccc}
+                            & 1          & 2          & 3          & 4          & 5          &            \\
+                Very easily & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & I get none
+              \end{tabular}
+            \end{center}
+          \end{minipage}
+
+    \item \textbf{Which VR devices have you used?}
+          \textit{(Text Input)}
+
+    \item \textbf{What tools have you used for 3D scene creation (Blender, Unity, Unreal Engine etc.)?}
+          \textit{(Text Input)}
+
+    \item \begin{minipage}[t]{\linewidth}
+            \textbf{What is your experience level in the tools you mentioned in the last question?}
+            \begin{center}
+              \small
+              \renewcommand{\arraystretch}{1.5}
+              \begin{tabular}{ccccccccc}
+                         & 1          & 2          & 3          & 4          & 5          &            \\
+                Beginner & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & Proficient
+              \end{tabular}
+            \end{center}
+          \end{minipage}
+
+    \item \textbf{Have you used a tool for scene creation inside VR? If yes, which ones have you used?}
+          \textit{(Text Input)}
+
+  \end{enumerate}
+
+  \section{VRSUQ}
+  \begin{enumerate}
+    \item \begin{minipage}[t]{\linewidth}
+            \textbf{The system responded well to my manipulations as expected with no delays.}
+            \begin{center}
+              \small
+              \renewcommand{\arraystretch}{1.5}
+              \begin{tabular}{ccccccccc}
+                                  & 1          & 2          & 3          & 4          & 5          & 6          & 7          &                \\
+                Strongly Disagree & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & Strongly Agree
+              \end{tabular}
+            \end{center}
+          \end{minipage}
+
+    \item \begin{minipage}[t]{\linewidth}
+            \textbf{I think the virtual reality system provides clear feedback on my manipulations.}
+            \begin{center}
+              \small
+              \renewcommand{\arraystretch}{1.5}
+              \begin{tabular}{ccccccccc}
+                                  & 1          & 2          & 3          & 4          & 5          & 6          & 7          &                \\
+                Strongly Disagree & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & Strongly Agree
+              \end{tabular}
+            \end{center}
+          \end{minipage}
+
+
+    \item \begin{minipage}[t]{\linewidth}
+            \textbf{(−)I kept making errors/mistakes while using the virtual reality system.}
+            \begin{center}
+              \small
+              \renewcommand{\arraystretch}{1.5}
+              \begin{tabular}{ccccccccc}
+                                  & 1          & 2          & 3          & 4          & 5          & 6          & 7          &                \\
+                Strongly Disagree & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & Strongly Agree
+              \end{tabular}
+            \end{center}
+          \end{minipage}
+
+
+    \item \begin{minipage}[t]{\linewidth}
+            \textbf{I could clearly understand the information presented within the virtual environment.}
+            \begin{center}
+              \small
+              \renewcommand{\arraystretch}{1.5}
+              \begin{tabular}{ccccccccc}
+                                  & 1          & 2          & 3          & 4          & 5          & 6          & 7          &                \\
+                Strongly Disagree & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & Strongly Agree
+              \end{tabular}
+            \end{center}
+          \end{minipage}
+
+
+    \item \begin{minipage}[t]{\linewidth}
+            \textbf{I think this system is user-friendly, straightforward to learn, and designed in such a way that most people will find it easy to adapt to.}
+            \begin{center}
+              \small
+              \renewcommand{\arraystretch}{1.5}
+              \begin{tabular}{ccccccccc}
+                                  & 1          & 2          & 3          & 4          & 5          & 6          & 7          &                \\
+                Strongly Disagree & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & Strongly Agree
+              \end{tabular}
+            \end{center}
+          \end{minipage}
+
+
+    \item \begin{minipage}[t]{\linewidth}
+            \textbf{I think it is easy to correct errors made while using the virtual reality system.}
+            \begin{center}
+              \small
+              \renewcommand{\arraystretch}{1.5}
+              \begin{tabular}{ccccccccc}
+                                  & 1          & 2          & 3          & 4          & 5          & 6          & 7          &                \\
+                Strongly Disagree & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & Strongly Agree
+              \end{tabular}
+            \end{center}
+          \end{minipage}
+
+
+    \item \begin{minipage}[t]{\linewidth}
+            \textbf{I enjoyed the virtual reality experience.}
+            \begin{center}
+              \small
+              \renewcommand{\arraystretch}{1.5}
+              \begin{tabular}{ccccccccc}
+                                  & 1          & 2          & 3          & 4          & 5          & 6          & 7          &                \\
+                Strongly Disagree & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & Strongly Agree
+              \end{tabular}
+            \end{center}
+          \end{minipage}
+
+
+    \item \begin{minipage}[t]{\linewidth}
+            \textbf{(−) I felt dizzy, motion sickness, or a headache while experiencing virtual reality.}
+            \begin{center}
+              \small
+              \renewcommand{\arraystretch}{1.5}
+              \begin{tabular}{ccccccccc}
+                                  & 1          & 2          & 3          & 4          & 5          & 6          & 7          &                \\
+                Strongly Disagree & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & Strongly Agree
+              \end{tabular}
+            \end{center}
+          \end{minipage}
+
+
+    \item \begin{minipage}[t]{\linewidth}
+            \textbf{(−) While experiencing virtual reality, I felt mental burdens such as tension, frustration, and time pressure.}
+            \begin{center}
+              \small
+              \renewcommand{\arraystretch}{1.5}
+              \begin{tabular}{ccccccccc}
+                                  & 1          & 2          & 3          & 4          & 5          & 6          & 7          &                \\
+                Strongly Disagree & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & Strongly Agree
+              \end{tabular}
+            \end{center}
+          \end{minipage}
+  \end{enumerate}
+
+  \section{UEQ-S}
+  \begin{enumerate}
+    \item \begin{minipage}[t]{\linewidth}
+            \textbf{obstructive vs. supportive}
+            \begin{center}
+              \small
+              \renewcommand{\arraystretch}{1.5}
+              \begin{tabular}{ccccccccc}
+                            & 1          & 2          & 3          & 4          & 5          & 6          & 7          &            \\
+                obstructive & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & supportive
+              \end{tabular}
+            \end{center}
+          \end{minipage}
+
+
+    \item \begin{minipage}[t]{\linewidth}
+            \textbf{complicated vs. easy}
+            \begin{center}
+              \small
+              \renewcommand{\arraystretch}{1.5}
+              \begin{tabular}{ccccccccc}
+                            & 1          & 2          & 3          & 4          & 5          & 6          & 7          &      \\
+                complicated & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & easy
+              \end{tabular}
+            \end{center}
+          \end{minipage}
+
+
+    \item \begin{minipage}[t]{\linewidth}
+            \textbf{inefficient vs. efficient}
+            \begin{center}
+              \small
+              \renewcommand{\arraystretch}{1.5}
+              \begin{tabular}{ccccccccc}
+                            & 1          & 2          & 3          & 4          & 5          & 6          & 7          &           \\
+                inefficient & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & efficient
+              \end{tabular}
+            \end{center}
+          \end{minipage}
+
+
+    \item \begin{minipage}[t]{\linewidth}
+            \textbf{clear vs. confusing}
+            \begin{center}
+              \small
+              \renewcommand{\arraystretch}{1.5}
+              \begin{tabular}{ccccccccc}
+                      & 1          & 2          & 3          & 4          & 5          & 6          & 7          &           \\
+                clear & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & confusing
+              \end{tabular}
+            \end{center}
+          \end{minipage}
+
+
+    \item \begin{minipage}[t]{\linewidth}
+            \textbf{boring  vs. exciting}
+            \begin{center}
+              \small
+              \renewcommand{\arraystretch}{1.5}
+              \begin{tabular}{ccccccccc}
+                       & 1          & 2          & 3          & 4          & 5          & 6          & 7          &          \\
+                boring & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & exciting
+              \end{tabular}
+            \end{center}
+          \end{minipage}
+
+    \item \begin{minipage}[t]{\linewidth}
+            \textbf{not interesting vs. interesting}
+            \begin{center}
+              \small
+              \renewcommand{\arraystretch}{1.5}
+              \begin{tabular}{ccccccccc}
+                                & 1          & 2          & 3          & 4          & 5          & 6          & 7          &             \\
+                not interesting & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & interesting
+              \end{tabular}
+            \end{center}
+          \end{minipage}
+
+
+    \item \begin{minipage}[t]{\linewidth}
+            \textbf{conventional vs. inventive}
+            \begin{center}
+              \small
+              \renewcommand{\arraystretch}{1.5}
+              \begin{tabular}{ccccccccc}
+                             & 1          & 2          & 3          & 4          & 5          & 6          & 7          &           \\
+                conventional & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & inventive
+              \end{tabular}
+            \end{center}
+          \end{minipage}
+
+
+    \item \begin{minipage}[t]{\linewidth}
+            \textbf{usual vs. leading-edge}
+            \begin{center}
+              \small
+              \renewcommand{\arraystretch}{1.5}
+              \begin{tabular}{ccccccccc}
+                      & 1          & 2          & 3          & 4          & 5          & 6          & 7          &              \\
+                usual & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & leading-edge
+              \end{tabular}
+            \end{center}
+          \end{minipage}
+  \end{enumerate}
+
+  \section{Custom Questions}
+  \begin{enumerate}
+    \item \begin{minipage}[t]{\linewidth}
+            \textbf{How easy was it to transform the assets in the scene?}
+            \begin{center}
+              \small
+              \renewcommand{\arraystretch}{1.5}
+              \begin{tabular}{ccccccc}
+                               & 1          & 2          & 3          & 4          & 5          &           \\
+                Very difficult & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & Very easy
+              \end{tabular}
+            \end{center}
+          \end{minipage}
+
+    \item \begin{minipage}[t]{\linewidth}
+            \textbf{How intuitive was the rotation of the objects?}
+            \begin{center}
+              \small
+              \renewcommand{\arraystretch}{1.5}
+              \begin{tabular}{ccccccc}
+                            & 1          & 2          & 3          & 4          & 5          &                \\
+                Unintuitive & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & Very intuitive
+              \end{tabular}
+            \end{center}
+          \end{minipage}
+
+    \item \begin{minipage}[t]{\linewidth}
+            \textbf{Was the central UI panel during the scene creation intrusive?}
+            \begin{center}
+              \small
+              \renewcommand{\arraystretch}{1.5}
+              \begin{tabular}{ccccccc}
+                               & 1          & 2          & 3          & 4          & 5          &               \\
+                Very Intrusive & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & Not Intrusive
+              \end{tabular}
+            \end{center}
+          \end{minipage}
+
+    \item \begin{minipage}[t]{\linewidth}
+            \textbf{How helpful was the snapping system?}
+            \begin{center}
+              \small
+              \renewcommand{\arraystretch}{1.5}
+              \begin{tabular}{ccccccc}
+                            & 1          & 2          & 3          & 4          & 5          &              \\
+                Not helpful & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & Very helpful
+              \end{tabular}
+            \end{center}
+          \end{minipage}
+
+    \item \begin{minipage}[t]{\linewidth}
+            \textbf{How easy was it to navigate around the scene?}
+            \begin{center}
+              \small
+              \renewcommand{\arraystretch}{1.5}
+              \begin{tabular}{ccccccc}
+                          & 1          & 2          & 3          & 4          & 5          &           \\
+                Very hard & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & Very easy
+              \end{tabular}
+            \end{center}
+          \end{minipage}
+
+    \item \begin{minipage}[t]{\linewidth}
+            \textbf{Would you prefer to make virtual reality scenes with this tool, rather than a traditional scene editor?}
+            \begin{center}
+              \small
+              \renewcommand{\arraystretch}{1.5}
+              \begin{tabular}{ccccccc}
+                           & 1          & 2          & 3          & 4          & 5          &             \\
+                Not likely & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & Most likely
+              \end{tabular}
+            \end{center}
+          \end{minipage}
+  \end{enumerate}
+
 \end{appendix}
 
 % manually include the bibliography
 \bibliographystyle{plain}
 {\footnotesize \bibliography{references}}
 
-% include it also in ToC (do sth on your own)
 \addcontentsline{toc}{chapter}{REFERENCES}
 
 \end{document}
